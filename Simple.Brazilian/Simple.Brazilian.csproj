@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net5.0;netcoreapp3.1;netstandard1.0;net45;net35</TargetFrameworks>
+    <LangVersion>8.0</LangVersion>
+
+    <Version>0.1</Version>
+    <Authors>RafaelEstevam.Net</Authors>
+    <Company>RafaelEstevam.Net</Company>
+    <Product>Simple brazilian text lib</Product>
+    <Description>Biblioteca de Ferramentas Textuais para português do Brasil</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/RafaelEstevamReis/Simple.Brazilian</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/RafaelEstevamReis/Simple.Brazilian</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>
+      See examples and documentation on the GitHub page
+      Paired with commit 0000000
+      https://github.com/RafaelEstevamReis/Simple.Brazilian
+    </PackageReleaseNotes>
+  </PropertyGroup>
+
+</Project>
