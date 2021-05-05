@@ -38,7 +38,6 @@ Existem repositórios em várias linguagens porém é raro que:
 * Altíssima compatibilidade permitindo o uso em qualquer versão de .Net
   * Net5
   * Net Core 3.1
-  * Net Framework 3.5
   * Net Framework 4.5
   * Net Standard 1.0
     * Mono 4.6+
