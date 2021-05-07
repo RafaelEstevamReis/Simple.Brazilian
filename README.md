@@ -16,6 +16,8 @@ To be as inclusive as possible this readme will be in Portuguese
 
 Esta biblioteca será uma ferramenta para todos que escrevem software em português e precisam lidar com textos, datas, e valores monetários em diferentes ambientes.
 
+Para manter o projeto acessível, este readme e toda a documentação será em português
+
 ## O que somos ?
 
 Toda software-house sempre escreve seus próprios métodos para remover acentos, escrever números por extenso, etc.
