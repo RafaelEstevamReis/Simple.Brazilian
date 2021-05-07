@@ -51,9 +51,11 @@ Existem repositórios em várias linguagens porém é raro que:
 * Funções para remoção de acentos a fim de tornar textos em português compatíveis com ASCII
 * Funções para escrita de valores por extenso 
 * Conversão bidirecional entre números e texto com sinal monetário
+* Remoção de caracteres especiais (configurável)
 
 ## O que ja temos ?
 
-Bom, terminei este README e vou mantendo ele atualizado com as novidades =)
+* Uma implementação relativamente eficiente de remoção de acentos com personalização para caracteres especiais
+* Nomes de meses, já com e sem acentos, escritos em diferentes capitalizações (não precisa converter)
 
 
