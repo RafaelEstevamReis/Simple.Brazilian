@@ -1,10 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFrameworks>net5.0;netcoreapp3.1;netstandard1.0;net45</TargetFrameworks>
     <LangVersion>8.0</LangVersion>
-
-    <Version>0.1</Version>
+    <Version>0.1.1-alpha</Version>
     <Authors>RafaelEstevam.Net</Authors>
     <Company>RafaelEstevam.Net</Company>
     <Product>Simple brazilian text lib</Product>
@@ -14,18 +12,12 @@
     <RepositoryUrl>https://github.com/RafaelEstevamReis/Simple.Brazilian</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>
-      See examples and documentation on the GitHub page
-      Paired with commit 0000000
+      Veja documentação e exemplos na página do GitHub
+      Pareado com o commit 3069b39
       https://github.com/RafaelEstevamReis/Simple.Brazilian
     </PackageReleaseNotes>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net5.0|AnyCPU'">
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-  </PropertyGroup>
-
   <ItemGroup>
     <Folder Include="Validadores\" />
   </ItemGroup>
-
 </Project>
