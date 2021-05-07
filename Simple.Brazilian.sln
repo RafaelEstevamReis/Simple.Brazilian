@@ -3,11 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Brazilian", "Simple.Brazilian\Simple.Brazilian.csproj", "{FABD3ABB-617D-40A5-A08B-B0588B2324C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simple.Brazilian", "Simple.Brazilian\Simple.Brazilian.csproj", "{FABD3ABB-617D-40A5-A08B-B0588B2324C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Brazilian.UnitTests", "Simple.Brazilian.UnitTests\Simple.Brazilian.UnitTests.csproj", "{EDCD7603-3E9B-42D6-8080-43F88D7C4FDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simple.Brazilian.UnitTests", "Simple.Brazilian.UnitTests\Simple.Brazilian.UnitTests.csproj", "{EDCD7603-3E9B-42D6-8080-43F88D7C4FDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Brazilian.Exemplos", "Simple.Brazilian.Exemplos\Simple.Brazilian.Exemplos.csproj", "{74833F04-5BAE-4AFF-94D7-4C23FEE80A76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simple.Brazilian.Exemplos", "Simple.Brazilian.Exemplos\Simple.Brazilian.Exemplos.csproj", "{74833F04-5BAE-4AFF-94D7-4C23FEE80A76}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{7C0DD0FD-E83A-40D8-AD76-FA6A9D22B049}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
