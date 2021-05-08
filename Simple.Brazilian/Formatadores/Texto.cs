@@ -53,5 +53,11 @@ namespace Simple.Brazilian.Formatadores
 
             return new string(texto);
         }
+
+
+        public static string RemoveMascara(string texto)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
