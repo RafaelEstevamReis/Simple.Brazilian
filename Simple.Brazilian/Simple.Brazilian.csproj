@@ -17,7 +17,4 @@
       https://github.com/RafaelEstevamReis/Simple.Brazilian
     </PackageReleaseNotes>
   </PropertyGroup>
-  <ItemGroup>
-    <Folder Include="Validadores\" />
-  </ItemGroup>
 </Project>
