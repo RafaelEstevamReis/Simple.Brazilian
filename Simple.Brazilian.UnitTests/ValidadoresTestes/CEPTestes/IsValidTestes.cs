@@ -1,7 +1,6 @@
 ﻿using Simple.Brazilian.Validadores;
 using System;
 using System.Linq;
-using System.Reflection.Emit;
 using Xunit;
 
 namespace Simple.Brazilian.UnitTests.ValidadoresTestes.CEPTestes
@@ -76,7 +75,6 @@ namespace Simple.Brazilian.UnitTests.ValidadoresTestes.CEPTestes
             var cep = $"{inicioCorreto}0.000-000";
             Assert.True(CEP.IsValid(cep, uf));
         }
-
 
         /// <summary>
         /// Varre todas as UFs para procurar brechas nos CEPs
