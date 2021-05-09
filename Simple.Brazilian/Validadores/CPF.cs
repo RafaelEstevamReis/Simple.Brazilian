@@ -8,10 +8,8 @@ namespace Simple.Brazilian.Validadores
         {
             throw new NotImplementedException();
         }
-        public static string Mask(string cpf)
-        {
-            throw new NotImplementedException();
-        }
+
+        public static string Mask(string cpf) => Formatadores.Texto.AplicaMascara(cpf, "___.___.___-__");
         public static string Unmask(string cpf) => Formatadores.Texto.RemoveMascara(cpf);
 
     }
