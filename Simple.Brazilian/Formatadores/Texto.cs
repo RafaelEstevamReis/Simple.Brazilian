@@ -58,9 +58,25 @@ namespace Simple.Brazilian.Formatadores
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// Remove todos os caracteres, exceto letras e números
+        /// </summary>
+        /// <param name="texto">Texto a ser limpo</param>
+        /// <returns>Texto desformatado</returns>
         public static string RemoveMascara(string texto)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(texto)) return texto;
+
+            StringBuilder sb = new StringBuilder(texto.Length);
+
+            for (int i = 0; i < texto.Length; i++)
+            {
+                if (char.IsNumber(texto[i])) sb.Append(texto[i]);
+                else if (char.IsLetter(texto[i])) sb.Append(texto[i]);
+            }
+
+            return sb.ToString();
         }
     }
 }
