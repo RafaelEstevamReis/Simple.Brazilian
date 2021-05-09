@@ -14,7 +14,7 @@ namespace Simple.Brazilian.Validadores
         }
         public static string Unmask(string rg)
         {
-            throw new NotImplementedException();
+            return Formatadores.Texto.RemoveMascara(rg);
         }
     }
 }
