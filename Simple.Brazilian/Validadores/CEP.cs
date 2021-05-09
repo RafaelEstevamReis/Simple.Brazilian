@@ -27,7 +27,11 @@ namespace Simple.Brazilian.Validadores
             // Executa teste base
             if (!IsValid(cep)) return false;
 
-            // Checa o UF
+            // Checa a Região
+            // É possível checar faixa de CEP por Sub-Região, 
+            //  não teria repetição de UF na região
+            // A tabela completa pode ser obtida em:
+            // https://pt.wikipedia.org/wiki/C%C3%B3digo_de_Endere%C3%A7amento_Postal#Estrutura_do_CEP
             switch (cep[0])
             {
                 case '0':
