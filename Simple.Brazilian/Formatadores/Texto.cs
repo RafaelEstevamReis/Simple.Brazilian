@@ -54,9 +54,36 @@ namespace Simple.Brazilian.Formatadores
             return new string(texto);
         }
 
+        /// <summary>
+        /// Aplica uma máscara no texto
+        /// </summary>
+        /// <param name="texto">Texto base para aplicar a máscara</param>
+        /// <param name="mascara">Máscara a ser usada. O caracter underline '_' será trocado pelo texto, demais caracteres serão mantidos</param>
+        /// <returns>Texto com a máscara aplicada</returns>
         public static string AplicaMascara(string texto, string mascara)
         {
-            throw new NotImplementedException();
+            if (texto is null) throw new ArgumentNullException(nameof(texto));
+            if (mascara is null) throw new ArgumentNullException(nameof(mascara));
+
+            if (texto.Length == 0) throw new ArgumentException($"O parâmetro {nameof(texto)} não pode ser vazio");
+            if (mascara.Length == 0) throw new ArgumentException($"O parâmetro {nameof(mascara)} não pode ser vazio");
+
+            StringBuilder sb = new StringBuilder(mascara.Length);
+            int idxTexto = 0;
+            for (int i = 0; i < mascara.Length; i++)
+            {
+                if (mascara[i] == '_')
+                {
+                    sb.Append(texto[idxTexto]);
+                    idxTexto++;
+                }
+                else
+                {
+                    sb.Append(mascara[i]);
+                }
+            }
+
+            return sb.ToString();
         }
 
         /// <summary>
