@@ -12,9 +12,7 @@ namespace Simple.Brazilian.Validadores
         {
             throw new NotImplementedException();
         }
-        public static string Unmask(string pis)
-        {
-            return Formatadores.Texto.RemoveMascara(pis);
-        }
+        public static string Unmask(string pis) => Formatadores.Texto.RemoveMascara(pis);
+
     }
 }

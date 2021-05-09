@@ -2,7 +2,7 @@
 
 namespace Simple.Brazilian.Validadores
 {
-    public static  class RG
+    public static class RG
     {
         public static bool IsValid(string rg)
         {
@@ -12,9 +12,7 @@ namespace Simple.Brazilian.Validadores
         {
             throw new NotImplementedException();
         }
-        public static string Unmask(string rg)
-        {
-            return Formatadores.Texto.RemoveMascara(rg);
-        }
+        public static string Unmask(string rg) => Formatadores.Texto.RemoveMascara(rg);
+
     }
 }

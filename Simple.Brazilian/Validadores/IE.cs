@@ -12,9 +12,7 @@ namespace Simple.Brazilian.Validadores
         {
             throw new NotImplementedException();
         }
-        public static string Unmask(string cep)
-        {
-            return Formatadores.Texto.RemoveMascara(cep);
-        }
+        public static string Unmask(string cep) => Formatadores.Texto.RemoveMascara(cep);
+
     }
 }

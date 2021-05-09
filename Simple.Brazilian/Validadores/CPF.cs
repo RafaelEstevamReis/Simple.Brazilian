@@ -12,9 +12,7 @@ namespace Simple.Brazilian.Validadores
         {
             throw new NotImplementedException();
         }
-        public static string Unmask(string cpf)
-        {
-            return Formatadores.Texto.RemoveMascara(cpf);
-        }
+        public static string Unmask(string cpf) => Formatadores.Texto.RemoveMascara(cpf);
+
     }
 }
