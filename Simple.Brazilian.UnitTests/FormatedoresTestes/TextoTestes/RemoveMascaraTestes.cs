@@ -55,30 +55,6 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         }
 
         [Theory]
-        [InlineData("12.345-678", "12345678")]
-        [InlineData("12345-678", "12345678")]
-        public void Texto_RemoveMascara_CEP(string entrada, string saida)
-        {
-            Assert.Equal(saida, Texto.RemoveMascara(entrada));
-        }
-
-        [Theory]
-        [InlineData("123.456.789-01", "12345678901")]
-        [InlineData("123.456.789/01", "12345678901")]
-        public void Texto_RemoveMascara_CPF(string entrada, string saida)
-        {
-            Assert.Equal(saida, Texto.RemoveMascara(entrada));
-        }
-
-        [Theory]
-        [InlineData("12.345.678/0001-90", "12345678000190")]
-        [InlineData("12.345.678.0001.90", "12345678000190")]
-        public void Texto_RemoveMascara_CNPJ(string entrada, string saida)
-        {
-            Assert.Equal(saida, Texto.RemoveMascara(entrada));
-        }
-
-        [Theory]
         [InlineData("#123.456.789", "123456789")]
         [InlineData("123.456/789.1", "1234567891")]
         public void Texto_RemoveMascara_Ticket(string entrada, string saida)
