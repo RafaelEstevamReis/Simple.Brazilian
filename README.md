@@ -1,5 +1,6 @@
 [![.NET](https://github.com/RafaelEstevamReis/Simple.Brazilian/actions/workflows/dotnet.yml/badge.svg)](https://github.com/RafaelEstevamReis/Simple.Brazilian/actions/workflows/dotnet.yml)
-[NuGet-Alpha](https://www.nuget.org/packages/Simple.Brazilian)
+[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Simple.Brazilian?color=green)](https://www.nuget.org/packages/Simple.Brazilian)
+
 
 # Brazilian text Tools
 
