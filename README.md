@@ -38,7 +38,8 @@ Existem repositórios em várias linguagens porém é raro que:
 * Conformidade com a ABNT
 * Segurança e previsibilidade
   * 100% coberto por testes unitários
-  * Verificação a cada commit/merge
+  * Verificação a cada commit/merge \
+   [![.NET](https://github.com/RafaelEstevamReis/Simple.Brazilian/actions/workflows/dotnet.yml/badge.svg)](https://github.com/RafaelEstevamReis/Simple.Brazilian/actions/workflows/dotnet.yml)
 * Inclusivo, código escrito e documentado em português
 * Altíssima compatibilidade permitindo o uso em qualquer versão de .Net
   * Net5
