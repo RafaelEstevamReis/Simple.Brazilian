@@ -8,10 +8,8 @@ namespace Simple.Brazilian.Validadores
         {
             throw new NotImplementedException();
         }
-        public static string Mask(string cep)
-        {
-            throw new NotImplementedException();
-        }
+
+        public static string Mask(string cep) => Formatadores.Texto.AplicaMascara(cep, "__.___-___");
         public static string Unmask(string cep) => Formatadores.Texto.RemoveMascara(cep);
 
     }
