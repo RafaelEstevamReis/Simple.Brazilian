@@ -8,10 +8,8 @@ namespace Simple.Brazilian.Validadores
         {
             throw new NotImplementedException();
         }
-        public static string Mask(string pis)
-        {
-            throw new NotImplementedException();
-        }
+
+        public static string Mask(string pis) => Formatadores.Texto.AplicaMascara(pis, "___._____.__._");
         public static string Unmask(string pis) => Formatadores.Texto.RemoveMascara(pis);
 
     }
