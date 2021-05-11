@@ -2,6 +2,9 @@
 
 namespace Simple.Brazilian.Validadores
 {
+    /// <summary>
+    /// Validador de PIS
+    /// </summary>
     public static class PIS
     {
         public static bool IsValid(string pis)

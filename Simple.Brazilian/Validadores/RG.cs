@@ -2,6 +2,9 @@
 
 namespace Simple.Brazilian.Validadores
 {
+    /// <summary>
+    /// Validador de RG
+    /// </summary>
     public static class RG
     {
         public static bool IsValid(string rg)

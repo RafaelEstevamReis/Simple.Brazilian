@@ -2,6 +2,9 @@
 
 namespace Simple.Brazilian.Validadores
 {
+    /// <summary>
+    /// Validador de CNPJ
+    /// </summary>
     public static class CNPJ
     {
         public static bool IsValid(string cnpj)

@@ -2,6 +2,9 @@
 
 namespace Simple.Brazilian.Validadores
 {
+    /// <summary>
+    /// Validador de CPF
+    /// </summary>
     public static class CPF
     {
         public static bool IsValid(string cpf)

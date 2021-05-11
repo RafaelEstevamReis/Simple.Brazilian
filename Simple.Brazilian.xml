@@ -167,6 +167,11 @@
             <param name="texto">Texto a ser limpo</param>
             <returns>Texto desformatado</returns>
         </member>
+        <member name="T:Simple.Brazilian.Validadores.CEP">
+            <summary>
+            Validador de CEP
+            </summary>
+        </member>
         <member name="M:Simple.Brazilian.Validadores.CEP.IsValid(System.String)">
             <summary>
             Verifica se o CEP tem ocomprimento correto
@@ -196,6 +201,11 @@
             <param name="cep">Texto com a máscara aplicada</param>
             <returns>Texto com a máscara removida</returns>
         </member>
+        <member name="T:Simple.Brazilian.Validadores.CNPJ">
+            <summary>
+            Validador de CNPJ
+            </summary>
+        </member>
         <member name="M:Simple.Brazilian.Validadores.CNPJ.Mask(System.String)">
             <summary>
             Aplica a máscara de CNPJ __.___.___/____-__
@@ -210,6 +220,11 @@
             <param name="cnpj">Texto com a máscara aplicada</param>
             <returns>Texto com a máscara removida</returns>
         </member>
+        <member name="T:Simple.Brazilian.Validadores.CPF">
+            <summary>
+            Validador de CPF
+            </summary>
+        </member>
         <member name="M:Simple.Brazilian.Validadores.CPF.Mask(System.String)">
             <summary>
             Aplica a máscara de CPF ___.___.___-__
@@ -223,6 +238,11 @@
             </summary>
             <param name="cpf">Texto com a máscara aplicada</param>
             <returns>Texto com a máscara removida</returns>
+        </member>
+        <member name="T:Simple.Brazilian.Validadores.IE">
+            <summary>
+            Validador de IE
+            </summary>
         </member>
         <member name="M:Simple.Brazilian.Validadores.IE.Mask(System.String,Simple.Brazilian.Dados.Locais.UF)">
             <summary>
@@ -239,6 +259,11 @@
             <param name="cep">Texto com a máscara aplicada</param>
             <returns>Texto com a máscara removida</returns>
         </member>
+        <member name="T:Simple.Brazilian.Validadores.PIS">
+            <summary>
+            Validador de PIS
+            </summary>
+        </member>
         <member name="M:Simple.Brazilian.Validadores.PIS.Mask(System.String)">
             <summary>
             Aplica a máscara de PIS ___._____.__._
@@ -252,6 +277,11 @@
             </summary>
             <param name="pis">Texto com a máscara aplicada</param>
             <returns>Texto com a máscara removida</returns>
+        </member>
+        <member name="T:Simple.Brazilian.Validadores.RG">
+            <summary>
+            Validador de RG
+            </summary>
         </member>
         <member name="M:Simple.Brazilian.Validadores.RG.Mask(System.String)">
             <summary>

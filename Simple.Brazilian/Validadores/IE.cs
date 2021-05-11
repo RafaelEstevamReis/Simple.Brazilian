@@ -3,6 +3,9 @@ using static Simple.Brazilian.Dados.Locais;
 
 namespace Simple.Brazilian.Validadores
 {
+    /// <summary>
+    /// Validador de IE
+    /// </summary>
     public static class IE
     {
         public static bool IsValid(string ie)

@@ -2,6 +2,9 @@
 
 namespace Simple.Brazilian.Validadores
 {
+    /// <summary>
+    /// Validador de CEP
+    /// </summary>
     public static class CEP
     {
         /// <summary>
