@@ -15,7 +15,6 @@ namespace Simple.Brazilian.Validadores
 
             return Unmask(cep).Length == 8;
         }
-
         /// <summary>
         /// Verifica se o CEP tem ocomprimento correto e se corresponde ao UF designado
         /// </summary>
@@ -88,8 +87,17 @@ namespace Simple.Brazilian.Validadores
             }
             throw new Exception("Nao é possível comparar o CEP informado com a UF informada");
         }
-
+        /// <summary>
+        /// Aplica a máscara de CEP __.___-___
+        /// </summary>
+        /// <param name="cep">Texto para aplicar a máscara</param>
+        /// <returns>Texto com a máscara</returns>
         public static string Mask(string cep) => Formatadores.Texto.AplicaMascara(cep, "__.___-___");
+        /// <summary>
+        /// Remove a máscara
+        /// </summary>
+        /// <param name="cep">Texto com a máscara aplicada</param>
+        /// <returns>Texto com a máscara removida</returns>
         public static string Unmask(string cep) => Formatadores.Texto.RemoveMascara(cep);
 
     }

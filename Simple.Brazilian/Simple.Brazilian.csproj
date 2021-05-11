@@ -17,4 +17,7 @@
       https://github.com/RafaelEstevamReis/Simple.Brazilian
     </PackageReleaseNotes>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net5.0|AnyCPU'">
+    <DocumentationFile>..\Simple.Brazilian.xml</DocumentationFile>
+  </PropertyGroup>
 </Project>
