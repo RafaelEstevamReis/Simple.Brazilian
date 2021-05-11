@@ -1,9 +1,5 @@
 ﻿using Simple.Brazilian.Formatadores;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
@@ -27,7 +23,6 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         /// </summary>
         [Theory]
         [InlineData("123", "")]
-        [InlineData("", "321")]
         [InlineData("", "")]
         public void Texto_AplicaMascara_CertificaVaziosRetornamException(string valor, string mascara)
         {
@@ -44,6 +39,30 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         public void Texto_AplicaMascara_CertificaMascaraLimpa(string valor, string mascara)
         {
             Assert.Equal(valor, Texto.AplicaMascara(valor, mascara));
+        }
+
+        /// <summary>
+        /// Máscara que simula um ticket
+        /// </summary>
+        /// <param name="valor"></param>
+        /// <param name="esperado"></param>
+        [Theory]
+        [InlineData("", "")]
+        [InlineData("1", "#1")]
+        [InlineData("12", "#12")]
+        [InlineData("123", "#12.3")]
+        [InlineData("1234", "#12.34")]
+        [InlineData("12345", "#12.34.5")]
+        [InlineData("123456", "#12.34.56")]
+        [InlineData("1234567", "#12.34.56-7")]
+        [InlineData("12345678", "#12.34.56-78")]
+        [InlineData("123456789", "#12.34.56-789")]
+        [InlineData("1234567890", "#12.34.56-789/0")]
+        [InlineData("12345678901", "#12.34.56-789/01")]
+        public void Texto_AplicaMascara_Ticket(string valor, string esperado)
+        {
+            string mascara = "#__.__.__-___/__";
+            Assert.Equal(esperado, Texto.AplicaMascara(valor, mascara));
         }
 
         /// <summary>

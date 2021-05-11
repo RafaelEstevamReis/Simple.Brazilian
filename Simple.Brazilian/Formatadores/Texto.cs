@@ -69,12 +69,11 @@ namespace Simple.Brazilian.Formatadores
             if (texto is null) throw new ArgumentNullException(nameof(texto));
             if (mascara is null) throw new ArgumentNullException(nameof(mascara));
 
-            if (texto.Length == 0) throw new ArgumentException($"O parâmetro {nameof(texto)} não pode ser vazio");
             if (mascara.Length == 0) throw new ArgumentException($"O parâmetro {nameof(mascara)} não pode ser vazio");
 
             StringBuilder sb = new StringBuilder(mascara.Length);
             int idxTexto = 0;
-            for (int i = 0; i < mascara.Length; i++)
+            for (int i = 0; i < mascara.Length && idxTexto < texto.Length; i++)
             {
                 if (mascara[i] == '_')
                 {
