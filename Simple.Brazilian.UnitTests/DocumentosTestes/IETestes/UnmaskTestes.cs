@@ -1,7 +1,7 @@
-﻿using Simple.Brazilian.Validadores;
+﻿using Simple.Brazilian.Documentos;
 using Xunit;
 
-namespace Simple.Brazilian.UnitTests.ValidadoresTestes.IETestes
+namespace Simple.Brazilian.UnitTests.DocumentosTestes.IETestes
 {
     public class UnmaskTestes
     {

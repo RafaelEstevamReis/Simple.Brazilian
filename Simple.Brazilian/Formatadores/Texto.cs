@@ -4,13 +4,17 @@ using System.Text;
 
 namespace Simple.Brazilian.Formatadores
 {
+    /// <summary>
+    /// Formatadores textuais
+    /// </summary>
     public static class Texto
     {
         /// <summary>
         /// Torna o texto compatível com ASCII sem acentuação. 
         /// Letras acentuadas serão convertidas e outros caracteres serão descartados
         /// </summary>
-        /// <param name="Texto">Texto a ser processado</param>
+        /// <param name="texto">Texto a ser processado</param>
+        /// <param name="opcoes">Opções de remoção</param>
         /// <returns>Retorno sem acentos</returns>
         public static string RemoveAcentos(this string texto, OpcoesTexto opcoes = null)
         {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Simple.Brazilian.Validadores
+namespace Simple.Brazilian.Documentos
 {
     /// <summary>
     /// Validador de CPF

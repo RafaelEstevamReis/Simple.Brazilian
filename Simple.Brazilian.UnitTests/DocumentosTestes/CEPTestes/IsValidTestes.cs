@@ -1,9 +1,9 @@
-﻿using Simple.Brazilian.Validadores;
+﻿using Simple.Brazilian.Documentos;
 using System;
 using System.Linq;
 using Xunit;
 
-namespace Simple.Brazilian.UnitTests.ValidadoresTestes.CEPTestes
+namespace Simple.Brazilian.UnitTests.DocumentosTestes.CEPTestes
 {
     public class IsValidTestes
     {

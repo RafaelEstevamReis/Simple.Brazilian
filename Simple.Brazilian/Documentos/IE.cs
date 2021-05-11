@@ -1,7 +1,7 @@
 ﻿using System;
 using static Simple.Brazilian.Dados.Locais;
 
-namespace Simple.Brazilian.Validadores
+namespace Simple.Brazilian.Documentos
 {
     /// <summary>
     /// Validador de IE
