@@ -6,8 +6,14 @@
 
 namespace Simple.Brazilian.Dados
 {
+    /// <summary>
+    /// Dados de localidades
+    /// </summary>
     public static class Locais
     {
+        /// <summary>
+        /// Unidades federativas
+        /// </summary>
         public enum UF
         {
             /// <summary>

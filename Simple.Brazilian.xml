@@ -4,6 +4,81 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
+        <member name="T:Simple.Brazilian.Dados.Datas">
+            <summary>
+            Informações sobre datas
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Dados.Datas.MesesComAcento">
+            <summary>
+            Lista de meses com a inicial maiúscula, com acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Dados.Datas.MesesSemAcento">
+            <summary>
+            Lista de meses com a inicial maiúscula, sem acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Dados.Datas.DiasSemanaComAcento">
+            <summary>
+            Lista de dias da semana com a inicial maiúscula, com acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Dados.Datas.DiasSemanaSemAcento">
+            <summary>
+            Lista de dias da semana com a inicial maiúscula, sem acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Dados.Datas.MesesComAcentoU">
+            <summary>
+            Lista de meses em maiúsculo, com acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Dados.Datas.MesesSemAcentoU">
+            <summary>
+            Lista de meses em maiúsculo, sem acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Dados.Datas.DiasSemanaComAcentoU">
+            <summary>
+            Lista de dias da semana em maiúsculo, com acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Dados.Datas.DiasSemanaSemAcentoU">
+            <summary>
+            Lista de dias da semana em maiúsculo, sem acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Dados.Datas.MesesComAcentoL">
+            <summary>
+            Lista de meses em minúsculo, com acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Dados.Datas.MesesSemAcentoL">
+            <summary>
+            Lista de meses em minúsculo, sem acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Dados.Datas.DiasSemanaComAcentoL">
+            <summary>
+            Lista de dias da semana em minúsculo, com acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Dados.Datas.DiasSemanaSemAcentoL">
+            <summary>
+            Lista de dias da semana em minúsculo, sem acentos
+            </summary>
+        </member>
+        <member name="T:Simple.Brazilian.Dados.Locais">
+            <summary>
+            Dados de localidades
+            </summary>
+        </member>
+        <member name="T:Simple.Brazilian.Dados.Locais.UF">
+            <summary>
+            Unidades federativas
+            </summary>
+        </member>
         <member name="F:Simple.Brazilian.Dados.Locais.UF.RO">
             <summary>
             Rondônia
