@@ -13,6 +13,7 @@ namespace Simple.Brazilian.UnitTests.DocumentosTestes.CEPTestes
         /// <param name="cep"></param>
         /// <param name="resultado"></param>
         [Theory]
+        [InlineData(null, false)]
         [InlineData("", false)]
         [InlineData("00.000", false)]
         [InlineData("00.000-000", true)]
