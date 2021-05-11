@@ -7,7 +7,7 @@ namespace Simple.Brazilian.Documentos
     /// </summary>
     public static class CPF
     {
-        public static bool IsValid(string cpf)
+        internal static bool IsValid(string cpf)
         {
             throw new NotImplementedException();
         }

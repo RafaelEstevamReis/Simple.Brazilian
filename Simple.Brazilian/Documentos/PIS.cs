@@ -7,7 +7,7 @@ namespace Simple.Brazilian.Documentos
     /// </summary>
     public static class PIS
     {
-        public static bool IsValid(string pis)
+        internal static bool IsValid(string pis)
         {
             throw new NotImplementedException();
         }

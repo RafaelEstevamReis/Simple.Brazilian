@@ -8,11 +8,11 @@ namespace Simple.Brazilian.Documentos
     /// </summary>
     public static class IE
     {
-        public static bool IsValid(string ie)
+        internal static bool IsValid(string ie)
         {
             throw new NotImplementedException();
         }
-        public static bool IsValid(string ie, UF uf)
+        internal static bool IsValid(string ie, UF uf)
         {
             throw new NotImplementedException();
         }

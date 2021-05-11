@@ -7,7 +7,7 @@ namespace Simple.Brazilian.Documentos
     /// </summary>
     public static class RG
     {
-        public static bool IsValid(string rg)
+        internal static bool IsValid(string rg)
         {
             throw new NotImplementedException();
         }
@@ -16,7 +16,7 @@ namespace Simple.Brazilian.Documentos
         /// </summary>
         /// <param name="rg">Texto para aplicar a máscara</param>
         /// <returns>Texto com a máscara</returns>
-        public static string Mask(string rg)
+        internal static string Mask(string rg)
         {
             throw new NotImplementedException();
         }

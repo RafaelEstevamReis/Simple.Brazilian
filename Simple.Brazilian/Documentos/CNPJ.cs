@@ -7,7 +7,7 @@ namespace Simple.Brazilian.Documentos
     /// </summary>
     public static class CNPJ
     {
-        public static bool IsValid(string cnpj)
+        internal static bool IsValid(string cnpj)
         {
             throw new NotImplementedException();
         }
