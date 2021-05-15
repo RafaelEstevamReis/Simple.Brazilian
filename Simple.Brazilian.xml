@@ -335,7 +335,7 @@
             Validador de RG
             </summary>
         </member>
-        <member name="M:Simple.Brazilian.Documentos.RG.Mask(System.String)">
+        <member name="M:Simple.Brazilian.Documentos.RG.Mask(System.String,Simple.Brazilian.Dados.Locais.UF)">
             <summary>
             Aplica a máscara de RG
             </summary>
