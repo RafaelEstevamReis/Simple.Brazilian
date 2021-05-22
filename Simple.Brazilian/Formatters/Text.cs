@@ -75,26 +75,27 @@ namespace Simple.Brazilian.Formatters
         public static string AplicaMascara(string texto, string mascara)
         {
             if (texto is null) throw new ArgumentNullException(nameof(texto));
-            if (mascara is null) throw new ArgumentNullException(nameof(mascara));
+            if (texto.Length == 0) return texto;
 
+            if (mascara is null) throw new ArgumentNullException(nameof(mascara));
             if (mascara.Length == 0) throw new ArgumentException($"O parâmetro {nameof(mascara)} não pode ser vazio");
 
-            StringBuilder sb = new StringBuilder(mascara.Length);
+            var result = mascara.ToCharArray();
             int idxTexto = 0;
             for (int i = 0; i < mascara.Length && idxTexto < texto.Length; i++)
             {
                 if (mascara[i] == '_')
                 {
-                    sb.Append(texto[idxTexto]);
+                    result[i] = texto[idxTexto];
                     idxTexto++;
-                }
-                else
-                {
-                    sb.Append(mascara[i]);
+                    if (idxTexto == texto.Length)
+                    {
+                        return new string(result, 0, i + 1);
+                    }
                 }
             }
 
-            return sb.ToString();
+            return new string(result);
         }
 
         /// <summary>

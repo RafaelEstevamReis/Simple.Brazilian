@@ -9,13 +9,9 @@ namespace Simple.Brazilian.Exemplos
         {
             Console.WriteLine("Olá, mundo !");
 
-            //for (int i = 0; i < 100000; i++)
-            //{
-            //    var a = new Desempenho.AnalisaRemocaoAcentos();
-            //    a.RemoveAcentosTextoLongoB();
-            //}
+            //BenchmarkRunner.Run<Desempenho.AnalisaRemocaoAcentos>();
+            //BenchmarkRunner.Run<Desempenho.AnalisaAplicacaoMascara>();
 
-            BenchmarkRunner.Run<Desempenho.AnalisaRemocaoAcentos>();
         }
     }
 }

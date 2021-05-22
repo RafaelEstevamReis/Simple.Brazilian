@@ -23,7 +23,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         /// </summary>
         [Theory]
         [InlineData("123", "")]
-        [InlineData("", "")]
+        //[InlineData("", "")] // Texto VAZIO deve retornar VAZIO
         public void Texto_AplicaMascara_CertificaVaziosRetornamException(string valor, string mascara)
         {
             Assert.Throws<ArgumentException>(() => Text.AplicaMascara(valor, mascara));
