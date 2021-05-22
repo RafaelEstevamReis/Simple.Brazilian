@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Simple.Brazilian.Documentos
+namespace Simple.Brazilian.Documents
 {
     /// <summary>
     /// Validador de CPF
@@ -16,13 +16,13 @@ namespace Simple.Brazilian.Documentos
         /// </summary>
         /// <param name="cpf">Texto para aplicar a máscara</param>
         /// <returns>Texto com a máscara</returns>
-        public static string Mask(string cpf) => Formatadores.Texto.AplicaMascara(cpf, "___.___.___-__");
+        public static string Mask(string cpf) => Formatters.Texto.AplicaMascara(cpf, "___.___.___-__");
         /// <summary>
         /// Remove a máscara
         /// </summary>
         /// <param name="cpf">Texto com a máscara aplicada</param>
         /// <returns>Texto com a máscara removida</returns>
-        public static string Unmask(string cpf) => Formatadores.Texto.RemoveMascara(cpf);
+        public static string Unmask(string cpf) => Formatters.Texto.RemoveMascara(cpf);
 
     }
 }

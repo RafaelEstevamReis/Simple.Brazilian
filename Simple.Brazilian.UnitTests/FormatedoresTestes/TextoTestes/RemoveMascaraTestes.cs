@@ -1,4 +1,4 @@
-﻿using Simple.Brazilian.Formatadores;
+﻿using Simple.Brazilian.Formatters;
 using Xunit;
 
 namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes

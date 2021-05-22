@@ -1,4 +1,4 @@
-﻿namespace Simple.Brazilian.Formatadores
+﻿namespace Simple.Brazilian.Formatters
 {
     /// <summary>
     /// Opções de texto

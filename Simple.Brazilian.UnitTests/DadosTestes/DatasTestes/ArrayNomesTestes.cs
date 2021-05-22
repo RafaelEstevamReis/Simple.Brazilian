@@ -45,7 +45,7 @@ namespace Simple.Brazilian.UnitTests.DadosTestes.DatasTestes
             {
                 for (int i = 0; i < baseCompara.Length; i++)
                 {
-                    Assert.Equal(baseCompara[i], Formatadores.Texto.RemoveAcentos(conjunto[i]).ToLower());
+                    Assert.Equal(baseCompara[i], Formatters.Texto.RemoveAcentos(conjunto[i]).ToLower());
                 }
             }
         }
@@ -68,7 +68,7 @@ namespace Simple.Brazilian.UnitTests.DadosTestes.DatasTestes
             {
                 for (int i = 0; i < baseCompara.Length; i++)
                 {
-                    Assert.Equal(baseCompara[i], Formatadores.Texto.RemoveAcentos(conjunto[i]).ToLower());
+                    Assert.Equal(baseCompara[i], Formatters.Texto.RemoveAcentos(conjunto[i]).ToLower());
                 }
             }
         }

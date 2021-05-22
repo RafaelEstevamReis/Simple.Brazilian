@@ -1,4 +1,4 @@
-﻿using Simple.Brazilian.Formatadores;
+﻿using Simple.Brazilian.Formatters;
 using System;
 using Xunit;
 

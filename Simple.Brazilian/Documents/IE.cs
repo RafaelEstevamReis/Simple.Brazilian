@@ -1,7 +1,7 @@
 ﻿using System;
 using static Simple.Brazilian.Dados.Locais;
 
-namespace Simple.Brazilian.Documentos
+namespace Simple.Brazilian.Documents
 {
     /// <summary>
     /// Validador de IE
@@ -31,7 +31,7 @@ namespace Simple.Brazilian.Documentos
         /// </summary>
         /// <param name="cep">Texto com a máscara aplicada</param>
         /// <returns>Texto com a máscara removida</returns>
-        public static string Unmask(string cep) => Formatadores.Texto.RemoveMascara(cep);
+        public static string Unmask(string cep) => Formatters.Texto.RemoveMascara(cep);
 
     }
 }

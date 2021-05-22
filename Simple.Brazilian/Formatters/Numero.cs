@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace Simple.Brazilian.Formatadores
+namespace Simple.Brazilian.Formatters
 {
     public class Numero
     {

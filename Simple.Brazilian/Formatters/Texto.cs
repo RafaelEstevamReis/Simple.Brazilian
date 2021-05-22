@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Simple.Brazilian.Formatadores
+namespace Simple.Brazilian.Formatters
 {
     /// <summary>
     /// Formatadores textuais

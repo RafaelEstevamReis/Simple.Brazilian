@@ -219,19 +219,19 @@
             Exterior
             </summary>
         </member>
-        <member name="T:Simple.Brazilian.Documentos.CEP">
+        <member name="T:Simple.Brazilian.Documents.CEP">
             <summary>
             Validador de CEP
             </summary>
         </member>
-        <member name="M:Simple.Brazilian.Documentos.CEP.IsValid(System.String)">
+        <member name="M:Simple.Brazilian.Documents.CEP.IsValid(System.String)">
             <summary>
             Verifica se o CEP tem ocomprimento correto
             </summary>
             <param name="cep">CEP a ser verificado</param>
             <returns>True se o CEP tem o comprimento correto; False senão</returns>
         </member>
-        <member name="M:Simple.Brazilian.Documentos.CEP.IsValid(System.String,Simple.Brazilian.Dados.Locais.UF)">
+        <member name="M:Simple.Brazilian.Documents.CEP.IsValid(System.String,Simple.Brazilian.Dados.Locais.UF)">
             <summary>
             Verifica se o CEP tem ocomprimento correto e se corresponde ao UF designado
             </summary>
@@ -239,64 +239,64 @@
             <param name="uf">UF a ser comparado</param>
             <returns>True se o CEP tem o comprimento correto; False senão</returns>
         </member>
-        <member name="M:Simple.Brazilian.Documentos.CEP.Mask(System.String)">
+        <member name="M:Simple.Brazilian.Documents.CEP.Mask(System.String)">
             <summary>
             Aplica a máscara de CEP __.___-___
             </summary>
             <param name="cep">Texto para aplicar a máscara</param>
             <returns>Texto com a máscara</returns>
         </member>
-        <member name="M:Simple.Brazilian.Documentos.CEP.Unmask(System.String)">
+        <member name="M:Simple.Brazilian.Documents.CEP.Unmask(System.String)">
             <summary>
             Remove a máscara
             </summary>
             <param name="cep">Texto com a máscara aplicada</param>
             <returns>Texto com a máscara removida</returns>
         </member>
-        <member name="T:Simple.Brazilian.Documentos.CNPJ">
+        <member name="T:Simple.Brazilian.Documents.CNPJ">
             <summary>
             Validador de CNPJ
             </summary>
         </member>
-        <member name="M:Simple.Brazilian.Documentos.CNPJ.Mask(System.String)">
+        <member name="M:Simple.Brazilian.Documents.CNPJ.Mask(System.String)">
             <summary>
             Aplica a máscara de CNPJ __.___.___/____-__
             </summary>
             <param name="cnpj">Texto para aplicar a máscara</param>
             <returns>Texto com a máscara</returns>
         </member>
-        <member name="M:Simple.Brazilian.Documentos.CNPJ.Unmask(System.String)">
+        <member name="M:Simple.Brazilian.Documents.CNPJ.Unmask(System.String)">
             <summary>
             Remove a máscara
             </summary>
             <param name="cnpj">Texto com a máscara aplicada</param>
             <returns>Texto com a máscara removida</returns>
         </member>
-        <member name="T:Simple.Brazilian.Documentos.CPF">
+        <member name="T:Simple.Brazilian.Documents.CPF">
             <summary>
             Validador de CPF
             </summary>
         </member>
-        <member name="M:Simple.Brazilian.Documentos.CPF.Mask(System.String)">
+        <member name="M:Simple.Brazilian.Documents.CPF.Mask(System.String)">
             <summary>
             Aplica a máscara de CPF ___.___.___-__
             </summary>
             <param name="cpf">Texto para aplicar a máscara</param>
             <returns>Texto com a máscara</returns>
         </member>
-        <member name="M:Simple.Brazilian.Documentos.CPF.Unmask(System.String)">
+        <member name="M:Simple.Brazilian.Documents.CPF.Unmask(System.String)">
             <summary>
             Remove a máscara
             </summary>
             <param name="cpf">Texto com a máscara aplicada</param>
             <returns>Texto com a máscara removida</returns>
         </member>
-        <member name="T:Simple.Brazilian.Documentos.IE">
+        <member name="T:Simple.Brazilian.Documents.IE">
             <summary>
             Validador de IE
             </summary>
         </member>
-        <member name="M:Simple.Brazilian.Documentos.IE.Mask(System.String,Simple.Brazilian.Dados.Locais.UF)">
+        <member name="M:Simple.Brazilian.Documents.IE.Mask(System.String,Simple.Brazilian.Dados.Locais.UF)">
             <summary>
             Aplica a máscara de IE
             </summary>
@@ -304,45 +304,45 @@
             <param name="uf">Especifica qual UF deve ser usada para aplicar a máscara</param>
             <returns>Texto com a máscara</returns>
         </member>
-        <member name="M:Simple.Brazilian.Documentos.IE.Unmask(System.String)">
+        <member name="M:Simple.Brazilian.Documents.IE.Unmask(System.String)">
             <summary>
             Remove a máscara
             </summary>
             <param name="cep">Texto com a máscara aplicada</param>
             <returns>Texto com a máscara removida</returns>
         </member>
-        <member name="T:Simple.Brazilian.Documentos.PIS">
+        <member name="T:Simple.Brazilian.Documents.PIS">
             <summary>
             Validador de PIS
             </summary>
         </member>
-        <member name="M:Simple.Brazilian.Documentos.PIS.Mask(System.String)">
+        <member name="M:Simple.Brazilian.Documents.PIS.Mask(System.String)">
             <summary>
             Aplica a máscara de PIS ___._____.__._
             </summary>
             <param name="pis">Texto para aplicar a máscara</param>
             <returns>Texto com a máscara</returns>
         </member>
-        <member name="M:Simple.Brazilian.Documentos.PIS.Unmask(System.String)">
+        <member name="M:Simple.Brazilian.Documents.PIS.Unmask(System.String)">
             <summary>
             Remove a máscara
             </summary>
             <param name="pis">Texto com a máscara aplicada</param>
             <returns>Texto com a máscara removida</returns>
         </member>
-        <member name="T:Simple.Brazilian.Documentos.RG">
+        <member name="T:Simple.Brazilian.Documents.RG">
             <summary>
             Validador de RG
             </summary>
         </member>
-        <member name="M:Simple.Brazilian.Documentos.RG.Mask(System.String,Simple.Brazilian.Dados.Locais.UF)">
+        <member name="M:Simple.Brazilian.Documents.RG.Mask(System.String,Simple.Brazilian.Dados.Locais.UF)">
             <summary>
             Aplica a máscara de RG
             </summary>
             <param name="rg">Texto para aplicar a máscara</param>
             <returns>Texto com a máscara</returns>
         </member>
-        <member name="M:Simple.Brazilian.Documentos.RG.Unmask(System.String)">
+        <member name="M:Simple.Brazilian.Documents.RG.Unmask(System.String)">
             <summary>
             Remove a máscara
             </summary>

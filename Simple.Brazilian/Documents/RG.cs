@@ -1,7 +1,7 @@
 ﻿using System;
 using static Simple.Brazilian.Dados.Locais;
 
-namespace Simple.Brazilian.Documentos
+namespace Simple.Brazilian.Documents
 {
     /// <summary>
     /// Validador de RG
@@ -26,7 +26,7 @@ namespace Simple.Brazilian.Documentos
         /// </summary>
         /// <param name="rg">Texto com a máscara aplicada</param>
         /// <returns>Texto com a máscara removida</returns>
-        public static string Unmask(string rg) => Formatadores.Texto.RemoveMascara(rg);
+        public static string Unmask(string rg) => Formatters.Texto.RemoveMascara(rg);
 
     }
 }

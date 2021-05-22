@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Simple.Brazilian.Documentos
+namespace Simple.Brazilian.Documents
 {
     /// <summary>
     /// Validador de CEP
@@ -95,13 +95,13 @@ namespace Simple.Brazilian.Documentos
         /// </summary>
         /// <param name="cep">Texto para aplicar a máscara</param>
         /// <returns>Texto com a máscara</returns>
-        public static string Mask(string cep) => Formatadores.Texto.AplicaMascara(cep, "__.___-___");
+        public static string Mask(string cep) => Formatters.Texto.AplicaMascara(cep, "__.___-___");
         /// <summary>
         /// Remove a máscara
         /// </summary>
         /// <param name="cep">Texto com a máscara aplicada</param>
         /// <returns>Texto com a máscara removida</returns>
-        public static string Unmask(string cep) => Formatadores.Texto.RemoveMascara(cep);
+        public static string Unmask(string cep) => Formatters.Texto.RemoveMascara(cep);
 
     }
 }

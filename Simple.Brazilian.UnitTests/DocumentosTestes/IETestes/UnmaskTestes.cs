@@ -1,4 +1,4 @@
-﻿using Simple.Brazilian.Documentos;
+﻿using Simple.Brazilian.Documents;
 using Xunit;
 
 namespace Simple.Brazilian.UnitTests.DocumentosTestes.IETestes

@@ -1,7 +1,7 @@
-﻿using Simple.Brazilian.Documentos;
+﻿using Simple.Brazilian.Documents;
 using System;
 
-namespace Simple.Brazilian.Extensoes
+namespace Simple.Brazilian.Extensions
 {
     public static class MaskAs
     {
