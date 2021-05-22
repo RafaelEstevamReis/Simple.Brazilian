@@ -15,7 +15,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         [InlineData(null, null)]
         public void Texto_AplicaMascara_CertificaNullRetornamException(string valor, string mascara)
         {
-            Assert.Throws<ArgumentNullException>(() => Text.AplicaMascara(valor, mascara));
+            Assert.Throws<ArgumentNullException>(() => Text.ApplyMask(valor, mascara));
         }
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         //[InlineData("", "")] // Texto VAZIO deve retornar VAZIO
         public void Texto_AplicaMascara_CertificaVaziosRetornamException(string valor, string mascara)
         {
-            Assert.Throws<ArgumentException>(() => Text.AplicaMascara(valor, mascara));
+            Assert.Throws<ArgumentException>(() => Text.ApplyMask(valor, mascara));
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         [InlineData("abc", "___")]
         public void Texto_AplicaMascara_CertificaMascaraLimpa(string valor, string mascara)
         {
-            Assert.Equal(valor, Text.AplicaMascara(valor, mascara));
+            Assert.Equal(valor, Text.ApplyMask(valor, mascara));
         }
 
         /// <summary>
@@ -59,10 +59,11 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         [InlineData("123456789", "#12.34.56-789")]
         [InlineData("1234567890", "#12.34.56-789/0")]
         [InlineData("12345678901", "#12.34.56-789/01")]
+        [InlineData("123456789012", "#12.34.56-789/01")] // Maior que a máscara
         public void Texto_AplicaMascara_Ticket(string valor, string esperado)
         {
             string mascara = "#__.__.__-___/__";
-            Assert.Equal(esperado, Text.AplicaMascara(valor, mascara));
+            Assert.Equal(esperado, Text.ApplyMask(valor, mascara));
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         [InlineData("12345678000190", "__.___.___/____-__", "12.345.678/0001-90")]
         public void Texto_AplicaMascara_CertificaMascarasComuns(string valor, string mascara, string esperado)
         {
-            Assert.Equal(esperado, Text.AplicaMascara(valor, mascara));
+            Assert.Equal(esperado, Text.ApplyMask(valor, mascara));
         }
 
     }

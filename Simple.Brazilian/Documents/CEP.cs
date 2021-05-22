@@ -95,13 +95,13 @@ namespace Simple.Brazilian.Documents
         /// </summary>
         /// <param name="cep">Texto para aplicar a máscara</param>
         /// <returns>Texto com a máscara</returns>
-        public static string Mask(string cep) => Formatters.Text.AplicaMascara(cep, "__.___-___");
+        public static string Mask(string cep) => Formatters.Text.ApplyMask(cep, "__.___-___");
         /// <summary>
         /// Remove a máscara
         /// </summary>
         /// <param name="cep">Texto com a máscara aplicada</param>
         /// <returns>Texto com a máscara removida</returns>
-        public static string Unmask(string cep) => Formatters.Text.RemoveMascara(cep);
+        public static string Unmask(string cep) => Formatters.Text.RemoveMask(cep);
 
     }
 }

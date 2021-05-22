@@ -72,7 +72,7 @@ namespace Simple.Brazilian.Formatters
         /// <param name="texto">Texto base para aplicar a máscara</param>
         /// <param name="mascara">Máscara a ser usada. O caracter underline '_' será trocado pelo texto, demais caracteres serão mantidos</param>
         /// <returns>Texto com a máscara aplicada</returns>
-        public static string AplicaMascara(string texto, string mascara)
+        public static string ApplyMask(string texto, string mascara)
         {
             if (texto is null) throw new ArgumentNullException(nameof(texto));
             if (texto.Length == 0) return texto;
@@ -103,7 +103,7 @@ namespace Simple.Brazilian.Formatters
         /// </summary>
         /// <param name="texto">Texto a ser limpo</param>
         /// <returns>Texto desformatado</returns>
-        public static string RemoveMascara(string texto)
+        public static string RemoveMask(string texto)
         {
             if (string.IsNullOrEmpty(texto)) return texto;
 

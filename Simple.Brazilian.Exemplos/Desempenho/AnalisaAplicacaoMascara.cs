@@ -30,7 +30,7 @@ namespace Simple.Brazilian.Exemplos.Desempenho
         {
             for (int i = 0; i < mascaras.Length; i++)
             {
-                Formatters.Text.AplicaMascara(textos[i], mascaras[i]);
+                Formatters.Text.ApplyMask(textos[i], mascaras[i]);
             }
         }
 

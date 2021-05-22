@@ -16,13 +16,13 @@ namespace Simple.Brazilian.Documents
         /// </summary>
         /// <param name="cpf">Texto para aplicar a máscara</param>
         /// <returns>Texto com a máscara</returns>
-        public static string Mask(string cpf) => Formatters.Text.AplicaMascara(cpf, "___.___.___-__");
+        public static string Mask(string cpf) => Formatters.Text.ApplyMask(cpf, "___.___.___-__");
         /// <summary>
         /// Remove a máscara
         /// </summary>
         /// <param name="cpf">Texto com a máscara aplicada</param>
         /// <returns>Texto com a máscara removida</returns>
-        public static string Unmask(string cpf) => Formatters.Text.RemoveMascara(cpf);
+        public static string Unmask(string cpf) => Formatters.Text.RemoveMask(cpf);
 
     }
 }

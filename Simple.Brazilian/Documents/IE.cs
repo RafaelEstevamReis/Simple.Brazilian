@@ -31,7 +31,7 @@ namespace Simple.Brazilian.Documents
         /// </summary>
         /// <param name="cep">Texto com a máscara aplicada</param>
         /// <returns>Texto com a máscara removida</returns>
-        public static string Unmask(string cep) => Formatters.Text.RemoveMascara(cep);
+        public static string Unmask(string cep) => Formatters.Text.RemoveMask(cep);
 
     }
 }

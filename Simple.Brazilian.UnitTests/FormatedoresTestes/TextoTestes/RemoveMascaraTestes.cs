@@ -11,7 +11,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         [Fact]
         public void Texto_RemoveMascara_CertificaNullRetornaNull()
         {
-            Assert.Null(Text.RemoveMascara(null));
+            Assert.Null(Text.RemoveMask(null));
         }
         /// <summary>
         /// Certifica que entrada Vazio, retorna Vazio
@@ -19,7 +19,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         [Fact]
         public void Texto_RemoveMascara_CertificaVazioRetornaVazio()
         {
-            Assert.Equal(string.Empty, Text.RemoveMascara(string.Empty));
+            Assert.Equal(string.Empty, Text.RemoveMask(string.Empty));
         }
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         {
             // Números do teclado ABNT2
             string testeEntrada = "1234567890";
-            Assert.Equal(testeEntrada, Text.RemoveMascara(testeEntrada));
+            Assert.Equal(testeEntrada, Text.RemoveMask(testeEntrada));
         }
         /// <summary>
         /// Certifica que letras não são alteradas
@@ -40,7 +40,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         {
             // Letras do teclado ABNT2
             string testeEntrada = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
-            Assert.Equal(testeEntrada, Text.RemoveMascara(testeEntrada));
+            Assert.Equal(testeEntrada, Text.RemoveMask(testeEntrada));
         }
 
         [Theory]
@@ -51,7 +51,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         [InlineData("+55(11)9.1234-5678", "5511912345678")]
         public void Texto_RemoveMascara_Telefone(string entrada, string saida)
         {
-            Assert.Equal(saida, Text.RemoveMascara(entrada));
+            Assert.Equal(saida, Text.RemoveMask(entrada));
         }
 
         [Theory]
@@ -59,7 +59,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         [InlineData("123.456/789.1", "1234567891")]
         public void Texto_RemoveMascara_Ticket(string entrada, string saida)
         {
-            Assert.Equal(saida, Text.RemoveMascara(entrada));
+            Assert.Equal(saida, Text.RemoveMask(entrada));
         }
     }
 }
