@@ -84,15 +84,13 @@ namespace Simple.Brazilian.Formatters
             int idxTexto = 0;
             for (int i = 0; i < mascara.Length && idxTexto < texto.Length; i++)
             {
-                if (mascara[i] == '_')
-                {
-                    result[i] = texto[idxTexto];
-                    idxTexto++;
-                    if (idxTexto == texto.Length)
-                    {
-                        return new string(result, 0, i + 1);
-                    }
-                }
+                if (mascara[i] != '_') continue;
+
+                result[i] = texto[idxTexto];
+                idxTexto++;
+
+                if (idxTexto == texto.Length) return new string(result, 0, i + 1);
+
             }
 
             return new string(result);
