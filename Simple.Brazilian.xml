@@ -349,27 +349,12 @@
             <param name="rg">Texto com a máscara aplicada</param>
             <returns>Texto com a máscara removida</returns>
         </member>
-        <member name="T:Simple.Brazilian.Formatadores.OpcoesTexto">
-            <summary>
-            Opções de texto
-            </summary>
-        </member>
-        <member name="P:Simple.Brazilian.Formatadores.OpcoesTexto.Padrao">
-            <summary>
-            Valor padrão para ser utilizado quando nenhuma opção é definida
-            </summary>
-        </member>
-        <member name="P:Simple.Brazilian.Formatadores.OpcoesTexto.CaracterPadraoSubstituicao">
-            <summary>
-            Especifica o caractere que deverá ser utilizado para a substituição
-            </summary>
-        </member>
-        <member name="T:Simple.Brazilian.Formatadores.Texto">
+        <member name="T:Simple.Brazilian.Formatters.Text">
             <summary>
             Formatadores textuais
             </summary>
         </member>
-        <member name="M:Simple.Brazilian.Formatadores.Texto.RemoveAcentos(System.String,Simple.Brazilian.Formatadores.OpcoesTexto)">
+        <member name="M:Simple.Brazilian.Formatters.Text.RemoveAcentos(System.String,Simple.Brazilian.Formatters.TextOptions)">
             <summary>
             Torna o texto compatível com ASCII sem acentuação. 
             Letras acentuadas serão convertidas e outros caracteres serão descartados
@@ -378,7 +363,7 @@
             <param name="opcoes">Opções de remoção</param>
             <returns>Retorno sem acentos</returns>
         </member>
-        <member name="M:Simple.Brazilian.Formatadores.Texto.AplicaMascara(System.String,System.String)">
+        <member name="M:Simple.Brazilian.Formatters.Text.AplicaMascara(System.String,System.String)">
             <summary>
             Aplica uma máscara no texto
             </summary>
@@ -386,12 +371,27 @@
             <param name="mascara">Máscara a ser usada. O caracter underline '_' será trocado pelo texto, demais caracteres serão mantidos</param>
             <returns>Texto com a máscara aplicada</returns>
         </member>
-        <member name="M:Simple.Brazilian.Formatadores.Texto.RemoveMascara(System.String)">
+        <member name="M:Simple.Brazilian.Formatters.Text.RemoveMascara(System.String)">
             <summary>
             Remove todos os caracteres, exceto letras e números
             </summary>
             <param name="texto">Texto a ser limpo</param>
             <returns>Texto desformatado</returns>
+        </member>
+        <member name="T:Simple.Brazilian.Formatters.TextOptions">
+            <summary>
+            Opções de texto
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Formatters.TextOptions.Padrao">
+            <summary>
+            Valor padrão para ser utilizado quando nenhuma opção é definida
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Formatters.TextOptions.CaracterPadraoSubstituicao">
+            <summary>
+            Especifica o caractere que deverá ser utilizado para a substituição
+            </summary>
         </member>
     </members>
 </doc>
