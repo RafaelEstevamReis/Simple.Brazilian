@@ -38,6 +38,13 @@ namespace Simple.Brazilian.Formatters
                     continue;
                 }
                 // Textos em ASCII baixo, mantém
+                // 20..2F => !"#$%&'()*+´-./
+                // 30..39 => Números
+                // 3A..40 => :;<=>?@
+                // 41..5A => Letras MAIÚSCULAS
+                // 5B..60 => [\]^_`
+                // 61..7A => Letras minúsculas
+                // 7B..7E => {|}
                 if (texto[i] >= 0x20 && texto[i] <= 0x7A)
                 {
                     continue;
