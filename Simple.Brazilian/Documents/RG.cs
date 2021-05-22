@@ -26,7 +26,7 @@ namespace Simple.Brazilian.Documents
         /// </summary>
         /// <param name="rg">Texto com a máscara aplicada</param>
         /// <returns>Texto com a máscara removida</returns>
-        public static string Unmask(string rg) => Formatters.Texto.RemoveMascara(rg);
+        public static string Unmask(string rg) => Formatters.Text.RemoveMascara(rg);
 
     }
 }

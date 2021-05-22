@@ -3,13 +3,13 @@
     /// <summary>
     /// Opções de texto
     /// </summary>
-    public class OpcoesTexto
+    public class TextOptions
     {
         // Uma vez definido, o padrão não deve ser alterado
         /// <summary>
         /// Valor padrão para ser utilizado quando nenhuma opção é definida
         /// </summary>
-        public static OpcoesTexto Padrao => new OpcoesTexto
+        public static TextOptions Padrao => new TextOptions
         {
             CaracterPadraoSubstituicao = ' ',
         };

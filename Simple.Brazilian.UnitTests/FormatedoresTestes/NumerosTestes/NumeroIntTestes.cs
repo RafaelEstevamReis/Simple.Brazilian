@@ -15,7 +15,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.NumerosTestes
         [InlineData(250, "250")]
         public void Numero_ToInt_Base(int expected, string test)
         {
-            Assert.Equal(expected, Numero.ToInt(test));
+            Assert.Equal(expected, Numbers.ToInt(test));
         }
 
         [Theory]
@@ -27,7 +27,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.NumerosTestes
         [InlineData(250, "250", null)]
         public void Numero_ToInt_BaseOnError(int expected, string test, int? onError)
         {
-            Assert.Equal(expected, Numero.ToInt(test, onError));
+            Assert.Equal(expected, Numbers.ToInt(test, onError));
         }
 
         [Theory]
@@ -37,7 +37,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.NumerosTestes
         [InlineData(-1, "250a", -1)]
         public void Numero_ToInt_ErrorHandled(int expected, string test, int? onError)
         {
-            Assert.Equal(expected, Numero.ToInt(test, onError));
+            Assert.Equal(expected, Numbers.ToInt(test, onError));
         }
 
         [Theory]
@@ -47,7 +47,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.NumerosTestes
         [InlineData("250a")]
         public void Numero_ToInt_ErrorThrown(string test)
         {
-            Assert.Throws<FormatException>(() => Numero.ToInt(test, null));
+            Assert.Throws<FormatException>(() => Numbers.ToInt(test, null));
         }
 
 
@@ -61,7 +61,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.NumerosTestes
         [InlineData(250, "\t250\t")]
         public void Numero_ToInt_Whitespace(int expected, string test)
         {
-            Assert.Equal(expected, Numero.ToInt(test));
+            Assert.Equal(expected, Numbers.ToInt(test));
         }
 
         [Theory]
@@ -73,7 +73,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.NumerosTestes
         [InlineData("250", 250)]
         public void Numero_ToText_Base(string expected, int test)
         {
-            Assert.Equal(expected, Numero.ToText(test));
+            Assert.Equal(expected, Numbers.ToText(test));
         }
     }
 }

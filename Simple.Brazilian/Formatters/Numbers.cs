@@ -3,10 +3,10 @@ using System.Globalization;
 
 namespace Simple.Brazilian.Formatters
 {
-    public class Numero
+    public class Numbers
     {
         public static CultureInfo DefaultCulture { get; }
-        static Numero()
+        static Numbers()
         {
             DefaultCulture = new CultureInfo("pt-BR");
         }

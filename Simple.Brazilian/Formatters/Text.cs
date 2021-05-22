@@ -7,7 +7,7 @@ namespace Simple.Brazilian.Formatters
     /// <summary>
     /// Formatadores textuais
     /// </summary>
-    public static class Texto
+    public static class Text
     {
         /// <summary>
         /// Torna o texto compatível com ASCII sem acentuação. 
@@ -16,12 +16,12 @@ namespace Simple.Brazilian.Formatters
         /// <param name="texto">Texto a ser processado</param>
         /// <param name="opcoes">Opções de remoção</param>
         /// <returns>Retorno sem acentos</returns>
-        public static string RemoveAcentos(this string texto, OpcoesTexto opcoes = null)
+        public static string RemoveAcentos(this string texto, TextOptions opcoes = null)
         {
-            return removeAcentos(texto, opcoes ?? OpcoesTexto.Padrao);
+            return removeAcentos(texto, opcoes ?? TextOptions.Padrao);
         }
 
-        private static string removeAcentos(string textoEntrada, OpcoesTexto opcoes)
+        private static string removeAcentos(string textoEntrada, TextOptions opcoes)
         {
             if (string.IsNullOrEmpty(textoEntrada)) return textoEntrada;
 

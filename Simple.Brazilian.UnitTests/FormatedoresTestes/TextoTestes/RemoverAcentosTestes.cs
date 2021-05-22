@@ -11,7 +11,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         [Fact]
         public void Texto_RemoveAcentos_CertificaNullRetornaNull()
         {
-            Assert.Null(Texto.RemoveAcentos(null, null));
+            Assert.Null(Text.RemoveAcentos(null, null));
         }
         /// <summary>
         /// Certifica que entrada Vazio, retorna Vazio
@@ -19,7 +19,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         [Fact]
         public void Texto_RemoveAcentos_CertificaVazioRetornaVazio()
         {
-            Assert.Equal(string.Empty, Texto.RemoveAcentos(string.Empty, null));
+            Assert.Equal(string.Empty, Text.RemoveAcentos(string.Empty, null));
         }
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         {
             // Números do teclado ABNT2
             string testeEntrada = "1234567890";
-            Assert.Equal(testeEntrada, Texto.RemoveAcentos(testeEntrada, null));
+            Assert.Equal(testeEntrada, Text.RemoveAcentos(testeEntrada, null));
         }
         /// <summary>
         /// Certifica que letras não são alteradas
@@ -40,7 +40,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         {
             // Letras do teclado ABNT2
             string testeEntrada = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
-            Assert.Equal(testeEntrada, Texto.RemoveAcentos(testeEntrada, null));
+            Assert.Equal(testeEntrada, Text.RemoveAcentos(testeEntrada, null));
         }
         [Fact]
         public void Texto_RemoveAcentos_ExemploTexto()
@@ -61,7 +61,7 @@ alem de ser uma das nacoes mais multiculturais e etnicamente diversas, em decorr
 Sua atual Constituicao, promulgada em 1988, concebe o Brasil como uma republica federativa presidencialista, formada pela uniao dos 26 estados, 
 do Distrito Federal e dos 5.570 municipios";
 
-            Assert.Equal(textoSemAcentos, Texto.RemoveAcentos(textoWikipedia, null));
+            Assert.Equal(textoSemAcentos, Text.RemoveAcentos(textoWikipedia, null));
         }
 
         [Fact]
@@ -73,17 +73,17 @@ do Distrito Federal e dos 5.570 municipios";
             string sem = "aeiouyAEIOUYaeiouAEIOUaonaeiouyAEIOUAONaeiouAEIOUcC123aA";
             // Vou utilizar para ter uma fonte externa de teste
 
-            Assert.Equal(sem, Texto.RemoveAcentos(com, null));
+            Assert.Equal(sem, Text.RemoveAcentos(com, null));
         }
 
         [Fact]
         public void Texto_RemovedorAcentos_TexteWikipediaCompleto()
         {
-            var opcoes = new OpcoesTexto()
+            var opcoes = new TextOptions()
             {
                 CaracterPadraoSubstituicao = '?'
             };
-            Assert.Equal(Exemplos.Externos.acentos_wikipedia_semAcentos, Texto.RemoveAcentos(Exemplos.Externos.acentos_wikipedia_original, opcoes));
+            Assert.Equal(Exemplos.Externos.acentos_wikipedia_semAcentos, Text.RemoveAcentos(Exemplos.Externos.acentos_wikipedia_original, opcoes));
         }
     }
 }

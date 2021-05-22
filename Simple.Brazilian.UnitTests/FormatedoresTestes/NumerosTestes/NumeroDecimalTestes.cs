@@ -23,7 +23,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.NumerosTestes
         [InlineData("250,11", 250.11)]
         public void Numero_ToText_N2(string expected, decimal test)
         {
-            Assert.Equal(expected, Numero.ToText(test, 2));
+            Assert.Equal(expected, Numbers.ToText(test, 2));
         }
         [Theory]
         [InlineData("-10,4", -10.45)]
@@ -39,7 +39,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.NumerosTestes
         [InlineData("250,1", 250.11)]
         public void Numero_ToText_N1(string expected, decimal test)
         {
-            Assert.Equal(expected, Numero.ToText(test, 1));
+            Assert.Equal(expected, Numbers.ToText(test, 1));
         }
 
         [Theory]
@@ -58,7 +58,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.NumerosTestes
         [InlineData("31,72", 31.7250)]
         public void Numero_ToText_N2_ABNT(string expected, decimal test)
         {
-            Assert.Equal(expected, Numero.ToText(test, 2));
+            Assert.Equal(expected, Numbers.ToText(test, 2));
         }
 
         [Theory]
@@ -71,7 +71,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.NumerosTestes
         [InlineData("R$ 250,11", 250.11)]
         public void Numero_ToText_Brl2(string expected, decimal test)
         {
-            Assert.Equal(expected, Numero.ToBRL(test, 2));
+            Assert.Equal(expected, Numbers.ToBRL(test, 2));
         }
 
         [Theory]
@@ -88,7 +88,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.NumerosTestes
         [InlineData("R$ 250,1", 250.11)]
         public void Numero_ToText_Brl1(string expected, decimal test)
         {
-            Assert.Equal(expected, Numero.ToBRL(test, 1));
+            Assert.Equal(expected, Numbers.ToBRL(test, 1));
         }
 
         [Theory]
@@ -107,7 +107,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.NumerosTestes
         [InlineData("R$ 31,72", 31.7250)]
         public void Numero_ToText_Brl_ABNT(string expected, decimal test)
         {
-            Assert.Equal(expected, Numero.ToBRL(test, 2));
+            Assert.Equal(expected, Numbers.ToBRL(test, 2));
         }
     }
 }

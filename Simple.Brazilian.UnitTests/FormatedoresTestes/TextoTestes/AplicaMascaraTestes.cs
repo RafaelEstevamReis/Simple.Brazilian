@@ -15,7 +15,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         [InlineData(null, null)]
         public void Texto_AplicaMascara_CertificaNullRetornamException(string valor, string mascara)
         {
-            Assert.Throws<ArgumentNullException>(() => Texto.AplicaMascara(valor, mascara));
+            Assert.Throws<ArgumentNullException>(() => Text.AplicaMascara(valor, mascara));
         }
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         [InlineData("", "")]
         public void Texto_AplicaMascara_CertificaVaziosRetornamException(string valor, string mascara)
         {
-            Assert.Throws<ArgumentException>(() => Texto.AplicaMascara(valor, mascara));
+            Assert.Throws<ArgumentException>(() => Text.AplicaMascara(valor, mascara));
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         [InlineData("abc", "___")]
         public void Texto_AplicaMascara_CertificaMascaraLimpa(string valor, string mascara)
         {
-            Assert.Equal(valor, Texto.AplicaMascara(valor, mascara));
+            Assert.Equal(valor, Text.AplicaMascara(valor, mascara));
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         public void Texto_AplicaMascara_Ticket(string valor, string esperado)
         {
             string mascara = "#__.__.__-___/__";
-            Assert.Equal(esperado, Texto.AplicaMascara(valor, mascara));
+            Assert.Equal(esperado, Text.AplicaMascara(valor, mascara));
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Simple.Brazilian.UnitTests.FormatedoresTestes.TextoTestes
         [InlineData("12345678000190", "__.___.___/____-__", "12.345.678/0001-90")]
         public void Texto_AplicaMascara_CertificaMascarasComuns(string valor, string mascara, string esperado)
         {
-            Assert.Equal(esperado, Texto.AplicaMascara(valor, mascara));
+            Assert.Equal(esperado, Text.AplicaMascara(valor, mascara));
         }
 
     }

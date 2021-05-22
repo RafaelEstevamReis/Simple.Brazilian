@@ -6,6 +6,6 @@ namespace Simple.Brazilian.Exemplos.Desempenho
     public class AnalisaRemocaoAcentos
     {
         [Benchmark]
-        public void RemoveAcentosTextoLongoA() => Formatters.Texto.RemoveAcentos(Externos.acentos_wikipedia_original, Formatters.OpcoesTexto.Padrao);
+        public void RemoveAcentosTextoLongoA() => Formatters.Text.RemoveAcentos(Externos.acentos_wikipedia_original, Formatters.TextOptions.Padrao);
     }
 }
