@@ -24,7 +24,7 @@ namespace Simple.Brazilian.UnitTests.DocumentosTestes.CNPJTestes
         [InlineData("67406732000157")]
         [InlineData("02361553000103")]
         [InlineData("37238174000105")]
-        [InlineData("39365864000142")]
+        [InlineData("39365864000142")]  
         [InlineData("34742750000150")]
         [InlineData("17189722000139")] // SHARP Sistemas
 
