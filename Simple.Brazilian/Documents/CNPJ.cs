@@ -7,7 +7,12 @@ namespace Simple.Brazilian.Documents
     /// </summary>
     public static class CNPJ
     {
-        internal static bool IsValid(string cnpj)
+        /// <summary>
+        /// Valida CNPJ
+        /// </summary>
+        /// <param name="cnpj"></param>
+        /// <returns></returns>
+        public static bool IsValid(string cnpj)
         {
             throw new NotImplementedException();
         }
