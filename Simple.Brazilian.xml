@@ -258,6 +258,13 @@
             Validador de CNPJ
             </summary>
         </member>
+        <member name="M:Simple.Brazilian.Documents.CNPJ.IsValid(System.String)">
+            <summary>
+            Valida CNPJ
+            </summary>
+            <param name="cnpj"></param>
+            <returns></returns>
+        </member>
         <member name="M:Simple.Brazilian.Documents.CNPJ.Mask(System.String)">
             <summary>
             Aplica a máscara de CNPJ __.___.___/____-__
