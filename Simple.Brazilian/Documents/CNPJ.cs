@@ -8,21 +8,39 @@ namespace Simple.Brazilian.Documents
     public static class CNPJ
     {
         /// <summary>
-        /// Valida CNPJ
+        /// Executa a validação de um CNPJ
+        /// com ou sem máscara
         /// </summary>
-        /// <param name="cnpj"></param>
-        /// <returns></returns>
+        /// <param name="cnpj">CNPJ a ser verificado</param>
+        /// <returns>True se o CNPJ é válido de acordo com o cálculo do Dígito Verificador;
+        /// False senão</returns>
         public static bool IsValid(string cnpj)
         {
+            //A validação é feita em duas estapas
+            //A primeira etapa precisamos retirar os dois últimos
+            //digitos que no caso são os digitos verificadores
+            //e em seguida multiplicamos pelo primeiro algorismo
+            //e depois soma o total das multiplicações.
+            //Na segunda etapa adicionaremos o resultado da primeira etapa
+            // para fazer o cálculo, da mesma forma teremos e o resultado
+            //e a conclusão.
+
+            // Definindo os algorismos para o cálculo
             int[] numMultiplier1 = new int[12]
             { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
             int[] numMultiplier2 = new int[13]
             { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
 
-            cnpj = Unmask(cnpj);
+            if (cnpj.Length > 14)
+            {
+                cnpj = Unmask(cnpj);
+            }
 
+            // Caso o tamanho do CNPJ seje diferente de 14
+            // ele já retorna false e termina aqui.
             if (cnpj.Length != 14) return false;
 
+            // Primeira etapa do cálculo
             string auxCNPJ = cnpj.Substring(0, 12);
 
             int result = 0;
@@ -37,8 +55,8 @@ namespace Simple.Brazilian.Documents
             if (resto < 2) resto = 0;
             else resto = 11 - resto;
 
+            //Segunda etapa do do cáculo
             auxCNPJ = auxCNPJ + resto;
-            string digitoV = resto.ToString();
             result = 0;
 
             for (int i = 0; i < 13; i++)
@@ -51,20 +69,13 @@ namespace Simple.Brazilian.Documents
             if (resto < 2) resto = 0;
             else resto = 11 - resto;
 
-            auxCNPJ = auxCNPJ + resto;
+            auxCNPJ += resto;
 
+
+            // Conclusão
             return auxCNPJ == cnpj;
 
         }
-
-
-
-
-
-
-
-
-
         /// <summary>
         /// Aplica a máscara de CNPJ __.___.___/____-__
         /// </summary>
