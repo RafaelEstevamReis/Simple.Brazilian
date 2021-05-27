@@ -16,6 +16,7 @@ namespace Simple.Brazilian.Documents
         /// False senão</returns>
         public static bool IsValid(string cnpj)
         {
+            if (string.IsNullOrEmpty(cnpj)) return false;
             //A validação é feita em duas estapas
             //A primeira etapa precisamos retirar os dois últimos
             //digitos que no caso são os digitos verificadores

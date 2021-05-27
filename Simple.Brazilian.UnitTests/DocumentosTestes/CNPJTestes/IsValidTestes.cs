@@ -35,6 +35,8 @@ namespace Simple.Brazilian.UnitTests.DocumentosTestes.CNPJTestes
 
 
         [Theory]
+        [InlineData(null)]
+        [InlineData("")]
         [InlineData("00550608000083")]
         [InlineData("16553608000184")]
         [InlineData("26553608000183")]
