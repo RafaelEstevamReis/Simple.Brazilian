@@ -70,7 +70,7 @@ Formatadores:
 - [ ] Conversão de números em texto com arredondamento `ABTN`
 - [X] Conversão de valor em reais para texto com sinal `monetário` e arredondamento `ABTN`
 - [ ] Funções para escrita de `valores por extenso`
-- [ ] Conversão de  palavras em ´singular` para `plural`
+- [ ] Conversão de  palavras em `singular` para `plural`
 
 Dados:
 
