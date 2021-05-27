@@ -45,7 +45,9 @@ Existem repositórios em várias linguagens porém é raro que:
   * Net5
   * Net Core 3.1
   * Net Framework 4.5
-  * Net Standard 1.0
+  * Net Framework 4.0
+  * Net Framework 2.0
+  * Net Standard 1.0+
     * Mono 4.6+
     * Xamarin.iOS 10.0+
     * Xamarin.Android 7.0+
