@@ -14,8 +14,7 @@ To be as inclusive as possible this readme will be in Portuguese
 - [Repositório de Ferramentas Textuais](#repositório-de-ferramentas-textuais)
   - [O que somos ?](#o-que-somos-)
   - [Quais são os pilares desta biblioteca ?](#quais-são-os-pilares-desta-biblioteca-)
-  - [O que queremos ter ?](#o-que-queremos-ter-)
-  - [O que ja temos ?](#o-que-ja-temos-)
+  - [O que já temos ou ainda queremos ter ?](#o-que-já-temos-ou-ainda-queremos-ter-)
 
 
 Esta biblioteca será uma ferramenta para todos que escrevem software em português e precisam lidar com textos, datas, e valores monetários em diferentes ambientes.
@@ -53,20 +52,29 @@ Existem repositórios em várias linguagens porém é raro que:
     * UWP 8.0+
     * Unity 2018.1+
 
-## O que queremos ter ?
+## O que já temos ou ainda queremos ter ?
 
-* Funções para remoção de acentos a fim de tornar textos em português compatíveis com ASCII
-* Funções para escrita de valores por extenso 
-* Conversão bidirecional entre números e texto com sinal monetário
-* Remoção de caracteres especiais (configurável)
+Validadores:
 
-## O que ja temos ?
+- [X] Validação de Documentos: `CEP`, `CNPJ` e `CPF`
+- [ ] Validação de Documentos: `IE`, `RG` e `PIS`
 
-* Máscaras para: CEP, CNPJ, CPF e PIS
-* Remoção de máscaras
-* Validação de CPF e CNPJ
-* Uma implementação relativamente eficiente de remoção de acentos com personalização para caracteres especiais
-* Nomes de meses, já com e sem acentos, escritos em diferentes capitalizações (não precisa converter)
-* UFs em enum com código do IBGE e nome da UF
+Formatadores:
 
+- [X] Máscas para documentos: `CEP`, `CNPJ`, `CPF` e `PIS`
+- [ ] Máscas para documentos: `IE` e `RG`
+- [X] Remoção de `máscaras`
+- [X] Remoção de `acentos` (torna o texto compatível com ASCII7)
+- [X] Remoção de `caracteres especiais` (configurável)
+- [ ] Conversão de textos em números
+- [ ] Conversão de números em texto com arredondamento `ABTN`
+- [X] Conversão de valor em reais para texto com sinal `monetário` e arredondamento `ABTN`
+- [ ] Funções para escrita de `valores por extenso`
+- [ ] Conversão de  palavras em ´singular` para `plural`
+
+Dados:
+
+- [X] Nomes de `meses` e `dias da semana` com e sem acentos, em maiúsculo e minúsculo
+- [X] Enum de `UFs` relacionado com o `Código IBGE`
+- [ ] Arrays com as `UFs`, os `nomes dos estados` e seus códigos no `IBGE`
 
