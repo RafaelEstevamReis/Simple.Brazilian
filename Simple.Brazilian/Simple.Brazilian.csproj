@@ -16,7 +16,7 @@ Pareado com o commit cae9e45
 https://github.com/RafaelEstevamReis/Simple.Brazilian
 </PackageReleaseNotes>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net5.0|AnyCPU'">
+  <PropertyGroup>
     <DocumentationFile>..\Simple.Brazilian.xml</DocumentationFile>
   </PropertyGroup>
 </Project>
