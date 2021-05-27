@@ -277,6 +277,18 @@
             Validador de CPF
             </summary>
         </member>
+        <member name="F:Simple.Brazilian.Documents.CPF.InvalidCPFs">
+            <summary>
+            CPFs com dígitos repetidos são considerados inválidos, mesmo passando pelas verificações.
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Documents.CPF.IsValid(System.String)">
+            <summary>
+            Valida se um CPF é válido
+            </summary>
+            <param name="cpf">Um CPF não formatado (ex.: 55487565082)</param>
+            <returns></returns>
+        </member>
         <member name="M:Simple.Brazilian.Documents.CPF.Mask(System.String)">
             <summary>
             Aplica a máscara de CPF ___.___.___-__
