@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Simple.Brazilian.UnitTests.DocumentosTestes.CNPJTestes
 {
-    public class ValidaCNPJTestes
+    public class IsValidTestes
     {
         [Theory]
         [InlineData("16.553.608/0001-83")]
