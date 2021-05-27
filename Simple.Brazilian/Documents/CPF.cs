@@ -26,11 +26,19 @@ namespace Simple.Brazilian.Documents
         /// <summary>
         /// Valida se um CPF é válido
         /// </summary>
-        /// <param name="cpf">Um CPF não formatado (ex.: 55487565082)</param>
-        /// <returns></returns>
+        /// <param name="cpf">Um CPF com ou sem máscara (ex.: 55487565082 ou 554.875.650-82)</param>
+        /// <returns>True se o CPF for válido, False se não</returns>
         public static bool IsValid(string cpf)
         {
-            if (string.IsNullOrEmpty(cpf) || cpf.Length != 11 || !IsDigitsOnly(cpf) || InvalidCPFs.Any(s => s == cpf))
+            // Vazio ou nulo
+            if (string.IsNullOrEmpty(cpf))
+                return false;
+            
+            // Se for maior, retira a máscara
+            if (cpf.Length > 11) cpf = Unmask(cpf);
+            
+            // Deve ser exatamente 11
+            if (cpf.Length != 11 || InvalidCPFs.Any(s => s == cpf))
                 return false;
 
             int firstDigit = cpf[9] - '0';
