@@ -32,18 +32,16 @@ namespace Simple.Brazilian.Documents
             int[] numMultiplier2 = new int[13]
             { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
 
+            // Checa comprimento
             if (cnpj.Length > 14)
             {
                 cnpj = Unmask(cnpj);
             }
-
-            // Caso o tamanho do CNPJ seje diferente de 14
-            // ele já retorna false e termina aqui.
+            // E já descarta
             if (cnpj.Length != 14) return false;
 
             // Primeira etapa do cálculo
             string auxCNPJ = cnpj.Substring(0, 12);
-
             int result = 0;
 
             for (int i = 0; i < 12; i++)
@@ -57,7 +55,7 @@ namespace Simple.Brazilian.Documents
             else resto = 11 - resto;
 
             //Segunda etapa do do cáculo
-            auxCNPJ = auxCNPJ + resto;
+            auxCNPJ += resto;
             result = 0;
 
             for (int i = 0; i < 13; i++)
@@ -71,9 +69,7 @@ namespace Simple.Brazilian.Documents
             else resto = 11 - resto;
 
             auxCNPJ += resto;
-
-
-            // Conclusão
+            
             return auxCNPJ == cnpj;
 
         }
