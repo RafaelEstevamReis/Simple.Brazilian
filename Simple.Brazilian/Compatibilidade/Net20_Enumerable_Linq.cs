@@ -47,19 +47,9 @@ namespace System.Linq
         {
             return new List<T>(source);
         }
-        /// <summary>
-        /// Não é eficiente, mas é usável
-        /// </summary>
         internal static T[] ToArray<T>(this IEnumerable<T> source)
         {
-            var lst = new List<T>(source);
-            T[] arr = new T[lst.Count];
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                arr[i] = lst[i];
-            }
-            return arr;
+            return new List<T>(source).ToArray();
         }
     }
 }
