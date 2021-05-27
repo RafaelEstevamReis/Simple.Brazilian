@@ -363,7 +363,7 @@
             <param name="opcoes">Opções de remoção</param>
             <returns>Retorno sem acentos</returns>
         </member>
-        <member name="M:Simple.Brazilian.Formatters.Text.AplicaMascara(System.String,System.String)">
+        <member name="M:Simple.Brazilian.Formatters.Text.ApplyMask(System.String,System.String)">
             <summary>
             Aplica uma máscara no texto
             </summary>
@@ -371,7 +371,7 @@
             <param name="mascara">Máscara a ser usada. O caracter underline '_' será trocado pelo texto, demais caracteres serão mantidos</param>
             <returns>Texto com a máscara aplicada</returns>
         </member>
-        <member name="M:Simple.Brazilian.Formatters.Text.RemoveMascara(System.String)">
+        <member name="M:Simple.Brazilian.Formatters.Text.RemoveMask(System.String)">
             <summary>
             Remove todos os caracteres, exceto letras e números
             </summary>
