@@ -64,6 +64,7 @@ Existem repositórios em várias linguagens porém é raro que:
 
 * Máscaras para: CEP, CNPJ, CPF e PIS
 * Remoção de máscaras
+* Validação de CPF
 * Uma implementação relativamente eficiente de remoção de acentos com personalização para caracteres especiais
 * Nomes de meses, já com e sem acentos, escritos em diferentes capitalizações (não precisa converter)
 * UFs em enum com código do IBGE e nome da UF
