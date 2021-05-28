@@ -73,6 +73,7 @@ Formatadores:
 - [X] Conversão de valor em reais para texto com sinal `monetário` e arredondamento `ABTN`
 - [ ] Funções para escrita de `valores por extenso`
 - [ ] Conversão de  palavras em `singular` para `plural`
+- [ ] Filtragem de textos para remoção de caracteres
 
 Dados:
 
