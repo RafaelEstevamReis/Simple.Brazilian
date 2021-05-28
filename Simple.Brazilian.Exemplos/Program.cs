@@ -11,7 +11,7 @@ namespace Simple.Brazilian.Exemplos
 
             //BenchmarkRunner.Run<Desempenho.AnalisaRemocaoAcentos>();
             //BenchmarkRunner.Run<Desempenho.AnalisaAplicacaoMascara>();
-
+            //BenchmarkRunner.Run<Desempenho.AnalisaValidacaoDocumentos>();
         }
     }
 }
