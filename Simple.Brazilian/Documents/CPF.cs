@@ -8,22 +8,6 @@ namespace Simple.Brazilian.Documents
     public static class CPF
     {
         /// <summary>
-        /// CPFs com dígitos repetidos são considerados inválidos, mesmo passando pelas verificações.
-        /// </summary>
-        private static readonly string[] InvalidCPFs = {
-            "11111111111",
-            "22222222222",
-            "33333333333",
-            "44444444444",
-            "55555555555",
-            "66666666666",
-            "77777777777",
-            "88888888888",
-            "99999999999",
-            "00000000000"
-        };
-
-        /// <summary>
         /// Valida se um CPF é válido
         /// </summary>
         /// <param name="cpf">Um CPF com ou sem máscara (ex.: 55487565082 ou 554.875.650-82)</param>
@@ -81,10 +65,10 @@ namespace Simple.Brazilian.Documents
             for (int i = 1; i < 11; i++)
             {
                 // Se algum for diferente, o CPF é válido
-                if (cpf[i] != firstDigit) return true;
+                if (cpf[i] != cpf[0]) return true;
             }
 
-            return true;
+            return false;
         }
 
         /// <summary>

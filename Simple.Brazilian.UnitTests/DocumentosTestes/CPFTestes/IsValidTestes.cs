@@ -30,10 +30,30 @@ namespace Simple.Brazilian.UnitTests.DocumentosTestes.CPFTestes
             Assert.True(CPF.IsValid(cpf));
         }
 
-
         [Theory]
         [InlineData(null)]
         [InlineData("")]
+        [InlineData("554.875.650-820")]
+        [InlineData("43364585023")]
+        [InlineData("43364585014")]
+        [InlineData("554.875.65O-82")]
+        public void CPF_IsValid_Errados(string cpf)
+        {
+            Assert.False(CPF.IsValid(cpf));
+        }
+
+        [Theory]
+        [InlineData("4A364585023")]
+        [InlineData("4ç364585023")]
+        [InlineData("4#364585023")]
+        [InlineData("4+364585023")]
+        [InlineData("4^364585023")]
+        public void CPF_IsValid_Caracteres(string cpf)
+        {
+            Assert.False(CPF.IsValid(cpf));
+        }
+
+        [Theory]
         [InlineData("00000000000")]
         [InlineData("11111111111")]
         [InlineData("22222222222")]
@@ -44,9 +64,7 @@ namespace Simple.Brazilian.UnitTests.DocumentosTestes.CPFTestes
         [InlineData("77777777777")]
         [InlineData("88888888888")]
         [InlineData("99999999999")]
-        [InlineData("554.875.650-820")]
-        [InlineData("554.875.65O-82")]
-        public void CPF_IsValid_Errados(string cpf)
+        public void CPF_IsValid_Repetidos(string cpf)
         {
             Assert.False(CPF.IsValid(cpf));
         }
