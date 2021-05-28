@@ -50,5 +50,25 @@ namespace Simple.Brazilian.Validators
             }
             return total;
         }
+
+        public static int CalculateMod11(string text, int min, int max)
+        {
+            // Este Mod11 não serve para codigos de barras, apenas documentos
+
+            // Obtém a sequência que será multiplicada
+            var sequencia = GenerateReverseSequence(min, max, text.Length);
+            var chars = text.ToCharArray();
+            // Executa a multiplicação
+            var soma = SumMultiply(sequencia, chars);
+            // O valor deve calculado Mod 11 e então subtraído de 11
+            int resto = (10 * soma) % 11;
+            // Para códigos de barras, o resto prefere 1
+            // para documentos o resto prefere 0
+            if (resto == 10) return 0;
+
+            return resto;
+        }
+        public static char CalculateMod11Char(string text, int min, int max)
+            => (char)('0' + CalculateMod11(text, min, max));
     }
 }
