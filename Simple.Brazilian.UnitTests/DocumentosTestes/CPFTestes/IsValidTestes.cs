@@ -17,6 +17,11 @@ namespace Simple.Brazilian.UnitTests.DocumentosTestes.CPFTestes
 
 
         [Theory]
+        // Precisa checar qual caminho foi tomado para
+        // chegar em resultado zero
+        [InlineData("79561606003")] // primeiro zero resto 10
+        [InlineData("89211219000")] // primeiro zero resto 0 | Segundo zero resto 0
+        [InlineData("25637952060")] // Segundo zero resto 10
         [InlineData("55487565082")]
         [InlineData("27419682097")]
         [InlineData("43364585024")]
