@@ -4,6 +4,26 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
+        <member name="T:System.Linq.Enumerable">
+            <summary>
+            Classe para dar compatibilidade à NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`2">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`3">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`4">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
         <member name="T:Simple.Brazilian.Dados.Datas">
             <summary>
             Informações sobre datas
@@ -92,29 +112,7 @@
         <member name="F:Simple.Brazilian.Dados.Locais.UF.AM">
             <summary>
             Amazonas
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.RR">
-            <summary>
-            Roraima
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.PA">
-            <summary>
-            Pará
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.AP">
-            <summary>
-            Amapá
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.TO">
-            <summary>
-            Tocantins
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.MA">
+       ber name="F:Simple.Brazilian.Dados.Locais.UF.MA">
             <summary>
             Maranhão
             </summary>
@@ -400,6 +398,23 @@
             <returns>Texto desformatado</returns>
         </member>
         <member name="T:Simple.Brazilian.Formatters.TextOptions">
+            <summary>
+            Opções de texto
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Formatters.TextOptions.Padrao">
+            <summary>
+            Valor padrão para ser utilizado quando nenhuma opção é definida
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Formatters.TextOptions.CaracterPadraoSubstituicao">
+            <summary>
+            Especifica o caractere que deverá ser utilizado para a substituição
+            </summary>
+        </member>
+    </members>
+</doc>
+  <member name="T:Simple.Brazilian.Formatters.TextOptions">
             <summary>
             Opções de texto
             </summary>
