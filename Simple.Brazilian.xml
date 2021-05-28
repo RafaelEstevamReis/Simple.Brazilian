@@ -112,7 +112,29 @@
         <member name="F:Simple.Brazilian.Dados.Locais.UF.AM">
             <summary>
             Amazonas
-       ber name="F:Simple.Brazilian.Dados.Locais.UF.MA">
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Dados.Locais.UF.RR">
+            <summary>
+            Roraima
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Dados.Locais.UF.PA">
+            <summary>
+            Pará
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Dados.Locais.UF.AP">
+            <summary>
+            Amapá
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Dados.Locais.UF.TO">
+            <summary>
+            Tocantins
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Dados.Locais.UF.MA">
             <summary>
             Maranhão
             </summary>
@@ -284,11 +306,6 @@
             Validador de CPF
             </summary>
         </member>
-        <member name="F:Simple.Brazilian.Documents.CPF.InvalidCPFs">
-            <summary>
-            CPFs com dígitos repetidos são considerados inválidos, mesmo passando pelas verificações.
-            </summary>
-        </member>
         <member name="M:Simple.Brazilian.Documents.CPF.IsValid(System.String)">
             <summary>
             Valida se um CPF é válido
@@ -398,23 +415,6 @@
             <returns>Texto desformatado</returns>
         </member>
         <member name="T:Simple.Brazilian.Formatters.TextOptions">
-            <summary>
-            Opções de texto
-            </summary>
-        </member>
-        <member name="P:Simple.Brazilian.Formatters.TextOptions.Padrao">
-            <summary>
-            Valor padrão para ser utilizado quando nenhuma opção é definida
-            </summary>
-        </member>
-        <member name="P:Simple.Brazilian.Formatters.TextOptions.CaracterPadraoSubstituicao">
-            <summary>
-            Especifica o caractere que deverá ser utilizado para a substituição
-            </summary>
-        </member>
-    </members>
-</doc>
-  <member name="T:Simple.Brazilian.Formatters.TextOptions">
             <summary>
             Opções de texto
             </summary>
