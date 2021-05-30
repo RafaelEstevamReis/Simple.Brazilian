@@ -8,8 +8,7 @@ namespace Simple.Brazilian.Formatters
         public static CultureInfo DefaultCulture { get; }
         static Numbers()
         {
-            DefaultCulture = new CultureInfo("pt-BR");
-            DefaultCulture.NumberFormat.CurrencySymbol = "R$ ";
+            DefaultCulture = new CultureInfo("pt-BR", false);
         }
 
         public static int ToInt(string text, int? OnError = 0)
