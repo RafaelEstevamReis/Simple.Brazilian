@@ -24,7 +24,7 @@ namespace Simple.Brazilian.Formatters
             this.text = text;
         }
 
-        public TextFilter Configure(Action<TextFilter> options) => throw new NotImplementedException();
+        internal TextFilter Configure(Action<TextFilter> options) => throw new NotImplementedException();
 
         public TextFilter DenyAll()
         {
