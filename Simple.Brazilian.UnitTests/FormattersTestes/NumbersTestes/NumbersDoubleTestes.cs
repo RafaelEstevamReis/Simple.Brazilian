@@ -2,9 +2,9 @@
 using System;
 using Xunit;
 
-namespace Simple.Brazilian.UnitTests.FormatedoresTestes.NumerosTestes
+namespace Simple.Brazilian.UnitTests.FormattersTestes.NumbersTestes
 {
-    public class NumeroDoubleTestes
+    public class NumbersDoubleTestes
     {
         //[Theory]
         //[InlineData(0, "")]
