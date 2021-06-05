@@ -8,7 +8,11 @@ namespace Simple.Brazilian.Formatters
         public static CultureInfo DefaultCulture { get; }
         static Numbers()
         {
+#if NETSTANDARD1_0
             DefaultCulture = new CultureInfo("pt-BR");
+#else
+            DefaultCulture = new CultureInfo("pt-BR", false);
+#endif
         }
 
         public static int ToInt(string text, int? OnError = 0)
