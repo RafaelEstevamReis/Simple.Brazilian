@@ -24,7 +24,7 @@ namespace Simple.Brazilian.Documents
         /// <param name="cep">CEP a ser verificado</param>
         /// <param name="uf">UF a ser comparado</param>
         /// <returns>True se o CEP tem o comprimento correto; False senão</returns>
-        public static bool IsValid(string cep, Dados.Places.UF uf)
+        public static bool IsValid(string cep, Information.Places.UF uf)
         {
             // Executa teste base
             if (!IsValid(cep)) return false;
@@ -38,55 +38,55 @@ namespace Simple.Brazilian.Documents
             {
                 case '0':
                 case '1':
-                    return uf == Dados.Places.UF.SP;
+                    return uf == Information.Places.UF.SP;
 
                 case '2':
-                    if (uf == Dados.Places.UF.RJ) return true;
-                    if (uf == Dados.Places.UF.ES) return true;
+                    if (uf == Information.Places.UF.RJ) return true;
+                    if (uf == Information.Places.UF.ES) return true;
                     return false;
 
                 case '3':
-                    return uf == Dados.Places.UF.MG;
+                    return uf == Information.Places.UF.MG;
 
                 case '4':
-                    if (uf == Dados.Places.UF.BA) return true;
-                    if (uf == Dados.Places.UF.SE) return true;
+                    if (uf == Information.Places.UF.BA) return true;
+                    if (uf == Information.Places.UF.SE) return true;
                     return false;
 
                 case '5':
-                    if (uf == Dados.Places.UF.PE) return true;
-                    if (uf == Dados.Places.UF.AL) return true;
-                    if (uf == Dados.Places.UF.PB) return true;
-                    if (uf == Dados.Places.UF.RN) return true;
+                    if (uf == Information.Places.UF.PE) return true;
+                    if (uf == Information.Places.UF.AL) return true;
+                    if (uf == Information.Places.UF.PB) return true;
+                    if (uf == Information.Places.UF.RN) return true;
                     return false;
 
                 case '6':
-                    if (uf == Dados.Places.UF.CE) return true;
-                    if (uf == Dados.Places.UF.PI) return true;
-                    if (uf == Dados.Places.UF.MA) return true;
-                    if (uf == Dados.Places.UF.PA) return true;
-                    if (uf == Dados.Places.UF.AP) return true;
-                    if (uf == Dados.Places.UF.AM) return true;
-                    if (uf == Dados.Places.UF.RR) return true;
-                    if (uf == Dados.Places.UF.AC) return true;
+                    if (uf == Information.Places.UF.CE) return true;
+                    if (uf == Information.Places.UF.PI) return true;
+                    if (uf == Information.Places.UF.MA) return true;
+                    if (uf == Information.Places.UF.PA) return true;
+                    if (uf == Information.Places.UF.AP) return true;
+                    if (uf == Information.Places.UF.AM) return true;
+                    if (uf == Information.Places.UF.RR) return true;
+                    if (uf == Information.Places.UF.AC) return true;
                     return false;
 
                 case '7':
-                    if (uf == Dados.Places.UF.DF) return true;
-                    if (uf == Dados.Places.UF.GO) return true;
-                    if (uf == Dados.Places.UF.TO) return true;
-                    if (uf == Dados.Places.UF.MT) return true;
-                    if (uf == Dados.Places.UF.RO) return true;
-                    if (uf == Dados.Places.UF.MS) return true;
+                    if (uf == Information.Places.UF.DF) return true;
+                    if (uf == Information.Places.UF.GO) return true;
+                    if (uf == Information.Places.UF.TO) return true;
+                    if (uf == Information.Places.UF.MT) return true;
+                    if (uf == Information.Places.UF.RO) return true;
+                    if (uf == Information.Places.UF.MS) return true;
                     return false;
 
                 case '8':
-                    if (uf == Dados.Places.UF.PR) return true;
-                    if (uf == Dados.Places.UF.SC) return true;
+                    if (uf == Information.Places.UF.PR) return true;
+                    if (uf == Information.Places.UF.SC) return true;
                     return false;
 
                 case '9':
-                    return uf == Dados.Places.UF.RS;
+                    return uf == Information.Places.UF.RS;
             }
             throw new Exception("Nao é possível comparar o CEP informado com a UF informada");
         }

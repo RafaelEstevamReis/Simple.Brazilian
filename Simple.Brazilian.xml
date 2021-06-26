@@ -4,241 +4,6 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
-        <member name="T:System.Linq.Enumerable">
-            <summary>
-            Classe para dar compatibilidade à NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`2">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`3">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`4">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
-        <member name="T:Simple.Brazilian.Dados.Datas">
-            <summary>
-            Informações sobre datas
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Datas.MesesComAcento">
-            <summary>
-            Lista de meses com a inicial maiúscula, com acentos
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Datas.MesesSemAcento">
-            <summary>
-            Lista de meses com a inicial maiúscula, sem acentos
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Datas.DiasSemanaComAcento">
-            <summary>
-            Lista de dias da semana com a inicial maiúscula, com acentos
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Datas.DiasSemanaSemAcento">
-            <summary>
-            Lista de dias da semana com a inicial maiúscula, sem acentos
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Datas.MesesComAcentoU">
-            <summary>
-            Lista de meses em maiúsculo, com acentos
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Datas.MesesSemAcentoU">
-            <summary>
-            Lista de meses em maiúsculo, sem acentos
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Datas.DiasSemanaComAcentoU">
-            <summary>
-            Lista de dias da semana em maiúsculo, com acentos
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Datas.DiasSemanaSemAcentoU">
-            <summary>
-            Lista de dias da semana em maiúsculo, sem acentos
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Datas.MesesComAcentoL">
-            <summary>
-            Lista de meses em minúsculo, com acentos
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Datas.MesesSemAcentoL">
-            <summary>
-            Lista de meses em minúsculo, sem acentos
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Datas.DiasSemanaComAcentoL">
-            <summary>
-            Lista de dias da semana em minúsculo, com acentos
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Datas.DiasSemanaSemAcentoL">
-            <summary>
-            Lista de dias da semana em minúsculo, sem acentos
-            </summary>
-        </member>
-        <member name="T:Simple.Brazilian.Dados.Locais">
-            <summary>
-            Dados de localidades
-            </summary>
-        </member>
-        <member name="T:Simple.Brazilian.Dados.Locais.UF">
-            <summary>
-            Unidades federativas
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.RO">
-            <summary>
-            Rondônia
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.AC">
-            <summary>
-            Acre
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.AM">
-            <summary>
-            Amazonas
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.RR">
-            <summary>
-            Roraima
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.PA">
-            <summary>
-            Pará
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.AP">
-            <summary>
-            Amapá
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.TO">
-            <summary>
-            Tocantins
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.MA">
-            <summary>
-            Maranhão
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.PI">
-            <summary>
-            Piauí
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.CE">
-            <summary>
-            Ceará
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.RN">
-            <summary>
-            Rio Grande do Norte
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.PB">
-            <summary>
-            Paraíba
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.PE">
-            <summary>
-            Pernambuco
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.AL">
-            <summary>
-            Alagoas
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.SE">
-            <summary>
-            Sergipe
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.BA">
-            <summary>
-            Bahia
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.MG">
-            <summary>
-            Minas Gerais
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.ES">
-            <summary>
-            Espírito Santo
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.RJ">
-            <summary>
-            Rio de Janeiro
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.SP">
-            <summary>
-            São Paulo
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.PR">
-            <summary>
-            Paraná
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.SC">
-            <summary>
-            Santa Catarina
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.RS">
-            <summary>
-            Rio Grande do Sul
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.MS">
-            <summary>
-            Mato Grosso do Sul
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.MT">
-            <summary>
-            Mato Grosso
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.GO">
-            <summary>
-            Goiás
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.DF">
-            <summary>
-            Distrito Federal
-            </summary>
-        </member>
-        <member name="F:Simple.Brazilian.Dados.Locais.UF.EX">
-            <summary>
-            Exterior
-            </summary>
-        </member>
         <member name="T:Simple.Brazilian.Documents.CEP">
             <summary>
             Validador de CEP
@@ -251,7 +16,7 @@
             <param name="cep">CEP a ser verificado</param>
             <returns>True se o CEP tem o comprimento correto; False senão</returns>
         </member>
-        <member name="M:Simple.Brazilian.Documents.CEP.IsValid(System.String,Simple.Brazilian.Dados.Locais.UF)">
+        <member name="M:Simple.Brazilian.Documents.CEP.IsValid(System.String,Simple.Brazilian.Information.Places.UF)">
             <summary>
             Verifica se o CEP tem ocomprimento correto e se corresponde ao UF designado
             </summary>
@@ -332,7 +97,7 @@
             Validador de IE
             </summary>
         </member>
-        <member name="M:Simple.Brazilian.Documents.IE.Mask(System.String,Simple.Brazilian.Dados.Locais.UF)">
+        <member name="M:Simple.Brazilian.Documents.IE.Mask(System.String,Simple.Brazilian.Information.Places.UF)">
             <summary>
             Aplica a máscara de IE
             </summary>
@@ -371,7 +136,7 @@
             Validador de RG
             </summary>
         </member>
-        <member name="M:Simple.Brazilian.Documents.RG.Mask(System.String,Simple.Brazilian.Dados.Locais.UF)">
+        <member name="M:Simple.Brazilian.Documents.RG.Mask(System.String,Simple.Brazilian.Information.Places.UF)">
             <summary>
             Aplica a máscara de RG
             </summary>
@@ -427,6 +192,243 @@
         <member name="P:Simple.Brazilian.Formatters.TextOptions.CaracterPadraoSubstituicao">
             <summary>
             Especifica o caractere que deverá ser utilizado para a substituição
+            </summary>
+        </member>
+        <member name="T:Simple.Brazilian.Informationmation.Dates">
+            <summary>
+            Informações sobre datas
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Informationmation.Dates.MesesComAcento">
+            <summary>
+            Lista de meses com a inicial maiúscula, com acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Informationmation.Dates.MesesSemAcento">
+            <summary>
+            Lista de meses com a inicial maiúscula, sem acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Informationmation.Dates.DiasSemanaComAcento">
+            <summary>
+            Lista de dias da semana com a inicial maiúscula, com acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Informationmation.Dates.DiasSemanaSemAcento">
+            <summary>
+            Lista de dias da semana com a inicial maiúscula, sem acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Informationmation.Dates.MesesComAcentoU">
+            <summary>
+            Lista de meses em maiúsculo, com acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Informationmation.Dates.MesesSemAcentoU">
+            <summary>
+            Lista de meses em maiúsculo, sem acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Informationmation.Dates.DiasSemanaComAcentoU">
+            <summary>
+            Lista de dias da semana em maiúsculo, com acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Informationmation.Dates.DiasSemanaSemAcentoU">
+            <summary>
+            Lista de dias da semana em maiúsculo, sem acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Informationmation.Dates.MesesComAcentoL">
+            <summary>
+            Lista de meses em minúsculo, com acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Informationmation.Dates.MesesSemAcentoL">
+            <summary>
+            Lista de meses em minúsculo, sem acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Informationmation.Dates.DiasSemanaComAcentoL">
+            <summary>
+            Lista de dias da semana em minúsculo, com acentos
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Informationmation.Dates.DiasSemanaSemAcentoL">
+            <summary>
+            Lista de dias da semana em minúsculo, sem acentos
+            </summary>
+        </member>
+        <member name="T:Simple.Brazilian.Information.Places">
+            <summary>
+            Dados de localidades
+            </summary>
+        </member>
+        <member name="T:Simple.Brazilian.Information.Places.UF">
+            <summary>
+            Unidades federativas
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.RO">
+            <summary>
+            Rondônia
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.AC">
+            <summary>
+            Acre
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.AM">
+            <summary>
+            Amazonas
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.RR">
+            <summary>
+            Roraima
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.PA">
+            <summary>
+            Pará
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.AP">
+            <summary>
+            Amapá
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.TO">
+            <summary>
+            Tocantins
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.MA">
+            <summary>
+            Maranhão
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.PI">
+            <summary>
+            Piauí
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.CE">
+            <summary>
+            Ceará
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.RN">
+            <summary>
+            Rio Grande do Norte
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.PB">
+            <summary>
+            Paraíba
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.PE">
+            <summary>
+            Pernambuco
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.AL">
+            <summary>
+            Alagoas
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.SE">
+            <summary>
+            Sergipe
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.BA">
+            <summary>
+            Bahia
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.MG">
+            <summary>
+            Minas Gerais
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.ES">
+            <summary>
+            Espírito Santo
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.RJ">
+            <summary>
+            Rio de Janeiro
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.SP">
+            <summary>
+            São Paulo
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.PR">
+            <summary>
+            Paraná
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.SC">
+            <summary>
+            Santa Catarina
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.RS">
+            <summary>
+            Rio Grande do Sul
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.MS">
+            <summary>
+            Mato Grosso do Sul
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.MT">
+            <summary>
+            Mato Grosso
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.GO">
+            <summary>
+            Goiás
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.DF">
+            <summary>
+            Distrito Federal
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.EX">
+            <summary>
+            Exterior
+            </summary>
+        </member>
+    </members>
+</doc>
+r name="F:Simple.Brazilian.Information.Places.UF.MT">
+            <summary>
+            Mato Grosso
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.GO">
+            <summary>
+            Goiás
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.DF">
+            <summary>
+            Distrito Federal
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.UF.EX">
+            <summary>
+            Exterior
             </summary>
         </member>
     </members>

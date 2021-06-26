@@ -4,7 +4,7 @@
 //using Simple.Brazilian.Compatibilidade;
 #endif
 
-namespace Simple.Brazilian.Dados
+namespace Simple.Brazilian.Information
 {
     /// <summary>
     /// Dados de localidades
