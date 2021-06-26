@@ -1,9 +1,5 @@
 ﻿using System.ComponentModel;
 
-#if NETSTANDARD1_0
-//using Simple.Brazilian.Compatibilidade;
-#endif
-
 namespace Simple.Brazilian.Information
 {
     /// <summary>
@@ -157,6 +153,5 @@ namespace Simple.Brazilian.Information
             [Description("Exterior")]
             EX = 99,
         }
-
     }
 }
