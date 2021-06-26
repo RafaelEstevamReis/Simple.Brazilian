@@ -16,63 +16,69 @@ namespace Simple.Brazilian.Documents
         /// False senão</returns>
         public static bool IsValid(string cnpj)
         {
-            if (string.IsNullOrEmpty(cnpj)) return false;
-            //A validação é feita em duas estapas
-            //A primeira etapa precisamos retirar os dois últimos
-            //digitos que no caso são os digitos verificadores
-            //e em seguida multiplicamos pelo primeiro algorismo
-            //e depois soma o total das multiplicações.
-            //Na segunda etapa adicionaremos o resultado da primeira etapa
-            // para fazer o cálculo, da mesma forma teremos e o resultado
-            //e a conclusão.
+            /* Comparativo entre a versão corrente e a original (60f80c9)
+             |       Method   |      Mean |     Error |    StdDev |    Median |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+             |--------------- |----------:|----------:|----------:|----------:|-------:|------:|------:|----------:|
+             | ValidaCNPJ     |  20.56 ns |  0.863 ns |  2.545 ns |  19.53 ns |      - |     - |     - |         - |
+             | ValidaCNPJ_Org | 578.52 ns | 21.540 ns | 63.511 ns | 596.85 ns | 0.4320 |     - |     - |     904 B |
+             */
 
-            // Definindo os algorismos para o cálculo
-            int[] numMultiplier1 = new int[12]
-            { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
-            int[] numMultiplier2 = new int[13]
-            { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+            // Vazio ou nulo
+            if (string.IsNullOrEmpty(cnpj))
+                return false;
 
-            // Checa comprimento
-            if (cnpj.Length > 14)
-            {
-                cnpj = Unmask(cnpj);
-            }
-            // E já descarta
-            if (cnpj.Length != 14) return false;
+            // Se for maior, retira a máscara
+            if (cnpj.Length > 14) cnpj = Unmask(cnpj);
 
-            // Primeira etapa do cálculo
-            string auxCNPJ = cnpj.Substring(0, 12);
-            int result = 0;
+            // Deve ser exatamente 11
+            if (cnpj.Length != 14)
+                return false;
 
+            int firstDigit = cnpj[12] - '0';
+            int secondDigit = cnpj[13] - '0';
+
+            int firstSum = 0;
+            int secondSum = 0;
+            int countdown1 = 5;
+            int countdown2 = 6;
             for (int i = 0; i < 12; i++)
             {
-                result += int.Parse(auxCNPJ[i].ToString()) * numMultiplier1[i];
+                int intValue = cnpj[i] - '0';
+                // Não é número ?
+                if (intValue > 9 || intValue < 0) return false;
+
+                firstSum += intValue * countdown1;
+                secondSum += intValue * countdown2;
+
+                countdown1 -= 1;
+                countdown2 -= 1;
+
+                if (countdown1 == 1) countdown1 = 9;
+                if (countdown2 == 1) countdown2 = 9;
             }
+            secondSum += 2 * firstDigit;
 
-            int resto = (result % 11);
+            int firstDigitVerification = (firstSum * 10) % 11;
+            int secondDigitVerification = (secondSum * 10) % 11;
 
-            if (resto < 2) resto = 0;
-            else resto = 11 - resto;
+            if (firstDigitVerification == 10)
+                firstDigitVerification = 0;
+            if (secondDigitVerification == 10)
+                secondDigitVerification = 0;
 
-            //Segunda etapa do do cáculo
-            auxCNPJ += resto;
-            result = 0;
+            if (firstDigitVerification != firstDigit || secondDigitVerification != secondDigit)
+                return false;
 
-            for (int i = 0; i < 13; i++)
+            // Não é válido se qualquer um dos dígitos for diferente
+            for (int i = 1; i < 14; i++)
             {
-                result += int.Parse(auxCNPJ[i].ToString()) * numMultiplier2[i];
+                // Se algum for diferente, o CPF é válido
+                if (cnpj[i] != cnpj[0]) return true;
             }
 
-            resto = (result % 11);
-
-            if (resto < 2) resto = 0;
-            else resto = 11 - resto;
-
-            auxCNPJ += resto;
-            
-            return auxCNPJ == cnpj;
-
+            return false;
         }
+
         /// <summary>
         /// Aplica a máscara de CNPJ __.___.___/____-__
         /// </summary>

@@ -22,12 +22,12 @@ namespace Simple.Brazilian.UnitTests.DocumentosTestes.CNPJTestes
         [Theory]
         [InlineData("16553608000183")]
         [InlineData("67406732000157")]
-        [InlineData("02361553000103")]
+        [InlineData("02361553000103")] // primeiro dígito == 10
+        [InlineData("34534876000130")] // Segundo dígito == 10
         [InlineData("37238174000105")]
-        [InlineData("39365864000142")]  
+        [InlineData("39365864000142")]
         [InlineData("34742750000150")]
         [InlineData("17189722000139")] // SHARP Sistemas
-
         public void CNPJ_IsValid_ChecaCNPJsSemMascara(string entrada)
         {
             Assert.True(CNPJ.IsValid(entrada));
@@ -35,8 +35,6 @@ namespace Simple.Brazilian.UnitTests.DocumentosTestes.CNPJTestes
 
 
         [Theory]
-        [InlineData(null)]
-        [InlineData("")]
         [InlineData("00550608000083")]
         [InlineData("16553608000184")]
         [InlineData("26553608000183")]
@@ -44,8 +42,21 @@ namespace Simple.Brazilian.UnitTests.DocumentosTestes.CNPJTestes
         [InlineData("17189452000139")]
         [InlineData("17189722000138")]
         [InlineData("00000000000123")]
-
+        [InlineData("00000000000000")] // Vale, mas não pode
         public void CNPJ_IsValid_ChecaCNPJsErrados(string entrada)
+        {
+            Assert.False(CNPJ.IsValid(entrada));
+        }
+
+
+        [Theory]
+        [InlineData(null)]
+        [InlineData("")]
+        [InlineData("0055060800008")]
+        [InlineData("!0550608000083")]
+        [InlineData("A0550608000083")]
+        [InlineData("005506080000830")]
+        public void CNPJ_IsValid_ChecaCNPJsInvalidos(string entrada)
         {
             Assert.False(CNPJ.IsValid(entrada));
         }
