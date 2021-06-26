@@ -3,7 +3,7 @@
     /// <summary>
     /// Informações sobre datas
     /// </summary>
-    public static class Datas
+    public static class Dates
     {
         /* Normais */
         /// <summary>
