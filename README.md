@@ -58,8 +58,8 @@ Existem repositórios em várias linguagens porém é raro que:
 
 Validadores:
 
-- [X] Validação de Documentos: `CEP`, `CNPJ` e `CPF`
-- [ ] Validação de Documentos: `IE`, `RG` e `PIS`
+- [X] Validação de Documentos: `CEP`, `CNPJ`, `CPF` e `PIS`
+- [ ] Validação de Documentos: `IE` e `RG`
 
 Formatadores:
 

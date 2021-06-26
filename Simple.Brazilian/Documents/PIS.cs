@@ -7,10 +7,14 @@ namespace Simple.Brazilian.Documents
     /// </summary>
     public static class PIS
     {
-        internal static bool IsValid(string pis)
-        {
-            throw new NotImplementedException();
-        }
+        /// <summary>
+        /// Executa a validação de um PIS
+        /// com ou sem máscara
+        /// </summary>
+        /// <param name="pis">PIS a ser verificado</param>
+        /// <returns>True se o PIS é válido de acordo com o cálculo do Dígito Verificador</returns>
+        public static bool IsValid(string pis) 
+            => Validators.ModValidation.CheckDocumentMod1129(pis, 11);
         /// <summary>
         /// Aplica a máscara de PIS ___._____.__._
         /// </summary>
