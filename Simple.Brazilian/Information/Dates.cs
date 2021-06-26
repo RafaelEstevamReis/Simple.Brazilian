@@ -1,4 +1,4 @@
-﻿namespace Simple.Brazilian.Informationmation
+﻿namespace Simple.Brazilian.Information
 {
     /// <summary>
     /// Informações sobre datas
