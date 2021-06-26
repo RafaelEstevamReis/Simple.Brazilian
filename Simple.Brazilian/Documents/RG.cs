@@ -1,5 +1,5 @@
 ﻿using System;
-using static Simple.Brazilian.Dados.Locais;
+using static Simple.Brazilian.Dados.Places;
 
 namespace Simple.Brazilian.Documents
 {

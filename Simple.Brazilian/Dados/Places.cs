@@ -9,7 +9,7 @@ namespace Simple.Brazilian.Dados
     /// <summary>
     /// Dados de localidades
     /// </summary>
-    public static class Locais
+    public static class Places
     {
         /// <summary>
         /// Unidades federativas
