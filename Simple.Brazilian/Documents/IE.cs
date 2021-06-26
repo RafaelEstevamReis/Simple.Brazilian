@@ -1,5 +1,5 @@
-﻿using System;
-using static Simple.Brazilian.Information.Places;
+﻿using Simple.Brazilian.Information;
+using System;
 
 namespace Simple.Brazilian.Documents
 {
@@ -12,7 +12,7 @@ namespace Simple.Brazilian.Documents
         {
             throw new NotImplementedException();
         }
-        internal static bool IsValid(string ie, UF uf)
+        internal static bool IsValid(string ie, Places.UF uf)
         {
             throw new NotImplementedException();
         }
@@ -22,7 +22,7 @@ namespace Simple.Brazilian.Documents
         /// <param name="ie">Texto para aplicar a máscara</param>
         /// <param name="uf">Especifica qual UF deve ser usada para aplicar a máscara</param>
         /// <returns>Texto com a máscara</returns>
-        public static string Mask(string ie, UF uf)
+        public static string Mask(string ie, Places.UF uf)
         {
             throw new NotImplementedException();
         }
