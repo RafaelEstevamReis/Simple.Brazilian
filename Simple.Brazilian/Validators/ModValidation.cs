@@ -70,5 +70,19 @@ namespace Simple.Brazilian.Validators
         }
         public static char CalculateMod11Char(string text, int min, int max)
             => (char)('0' + CalculateMod11(text, min, max));
+
+        public static bool CheckDocumentMod1129(string text, int expectedLen)
+        {
+            if (text == null) return false;
+            if (text.Length < 2) return false;
+
+            if (text.Length > expectedLen) text = Formatters.Text.RemoveMask(text);
+            if (text.Length != expectedLen) return false;
+
+            char orgDv = text[text.Length - 1];
+            var calcDv = CalculateMod11Char(text.Substring(0, text.Length - 1), 2, 9);
+
+            return orgDv == calcDv;
+        }
     }
 }
