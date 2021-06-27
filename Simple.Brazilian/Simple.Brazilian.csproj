@@ -19,4 +19,17 @@ https://github.com/RafaelEstevamReis/Simple.Brazilian
   <PropertyGroup>
     <DocumentationFile>..\Simple.Brazilian.xml</DocumentationFile>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Information\Places\DadosMunicipios.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DadosMunicipios.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Information\Places\DadosMunicipios.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DadosMunicipios.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
