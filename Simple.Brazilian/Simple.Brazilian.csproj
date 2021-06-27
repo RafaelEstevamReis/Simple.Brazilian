@@ -19,4 +19,26 @@ https://github.com/RafaelEstevamReis/Simple.Brazilian
   <PropertyGroup>
     <DocumentationFile>..\Simple.Brazilian.xml</DocumentationFile>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Information\Places\BandeirasPNG.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BandeirasPNG.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Information\Places\BandeirasSVG.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BandeirasSVG.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Information\Places\BandeirasPNG.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BandeirasPNG.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Information\Places\BandeirasSVG.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BandeirasSVG.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
