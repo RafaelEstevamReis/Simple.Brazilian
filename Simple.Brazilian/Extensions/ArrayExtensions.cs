@@ -2,7 +2,7 @@
 
 namespace Simple.Brazilian
 {
-    internal static class ArrayExtensions
+    public static class ArrayExtensions
     {
         public static int IndexOf(this string[] array, string search, StringComparison stringComparison)
         {

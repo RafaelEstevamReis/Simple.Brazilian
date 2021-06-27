@@ -1,4 +1,6 @@
-﻿namespace Simple.Brazilian.Information.Places
+﻿using System.Linq;
+
+namespace Simple.Brazilian.Information.Places
 {
     /// <summary>
     /// Informções sobre estados (UFs)
@@ -32,6 +34,30 @@
 
         //private byte[] bandeiraSvg;
         //public byte[] BandeiraSVG() => bandeiraSvg;
+
+        private CityInfo[] cityInfo;
+        public CityInfo[] CityInfo
+        {
+            get
+            {
+                if (cityInfo == null)
+                {
+                    var cidades = States.CityInfo
+                                        .Where(o => o.IdState == IdIBGE);
+#if NET20
+                    var lst = new System.Collections.Generic.List<CityInfo>(cidades);
+                    lst.Sort(delegate (CityInfo o1, CityInfo o2)
+                    {
+                        return o1.Name.CompareTo(o2.Name);                        
+                    });
+                    cityInfo = lst.ToArray();
+#else
+                    cityInfo = cidades.OrderBy(o => o.Name).ToArray();
+#endif
+                }
+                return cityInfo;
+            }
+        }
 
         internal static StateInfo FromIndex(int index)
         {

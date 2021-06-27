@@ -21,7 +21,7 @@ namespace Simple.Brazilian.Information.Places
         /// <summary>
         /// Lista de códigos do IBGE das UFs em ordem alfabética de UF
         /// </summary>
-        public static readonly int[] IdIBGE = { 12, 27, 13, 16, 29, 23, 53, 32, 52, 21, 31, 50, 51, 15, 25, 26, 22, 41, 33, 24, 11, 14, 43, 42, 28, 35, 17 };
+        public static readonly int[] IdIBGE = { 12, 27, 16, 13, 29, 23, 53, 32, 52, 21, 51, 50, 31, 15, 25, 41, 26, 22, 33, 24, 43, 11, 14, 42, 35, 28, 17 };
         /// <summary>
         /// Lista de capitais dos UFs em ordem alfabética de UF
         /// </summary>
@@ -43,6 +43,7 @@ namespace Simple.Brazilian.Information.Places
                 return cityInfo;
             }
         }
+
         private static void initializeCityInfo()
         {
             cityInfo = retrieveCityData(Places.CityInfo.rawCityData).ToArray();
@@ -70,22 +71,22 @@ namespace Simple.Brazilian.Information.Places
         /// Obtém um objeto "StateInfo"
         /// </summary>
         /// <param name="uf">Sigla da UF</param>
-        public StateInfo GetStateInfoByUF(string uf) => StateInfo.FromIndex(UF.IndexOf(uf, StringComparison.CurrentCultureIgnoreCase));
+        public static StateInfo GetStateInfoByUF(string uf) => StateInfo.FromIndex(UF.IndexOf(uf, StringComparison.CurrentCultureIgnoreCase));
         /// <summary>
         /// Obtém um objeto "StateInfo"
         /// </summary>
         /// <param name="name">Nome da UF (com acentos)</param>
-        public StateInfo GetStateInfoByName(string name) => StateInfo.FromIndex(Names.IndexOf(name, StringComparison.CurrentCultureIgnoreCase));
+        public static StateInfo GetStateInfoByName(string name) => StateInfo.FromIndex(Names.IndexOf(name, StringComparison.CurrentCultureIgnoreCase));
         /// <summary>
         /// Obtém um objeto "StateInfo"
         /// </summary>
         /// <param name="id">Id do IBGE</param>
-        public StateInfo GetStateInfoByName(int id) => StateInfo.FromIndex(IdIBGE.IndexOf(id));
+        public static StateInfo GetStateInfoByName(int id) => StateInfo.FromIndex(IdIBGE.IndexOf(id));
         /// <summary>
         /// Obtém um objeto "StateInfo"
         /// </summary>
         /// <param name="uf">Item do enum UFs</param>
-        public StateInfo GetStateInfo(UFs uf) => GetStateInfoByName((int)uf);
+        public static StateInfo GetStateInfo(UFs uf) => GetStateInfoByName((int)uf);
 
     }
 }
