@@ -8,37 +8,37 @@ namespace Simple.Brazilian.UnitTests.DadosTestes.DatasTestes
         [Fact]
         public void Datas_ArraysNomes_CertificaComprimento_Semana()
         {
-            Assert.Equal(7, Dates.DiasSemanaComAcento.Length);
-            Assert.Equal(7, Dates.DiasSemanaSemAcento.Length);
-            Assert.Equal(7, Dates.DiasSemanaComAcentoL.Length);
-            Assert.Equal(7, Dates.DiasSemanaSemAcentoL.Length);
-            Assert.Equal(7, Dates.DiasSemanaComAcentoU.Length);
-            Assert.Equal(7, Dates.DiasSemanaSemAcentoU.Length);
+            Assert.Equal(7, Dates.WeekDayWithAccent.Length);
+            Assert.Equal(7, Dates.WeekDayWithoutAccent.Length);
+            Assert.Equal(7, Dates.WeekDayWithAccentLower.Length);
+            Assert.Equal(7, Dates.WeekDayWithoutAccentLower.Length);
+            Assert.Equal(7, Dates.WeekDayWithAccentUpper.Length);
+            Assert.Equal(7, Dates.WeekDayWithoutAccentUpper.Length);
         }
 
         [Fact]
         public void Datas_ArraysNomes_CertificaComprimento_Meses()
         {
-            Assert.Equal(12, Dates.MesesComAcento.Length);
-            Assert.Equal(12, Dates.MesesSemAcento.Length);
-            Assert.Equal(12, Dates.MesesComAcentoL.Length);
-            Assert.Equal(12, Dates.MesesSemAcentoL.Length);
-            Assert.Equal(12, Dates.MesesComAcentoU.Length);
-            Assert.Equal(12, Dates.MesesSemAcentoU.Length);
+            Assert.Equal(12, Dates.MonthsWithAccent.Length);
+            Assert.Equal(12, Dates.MonthsWithoutAccent.Length);
+            Assert.Equal(12, Dates.MonthsWithAccentLower.Length);
+            Assert.Equal(12, Dates.MonthsWithoutAccentLower.Length);
+            Assert.Equal(12, Dates.MonthsWithAccentUpper.Length);
+            Assert.Equal(12, Dates.MonthsWithoutAccentUpper.Length);
         }
 
         [Fact]
         public void Datas_ArraysNomes_CertificaIgualdade_Semana()
         {
-            var baseCompara = Dates.DiasSemanaSemAcentoL;
+            var baseCompara = Dates.WeekDayWithoutAccentLower;
 
             var todos = new string[][]{
-                Dates.DiasSemanaComAcento,
-                Dates.DiasSemanaSemAcento,
-                Dates.DiasSemanaComAcentoL,
+                Dates.WeekDayWithAccent,
+                Dates.WeekDayWithoutAccent,
+                Dates.WeekDayWithAccentLower,
                 //Datas.DiasSemanaSemAcentoL, - Já é a base
-                Dates.DiasSemanaComAcentoU,
-                Dates.DiasSemanaSemAcentoU,
+                Dates.WeekDayWithAccentUpper,
+                Dates.WeekDayWithoutAccentUpper,
             };
 
             foreach (var conjunto in todos)
@@ -53,15 +53,15 @@ namespace Simple.Brazilian.UnitTests.DadosTestes.DatasTestes
         [Fact]
         public void Datas_ArraysNomes_CertificaIgualdade_Meses()
         {
-            var baseCompara = Dates.MesesSemAcentoL;
+            var baseCompara = Dates.MonthsWithoutAccentLower;
 
             var todos = new string[][]{
-                Dates.MesesComAcento,
-                Dates.MesesSemAcento,
-                Dates.MesesComAcentoL,
+                Dates.MonthsWithAccent,
+                Dates.MonthsWithoutAccent,
+                Dates.MonthsWithAccentLower,
                 //Datas.MesesSemAcentoL, - Já é a base
-                Dates.MesesComAcentoU,
-                Dates.MesesSemAcentoU,
+                Dates.MonthsWithAccentUpper,
+                Dates.MonthsWithoutAccentUpper,
             };
 
             foreach (var conjunto in todos)
