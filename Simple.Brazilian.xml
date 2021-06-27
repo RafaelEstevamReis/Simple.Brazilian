@@ -4,26 +4,6 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
-        <member name="T:System.Linq.Enumerable">
-            <summary>
-            Classe para dar compatibilidade à NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`2">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`3">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`4">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
         <member name="T:Simple.Brazilian.Documents.CEP">
             <summary>
             Validador de CEP
@@ -169,6 +149,7 @@
             Aplica a máscara de RG
             </summary>
             <param name="rg">Texto para aplicar a máscara</param>
+            <param name="uf"></param>
             <returns>Texto com a máscara</returns>
         </member>
         <member name="M:Simple.Brazilian.Documents.RG.Unmask(System.String)">
@@ -206,6 +187,135 @@
             </summary>
             <param name="texto">Texto a ser limpo</param>
             <returns>Texto desformatado</returns>
+        </member>
+        <member name="T:Simple.Brazilian.Formatters.TextFilter">
+            <summary>
+            Executa filtragem de textos
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Formatters.TextFilter.AllowsNumbers">
+            <summary>
+            Define se números são permitidos durante a filtragem
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Formatters.TextFilter.AllowsUppercaseLetters">
+            <summary>
+            Define se letras maiúsculas são permitidas durante a filtragem
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Formatters.TextFilter.AllowsLowercaseLetters">
+            <summary>
+            Define se letras minúsculas são permitidas durante a filtragem
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Formatters.TextFilter.AllowsSymbols">
+            <summary>
+            Define se símbolos são permitidos durante a filtragem
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Formatters.TextFilter.AllowsPunctuation">
+            <summary>
+            Define se pontuações são permitidas durante a filtragem
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Formatters.TextFilter.AllowsWhitespace">
+            <summary>
+            Define se espaços e whitespaces são permitidos durante a filtragem
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.TextFilter.DenyAll">
+            <summary>
+            Remove todos os caracteres
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.TextFilter.AllowAll">
+            <summary>
+            Permite todos os caracteres
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.TextFilter.AllowNumbers">
+            <summary>
+            Permite números
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.TextFilter.AllowUppercaseLetters">
+            <summary>
+            Permite maiúsculas
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.TextFilter.AllowLowercaseLetters">
+            <summary>
+            Permite minúsculas
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.TextFilter.AllowSymbols">
+            <summary>
+            Permite símbolos
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.TextFilter.AllowPunctuation">
+            <summary>
+            Permite pontuações
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.TextFilter.AllowWhitespace">
+            <summary>
+            Permite espaços e whitespaces
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.TextFilter.DenyNumbers">
+            <summary>
+            Remove números
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.TextFilter.DenyUppercaseLetters">
+            <summary>
+            Remove maiúsculas
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.TextFilter.DenyLowercaseLetters">
+            <summary>
+            Remove minúsculas
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.TextFilter.DenySymbols">
+            <summary>
+            Remove símbolos
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.TextFilter.DenyPunctuation">
+            <summary>
+            Remove pontuações
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.TextFilter.DenyWhitespace">
+            <summary>
+            Remove espaços e whitespaces
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.TextFilter.Execute">
+            <summary>
+            Executa filtro
+            </summary>
+            <returns>Retorna texto com filtros aplicados</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.TextFilter.Filter(System.String)">
+            <summary>
+            Inicializa filtro de texto
+            </summary>
+        </member>
+        <member name="T:Simple.Brazilian.Formatters.TextFilterExtension">
+            <summary>
+            Extensão de filtro de texto
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.TextFilterExtension.Filter(System.String)">
+            <summary>
+            Executa filtragem de textos
+            </summary>
+            <param name="text">Texto a ser filtrado</param>
+            <returns>Chaining de filtragem de texto</returns>
         </member>
         <member name="T:Simple.Brazilian.Formatters.TextOptions">
             <summary>
@@ -286,6 +396,130 @@
             <summary>
             Lista de dias da semana em minúsculo, sem acentos
             </summary>
+        </member>
+        <member name="T:Simple.Brazilian.Information.Places.CityInfo">
+            <summary>
+            Dados sobre a cidade
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Places.CityInfo.IdState">
+            <summary>
+            Código IBGE do estado
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Places.CityInfo.IdCity">
+            <summary>
+            Código IBGE da cidade
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Places.CityInfo.Name">
+            <summary>
+            Nome da Cidade
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Places.CityInfo.CompleteId">
+            <summary>
+            Código completo da cidade no IBGE
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Information.Places.CityInfo.ToString">
+            <summary>
+            Representação textual da cidade
+            </summary>
+        </member>
+        <member name="T:Simple.Brazilian.Information.Places.StateInfo">
+            <summary>
+            Informções sobre estados (UFs)
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Places.StateInfo.Name">
+            <summary>
+            Nome do estado
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Places.StateInfo.UF">
+            <summary>
+            Sigla do estado
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Places.StateInfo.IdIBGE">
+            <summary>
+            Código do estado no IBGE
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Places.StateInfo.Capital">
+            <summary>
+            Capital administrativa do estado
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Places.StateInfo.AreaKm2">
+            <summary>
+            Área do estado em Km²
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Places.StateInfo.CityInfo">
+            <summary>
+            Informações sobre as cidades do estado
+            </summary>
+        </member>
+        <member name="T:Simple.Brazilian.Information.Places.States">
+            <summary>
+            Informações sobre estados
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.States.UF">
+            <summary>
+            Lista de siglas de UFs em ordem alfabética 
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.States.Names">
+            <summary>
+            Lista de nomes de UFs em ordem alfabética de UF
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.States.IdIBGE">
+            <summary>
+            Lista de códigos do IBGE das UFs em ordem alfabética de UF
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.States.Capital">
+            <summary>
+            Lista de capitais dos UFs em ordem alfabética de UF
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.Places.States.AreaKm2">
+            <summary>
+            Lista de área dos UFs em ordem alfabética de UF
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Places.States.CityInfo">
+            <summary>
+            Obtém uma lista com todos os municípios, seus nomes e códigos IBGE
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Information.Places.States.GetStateInfoByUF(System.String)">
+            <summary>
+            Obtém um objeto "StateInfo"
+            </summary>
+            <param name="uf">Sigla da UF</param>
+        </member>
+        <member name="M:Simple.Brazilian.Information.Places.States.GetStateInfoByName(System.String)">
+            <summary>
+            Obtém um objeto "StateInfo"
+            </summary>
+            <param name="name">Nome da UF (com acentos)</param>
+        </member>
+        <member name="M:Simple.Brazilian.Information.Places.States.GetStateInfoByName(System.Int32)">
+            <summary>
+            Obtém um objeto "StateInfo"
+            </summary>
+            <param name="id">Id do IBGE</param>
+        </member>
+        <member name="M:Simple.Brazilian.Information.Places.States.GetStateInfo(Simple.Brazilian.Information.Places.UFs)">
+            <summary>
+            Obtém um objeto "StateInfo"
+            </summary>
+            <param name="uf">Item do enum UFs</param>
         </member>
         <member name="T:Simple.Brazilian.Information.Places.UFs">
             <summary>
@@ -430,6 +664,44 @@
         <member name="F:Simple.Brazilian.Information.Places.UFs.EX">
             <summary>
             Exterior
+            </summary>
+        </member>
+        <member name="T:Simple.Brazilian.Validators.ModValidation">
+            <summary>
+            Validação e dados com "Mod"
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.ModValidation.GenerateReverseSequence(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gerador de sequências decrescentes MOD
+            </summary>
+            <param name="min">Menor valor</param>
+            <param name="max">Maior valor</param>
+            <param name="len">Quantidade de números a serem gerados</param>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.ModValidation.SumMultiply(System.Int32[],System.Int32[])">
+            <summary>
+            Multiplica dois arrays e retorna a soma
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.ModValidation.SumMultiply(System.Int32[],System.Char[])">
+            <summary>
+            Multiplica dois arrays e retorna a soma
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.ModValidation.CalculateMod11(System.String,System.Int32,System.Int32)">
+            <summary>
+            Executa cálculo do Mod11 no texto, retorna INT
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.ModValidation.CalculateMod11Char(System.String,System.Int32,System.Int32)">
+            <summary>
+            Executa cálculo do Mod11 no texto, retorna CHAR
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.ModValidation.CheckDocumentMod1129(System.String,System.Int32)">
+            <summary>
+            Executa check de documento com Mod11, valores de 9 a 2
             </summary>
         </member>
     </members>
