@@ -80,4 +80,5 @@ Dados:
 - [X] Nomes de `meses` e `dias da semana` com e sem acentos, em maiúsculo e minúsculo
 - [X] Enum de `UFs` relacionado com o `Código IBGE`
 - [X] Arrays com as `UFs`, os `nomes dos estados`, seus códigos no `IBGE` e suas `capitais`
+- [X] Lista de `Cidades` com os `Códigos IBGE`
 
