@@ -10,11 +10,11 @@
         public string Capital { get; set; }
         public double AreaKm2 { get; set; }
 
-        private byte[] bandeiraPng;
-        public byte[] BandeiraPNG() => bandeiraPng;
+        //private byte[] bandeiraPng;
+        //public byte[] BandeiraPNG() => bandeiraPng;
 
-        private byte[] bandeiraSvg;
-        public byte[] BandeiraSVG() => bandeiraSvg;
+        //private byte[] bandeiraSvg;
+        //public byte[] BandeiraSVG() => bandeiraSvg;
 
         internal static StateInfo FromIndex(int index)
         {
@@ -25,11 +25,11 @@
                 IdIBGE = States.IdIBGE[index],
                 Capital = States.Capital[index],
                 AreaKm2 = States.AreaKm2[index],
-                bandeiraPng = bandeiraPngFromIndex(index),
-                bandeiraSvg = bandeiraSvgFromIndex(index),
+                //bandeiraPng = bandeiraPngFromIndex(index),
+                //bandeiraSvg = bandeiraSvgFromIndex(index),
             };
         }
-
+        /*
         private static byte[] bandeiraSvgFromIndex(int index)
         {
             switch (index)
@@ -98,5 +98,6 @@
                 default: return null;
             }
         }
+        */
     }
 }
