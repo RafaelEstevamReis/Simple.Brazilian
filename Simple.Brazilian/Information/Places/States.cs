@@ -13,5 +13,7 @@ namespace Simple.Brazilian.Information.Places
         public StateInfo GetStateInfoByUF(string uf) => StateInfo.FromIndex(UF.IndexOf(uf,  StringComparison.CurrentCultureIgnoreCase));
         public StateInfo GetStateInfoByName(string name) => StateInfo.FromIndex(Names.IndexOf(name, StringComparison.CurrentCultureIgnoreCase));
         public StateInfo GetStateInfoByName(int id) => StateInfo.FromIndex(IdIBGE.IndexOf(id));
+        public StateInfo GetStateInfo(UFs uf) => GetStateInfoByName((int)uf);
+
     }
 }
