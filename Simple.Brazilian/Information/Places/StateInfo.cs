@@ -36,6 +36,9 @@ namespace Simple.Brazilian.Information.Places
         //public byte[] BandeiraSVG() => bandeiraSvg;
 
         private CityInfo[] cityInfo;
+        /// <summary>
+        /// Informações sobre as cidades do estado
+        /// </summary>
         public CityInfo[] CityInfo
         {
             get
