@@ -16,6 +16,7 @@ namespace Simple.Brazilian.Documents
         /// Aplica a máscara de RG
         /// </summary>
         /// <param name="rg">Texto para aplicar a máscara</param>
+        /// <param name="uf"></param>
         /// <returns>Texto com a máscara</returns>
         internal static string Mask(string rg, UFs uf)
         {
