@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace Simple.Brazilian.Information.Places
 {
@@ -28,11 +31,43 @@ namespace Simple.Brazilian.Information.Places
         /// </summary>
         public static readonly double[] AreaKm2 = { 164_122.2, 27_767.7, 142_814.6, 1_570_745.7, 564_692.7, 148_825.6, 5_822.1, 46_077.5, 340_086.7, 331_983.3, 903_357.9, 357_125.0, 586_528.3, 1_247_689.5, 56_439.8, 199_314.9, 98_311.6, 251_529.2, 43_696.1, 52_796.8, 281_748.5, 237_576.2, 224_299.0, 95_346.2, 248_209.4, 21_910.3, 277_620.9, };
 
+        static CityInfo[] cityInfo = null;
+        public static CityInfo[] CityInfo
+        {
+            get
+            {
+                if (cityInfo == null) initializeCityInfo();
+                return cityInfo;
+            }
+        }
+        private static void initializeCityInfo()
+        {
+            cityInfo = retrieveCityData(Places.CityInfo.rawCityData).ToArray();
+        }
+        private static IEnumerable<CityInfo> retrieveCityData(string municipios)
+        {
+            StringReader str = new StringReader(municipios);
+            string line;
+            while ((line = str.ReadLine()) != null)
+            {
+                var data = line.Split('\t');
+                if (data.Length < 3) continue;
+
+                yield return new CityInfo()
+                {
+                    IdState = int.Parse(data[0]),
+                    IdCity = int.Parse(data[1]),
+                    Name = data[2],
+                    CompleteId = data[0] + data[1],
+                };
+            }
+        }
+
         /// <summary>
         /// Obtém um objeto "StateInfo"
         /// </summary>
         /// <param name="uf">Sigla da UF</param>
-        public StateInfo GetStateInfoByUF(string uf) => StateInfo.FromIndex(UF.IndexOf(uf,  StringComparison.CurrentCultureIgnoreCase));
+        public StateInfo GetStateInfoByUF(string uf) => StateInfo.FromIndex(UF.IndexOf(uf, StringComparison.CurrentCultureIgnoreCase));
         /// <summary>
         /// Obtém um objeto "StateInfo"
         /// </summary>
