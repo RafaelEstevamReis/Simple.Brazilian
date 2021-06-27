@@ -105,6 +105,7 @@ namespace Simple.Brazilian.UnitTests.InformationTestes.PlacesTestes
         {
             var dados = States.GetStateInfoByUF(uf);
             Assert.Equal(cidades, dados.CityInfo.Length);
+            Assert.True(dados.CityInfo.All(o => o.IdState == dados.IdIBGE));
         }
 
     }
