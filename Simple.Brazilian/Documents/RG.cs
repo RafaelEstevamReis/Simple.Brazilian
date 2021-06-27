@@ -1,4 +1,4 @@
-﻿using Simple.Brazilian.Information;
+﻿using Simple.Brazilian.Information.Places;
 using System;
 
 namespace Simple.Brazilian.Documents
@@ -17,7 +17,7 @@ namespace Simple.Brazilian.Documents
         /// </summary>
         /// <param name="rg">Texto para aplicar a máscara</param>
         /// <returns>Texto com a máscara</returns>
-        internal static string Mask(string rg, Places.UF uf)
+        internal static string Mask(string rg, UFs uf)
         {
             throw new NotImplementedException();
         }
