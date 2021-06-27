@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace Simple.Brazilian.Information.Places
+﻿namespace Simple.Brazilian.Information.Places
 {
-    public sealed class State
+    public sealed class StateInfo
     {
-        private State() { }
+        private StateInfo() { }
 
         public string Name { get; set; }
         public string UF { get; set; }
@@ -18,15 +16,17 @@ namespace Simple.Brazilian.Information.Places
         private byte[] bandeiraSvg;
         public byte[] BandeiraSVG() => bandeiraSvg;
 
-        internal static State FromIndex(int index)
+        internal static StateInfo FromIndex(int index)
         {
-            return new State()
+            return new StateInfo()
             {
                 Name = States.Names[index],
                 UF = States.UF[index],
                 IdIBGE = States.IdIBGE[index],
                 Capital = States.Capital[index],
                 AreaKm2 = States.AreaKm2[index],
+                bandeiraPng = bandeiraPngFromIndex(index),
+                bandeiraSvg = bandeiraSvgFromIndex(index),
             };
         }
 
