@@ -2,8 +2,17 @@
 
 namespace Simple.Brazilian.Validators
 {
+    /// <summary>
+    /// Validação e dados com "Mod"
+    /// </summary>
     public static class ModValidation
     {
+        /// <summary>
+        /// Gerador de sequências decrescentes MOD
+        /// </summary>
+        /// <param name="min">Menor valor</param>
+        /// <param name="max">Maior valor</param>
+        /// <param name="len">Quantidade de números a serem gerados</param>
         public static int[] GenerateReverseSequence(int min, int max, int len)
         {
             int[] arr = new int[len];
@@ -18,6 +27,9 @@ namespace Simple.Brazilian.Validators
             }
             return arr;
         }
+        /// <summary>
+        /// Multiplica dois arrays e retorna a soma
+        /// </summary>
         public static int SumMultiply(int[] arr1, int[] arr2)
         {
             if (arr1 is null) throw new ArgumentNullException(nameof(arr1));
@@ -34,6 +46,9 @@ namespace Simple.Brazilian.Validators
             }
             return total;
         }
+        /// <summary>
+        /// Multiplica dois arrays e retorna a soma
+        /// </summary>
         public static int SumMultiply(int[] arr1, char[] arr2)
         {
             if (arr1 is null) throw new ArgumentNullException(nameof(arr1));
@@ -50,7 +65,9 @@ namespace Simple.Brazilian.Validators
             }
             return total;
         }
-
+        /// <summary>
+        /// Executa cálculo do Mod11 no texto, retorna INT
+        /// </summary>
         public static int CalculateMod11(string text, int min, int max)
         {
             // Este Mod11 não serve para codigos de barras, apenas documentos
@@ -68,9 +85,14 @@ namespace Simple.Brazilian.Validators
 
             return resto;
         }
+        /// <summary>
+        /// Executa cálculo do Mod11 no texto, retorna CHAR
+        /// </summary>
         public static char CalculateMod11Char(string text, int min, int max)
             => (char)('0' + CalculateMod11(text, min, max));
-
+        /// <summary>
+        /// Executa check de documento com Mod11, valores de 9 a 2
+        /// </summary>
         public static bool CheckDocumentMod1129(string text, int expectedLen)
         {
             if (text == null) return false;
