@@ -1,12 +1,29 @@
 ﻿namespace Simple.Brazilian.Information.Places
 {
+    /// <summary>
+    /// Dados sobre a cidade
+    /// </summary>
     public class CityInfo
     {
+        /// <summary>
+        /// Código IBGE do estado
+        /// </summary>
         public int IdState { get; set; }
+        /// <summary>
+        /// Código IBGE da cidade
+        /// </summary>
         public int IdCity { get; set; }
+        /// <summary>
+        /// Nome da Cidade
+        /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// Código completo da cidade no IBGE
+        /// </summary>
         public string CompleteId { get; set; }
-
+        /// <summary>
+        /// Representação textual da cidade
+        /// </summary>
         public override string ToString() => $"{IdState} {IdCity} {Name}";
 
         internal static readonly string rawCityData =
