@@ -1,13 +1,30 @@
 ﻿namespace Simple.Brazilian.Information.Places
 {
+    /// <summary>
+    /// Informções sobre estados (UFs)
+    /// </summary>
     public sealed class StateInfo
     {
         private StateInfo() { }
-
+        /// <summary>
+        /// Nome do estado
+        /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// Sigla do estado
+        /// </summary>
         public string UF { get; set; }
+        /// <summary>
+        /// Código do estado no IBGE
+        /// </summary>
         public int IdIBGE { get; set; }
+        /// <summary>
+        /// Capital administrativa do estado
+        /// </summary>
         public string Capital { get; set; }
+        /// <summary>
+        /// Área do estado em Km²
+        /// </summary>
         public double AreaKm2 { get; set; }
 
         //private byte[] bandeiraPng;
