@@ -66,7 +66,7 @@ namespace Simple.Brazilian.Validators
             return total;
         }
         /// <summary>
-        /// Executa cálculo do Mod11 (com multiplicação por 10) no texto, retorna INT
+        /// Executa cálculo do Mod11 com multiplicação por 10 no texto, retorna INT
         /// </summary>
         public static int CalculateMult10Mod11(string text, int min, int max)
         {
@@ -86,10 +86,34 @@ namespace Simple.Brazilian.Validators
             return resto;
         }
         /// <summary>
-        /// Executa cálculo do Mod11 no texto, retorna CHAR
+        /// Executa cálculo do Mod11 no texto, retorna INT
+        /// </summary>
+        public static int CalculateMod11(string text, int min, int max)
+        {
+            // Obtém a sequência que será multiplicada
+            var sequencia = GenerateReverseSequence(min, max, text.Length);
+            var chars = text.ToCharArray();
+            // Executa a multiplicação
+            var soma = SumMultiply(sequencia, chars);
+            // O valor deve calculado Mod 11 e então subtraído de 11
+            int resto = soma % 11;
+            // Para códigos de barras, o resto prefere 1
+            // para documentos o resto prefere 0
+            if (resto == 10) return 0;
+
+            return resto;
+        }
+        /// <summary>
+        /// Executa cálculo do Mod11 com multiplicação por 10 no texto, retorna CHAR
         /// </summary>
         public static char CalculateMult10Mod11Char(string text, int min, int max)
             => (char)('0' + CalculateMult10Mod11(text, min, max));
+
+        /// <summary>
+        /// Executa cálculo do Mod11 no texto, retorna CHAR
+        /// </summary>
+        public static char CalculateMod11Char(string text, int min, int max)
+            => (char)('0' + CalculateMod11(text, min, max));
 
         /// <summary>
         /// Executa verificação de documento com Mod11, valores de 9 a 2
