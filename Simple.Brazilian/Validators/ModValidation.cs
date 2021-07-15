@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Simple.Brazilian.Validators
 {
@@ -50,21 +51,7 @@ namespace Simple.Brazilian.Validators
         /// Multiplica dois arrays e retorna a soma
         /// </summary>
         public static int SumMultiply(int[] arr1, char[] arr2)
-        {
-            if (arr1 is null) throw new ArgumentNullException(nameof(arr1));
-            if (arr2 is null) throw new ArgumentNullException(nameof(arr2));
-
-            if (arr1.Length != arr2.Length) throw new ArgumentException("Os comprimentos devem ser iguais");
-
-            if (arr1.Length == 0) return 0;
-
-            int total = 0;
-            for (int i = 0; i < arr1.Length; i++)
-            {
-                total += arr1[i] * (arr2[i] - '0');
-            }
-            return total;
-        }
+            => SumMultiply(arr1, arr2.Select(o => o - '0').ToArray());
         /// <summary>
         /// Executa cálculo do Mod11 com multiplicação por 10 no texto, retorna INT
         /// </summary>
