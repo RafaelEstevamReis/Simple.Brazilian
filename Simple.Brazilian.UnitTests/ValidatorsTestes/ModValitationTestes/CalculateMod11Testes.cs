@@ -17,8 +17,8 @@ namespace Simple.Brazilian.UnitTests.ValidatorsTestes.ModValitationTestes
         [InlineData("847122540", 9, '9')]
         public void CalculateMod11_11_2(string text, int inum, char cnum)
         {
-            Assert.Equal(inum, ModValidation.CalculateMod11(text, 2, 11));
-            Assert.Equal(cnum, ModValidation.CalculateMod11Char(text, 2, 11));
+            Assert.Equal(inum, ModValidation.CalculateMult10Mod11(text, 2, 11));
+            Assert.Equal(cnum, ModValidation.CalculateMult10Mod11Char(text, 2, 11));
         }
     }
 }

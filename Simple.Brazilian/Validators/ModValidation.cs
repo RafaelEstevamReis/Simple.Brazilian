@@ -66,9 +66,9 @@ namespace Simple.Brazilian.Validators
             return total;
         }
         /// <summary>
-        /// Executa cálculo do Mod11 no texto, retorna INT
+        /// Executa cálculo do Mod11 (com multiplicação por 10) no texto, retorna INT
         /// </summary>
-        public static int CalculateMod11(string text, int min, int max)
+        public static int CalculateMult10Mod11(string text, int min, int max)
         {
             // Este Mod11 não serve para codigos de barras, apenas documentos
 
@@ -88,21 +88,35 @@ namespace Simple.Brazilian.Validators
         /// <summary>
         /// Executa cálculo do Mod11 no texto, retorna CHAR
         /// </summary>
-        public static char CalculateMod11Char(string text, int min, int max)
-            => (char)('0' + CalculateMod11(text, min, max));
+        public static char CalculateMult10Mod11Char(string text, int min, int max)
+            => (char)('0' + CalculateMult10Mod11(text, min, max));
+
         /// <summary>
-        /// Executa check de documento com Mod11, valores de 9 a 2
+        /// Executa verificação de documento com Mod11, valores de 9 a 2
         /// </summary>
+        /// <param name="text">Texto a ser verificado</param>
+        /// <param name="expectedLen">Comprimento eperado. 
+        /// Será chamada remoção de máscara se o comprimento for maior do que o esperado
+        /// </param>
         public static bool CheckDocumentMod1129(string text, int expectedLen)
         {
             if (text == null) return false;
-            if (text.Length < 2) return false;
 
             if (text.Length > expectedLen) text = Formatters.Text.RemoveMask(text);
             if (text.Length != expectedLen) return false;
 
+            return CheckDocumentMod1129(text);
+        }
+        /// <summary>
+        /// Executa verificação de documento com Mod11, valores de 9 a 2
+        /// </summary>
+        public static bool CheckDocumentMod1129(string text)
+        {
+            if (text == null) return false;
+            if (text.Length < 2) return false;
+
             char orgDv = text[text.Length - 1];
-            var calcDv = CalculateMod11Char(text.Substring(0, text.Length - 1), 2, 9);
+            var calcDv = CalculateMult10Mod11Char(text.Substring(0, text.Length - 1), 2, 9);
 
             return orgDv == calcDv;
         }
