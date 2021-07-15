@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Simple.Brazilian.UnitTests.ValidatorsTestes.ModValitationTestes
 {
-    public class CalculateMod11Testes
+    public class CalculateMult10Mod11Testes
     {
         [Theory]
         [InlineData("0318556006", 0, '0')] // resto 10
