@@ -9,61 +9,38 @@ namespace Simple.Brazilian.Validators
     public static class ModValidation
     {
         /// <summary>
-        /// Gerador de sequências decrescentes MOD
+        /// Retorna a soma da multiplicação de sequencias geradas entre Min e Max
         /// </summary>
-        /// <param name="min">Menor valor</param>
-        /// <param name="max">Maior valor</param>
-        /// <param name="len">Quantidade de números a serem gerados</param>
-        public static int[] GenerateReverseSequence(int min, int max, int len)
+        public static int SumMultiplySequence(char[] chars, int min, int max, bool reverse)
         {
-            int[] arr = new int[len];
-            int corrente = min;
-
-            for (int i = len - 1; i >= 0; i--)
+            // Generate sequence
+            int[] sequence = new int[chars.Length];
+            int current = min;
+            for (int i = 0; i < sequence.Length; i++)
             {
-                arr[i] = corrente;
-                corrente++;
-
-                if (corrente > max) corrente = min;
+                sequence[i] = current;
+                current++;
+                if (current > max) current = min;
             }
-            return arr;
-        }
-        /// <summary>
-        /// Multiplica dois arrays e retorna a soma
-        /// </summary>
-        public static int SumMultiply(int[] arr1, int[] arr2)
-        {
-            if (arr1 is null) throw new ArgumentNullException(nameof(arr1));
-            if (arr2 is null) throw new ArgumentNullException(nameof(arr2));
-
-            if (arr1.Length != arr2.Length) throw new ArgumentException("Os comprimentos devem ser iguais");
-
-            if (arr1.Length == 0) return 0;
-
+            // Reverse
+            if (reverse) Array.Reverse(sequence);
+            // Sum
             int total = 0;
-            for (int i = 0; i < arr1.Length; i++)
+            for (int i = 0; i < chars.Length; i++)
             {
-                total += arr1[i] * arr2[i];
+                total += (chars[i] - '0') * sequence[i];
             }
             return total;
         }
-        /// <summary>
-        /// Multiplica dois arrays e retorna a soma
-        /// </summary>
-        public static int SumMultiply(int[] arr1, char[] arr2)
-            => SumMultiply(arr1, arr2.Select(o => o - '0').ToArray());
+
         /// <summary>
         /// Executa cálculo do Mod11 com multiplicação por 10 no texto, retorna INT
         /// </summary>
         public static int CalculateMult10Mod11(string text, int min, int max)
         {
             // Este Mod11 não serve para codigos de barras, apenas documentos
+            var soma = SumMultiplySequence(text.ToCharArray(), min, max, true);
 
-            // Obtém a sequência que será multiplicada
-            var sequencia = GenerateReverseSequence(min, max, text.Length);
-            var chars = text.ToCharArray();
-            // Executa a multiplicação
-            var soma = SumMultiply(sequencia, chars);
             // O valor deve calculado Mod 11 e então subtraído de 11
             int resto = (10 * soma) % 11;
             // Para códigos de barras, o resto prefere 1
@@ -77,11 +54,7 @@ namespace Simple.Brazilian.Validators
         /// </summary>
         public static int CalculateMod11(string text, int min, int max)
         {
-            // Obtém a sequência que será multiplicada
-            var sequencia = GenerateReverseSequence(min, max, text.Length);
-            var chars = text.ToCharArray();
-            // Executa a multiplicação
-            var soma = SumMultiply(sequencia, chars);
+            var soma = SumMultiplySequence(text.ToCharArray(), min, max, true);
             // O valor deve calculado Mod 11 e então subtraído de 11
             int resto = soma % 11;
             // Para códigos de barras, o resto prefere 1
