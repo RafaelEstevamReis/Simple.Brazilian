@@ -4,6 +4,26 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
+        <member name="T:System.Linq.Enumerable">
+            <summary>
+            Classe para dar compatibilidade à NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`2">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`3">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`4">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
         <member name="T:Simple.Brazilian.Documents.CEP">
             <summary>
             Validador de CEP
@@ -671,22 +691,19 @@
             Validação e dados com "Mod"
             </summary>
         </member>
-        <member name="M:Simple.Brazilian.Validators.ModValidation.GenerateReverseSequence(System.Int32,System.Int32,System.Int32)">
+        <member name="M:Simple.Brazilian.Validators.ModValidation.SumMultiplySequence(System.Char[],System.Int32,System.Int32,System.Boolean)">
             <summary>
-            Gerador de sequências decrescentes MOD
-            </summary>
-            <param name="min">Menor valor</param>
-            <param name="max">Maior valor</param>
-            <param name="len">Quantidade de números a serem gerados</param>
-        </member>
-        <member name="M:Simple.Brazilian.Validators.ModValidation.SumMultiply(System.Int32[],System.Int32[])">
-            <summary>
-            Multiplica dois arrays e retorna a soma
+            Retorna a soma da multiplicação de sequencias geradas entre Min e Max
             </summary>
         </member>
-        <member name="M:Simple.Brazilian.Validators.ModValidation.SumMultiply(System.Int32[],System.Char[])">
+        <member name="M:Simple.Brazilian.Validators.ModValidation.SumMultiplySequence(System.String,System.Int32,System.Int32,System.Boolean)">
             <summary>
-            Multiplica dois arrays e retorna a soma
+            Retorna a soma da multiplicação de sequencias geradas entre Min e Max
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.ModValidation.CalculateMult10Mod11(System.String,System.Int32,System.Int32)">
+            <summary>
+            Executa cálculo do Mod11 com multiplicação por 10 no texto, retorna INT
             </summary>
         </member>
         <member name="M:Simple.Brazilian.Validators.ModValidation.CalculateMod11(System.String,System.Int32,System.Int32)">
@@ -694,14 +711,19 @@
             Executa cálculo do Mod11 no texto, retorna INT
             </summary>
         </member>
+        <member name="M:Simple.Brazilian.Validators.ModValidation.CalculateMult10Mod11Char(System.String,System.Int32,System.Int32)">
+            <summary>
+            Executa cálculo do Mod11 com multiplicação por 10 no texto, retorna CHAR
+            </summary>
+        </member>
         <member name="M:Simple.Brazilian.Validators.ModValidation.CalculateMod11Char(System.String,System.Int32,System.Int32)">
             <summary>
             Executa cálculo do Mod11 no texto, retorna CHAR
             </summary>
         </member>
-        <member name="M:Simple.Brazilian.Validators.ModValidation.CheckDocumentMod1129(System.String,System.Int32)">
+        <member name="M:Simple.Brazilian.Validators.ModValidation.CheckDocumentMod1129(System.String)">
             <summary>
-            Executa check de documento com Mod11, valores de 9 a 2
+            Executa verificação de documento com Mod11, valores de 9 a 2
             </summary>
         </member>
     </members>
