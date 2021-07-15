@@ -15,15 +15,28 @@ namespace Simple.Brazilian.Validators
         {
             // Generate sequence
             int[] sequence = new int[chars.Length];
-            int current = min;
-            for (int i = 0; i < sequence.Length; i++)
+
+            if (reverse)
             {
-                sequence[i] = current;
-                current++;
-                if (current > max) current = min;
+                int current = min;
+                for (int i = sequence.Length -1; i >= 0; i--)
+                {
+                    sequence[i] = current;
+                    current++;
+                    if (current > max) current = min;
+                }
             }
-            // Reverse
-            if (reverse) Array.Reverse(sequence);
+            else
+            {
+                int current = min;
+                for (int i = 0; i < sequence.Length; i++)
+                {
+                    sequence[i] = current;
+                    current++;
+                    if (current > max) current = min;
+                }
+            }
+            
             // Sum
             int total = 0;
             for (int i = 0; i < chars.Length; i++)
@@ -32,6 +45,11 @@ namespace Simple.Brazilian.Validators
             }
             return total;
         }
+        /// <summary>
+        /// Retorna a soma da multiplicação de sequencias geradas entre Min e Max
+        /// </summary>
+        public static int SumMultiplySequence(string text, int min, int max, bool reverse)
+            => SumMultiplySequence(text.ToCharArray(), min, max, reverse);
 
         /// <summary>
         /// Executa cálculo do Mod11 com multiplicação por 10 no texto, retorna INT
@@ -39,7 +57,7 @@ namespace Simple.Brazilian.Validators
         public static int CalculateMult10Mod11(string text, int min, int max)
         {
             // Este Mod11 não serve para codigos de barras, apenas documentos
-            var soma = SumMultiplySequence(text.ToCharArray(), min, max, true);
+            var soma = SumMultiplySequence(text, min, max, true);
 
             // O valor deve calculado Mod 11 e então subtraído de 11
             int resto = (10 * soma) % 11;
@@ -54,7 +72,7 @@ namespace Simple.Brazilian.Validators
         /// </summary>
         public static int CalculateMod11(string text, int min, int max)
         {
-            var soma = SumMultiplySequence(text.ToCharArray(), min, max, true);
+            var soma = SumMultiplySequence(text, min, max, true);
             // O valor deve calculado Mod 11 e então subtraído de 11
             int resto = soma % 11;
             // Para códigos de barras, o resto prefere 1
