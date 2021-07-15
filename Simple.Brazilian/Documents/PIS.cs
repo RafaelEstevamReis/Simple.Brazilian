@@ -15,6 +15,8 @@ namespace Simple.Brazilian.Documents
         /// <returns>True se o PIS é válido de acordo com o cálculo do Dígito Verificador</returns>
         public static bool IsValid(string pis)
         {
+            if (string.IsNullOrEmpty(pis)) return false;
+
             if (pis.Length > 11) pis = Unmask(pis);
             if (pis.Length != 11) return false;
 
