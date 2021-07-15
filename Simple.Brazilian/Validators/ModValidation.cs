@@ -78,22 +78,6 @@ namespace Simple.Brazilian.Validators
         /// <summary>
         /// Executa verificação de documento com Mod11, valores de 9 a 2
         /// </summary>
-        /// <param name="text">Texto a ser verificado</param>
-        /// <param name="expectedLen">Comprimento eperado. 
-        /// Será chamada remoção de máscara se o comprimento for maior do que o esperado
-        /// </param>
-        public static bool CheckDocumentMod1129(string text, int expectedLen)
-        {
-            if (text == null) return false;
-
-            if (text.Length > expectedLen) text = Formatters.Text.RemoveMask(text);
-            if (text.Length != expectedLen) return false;
-
-            return CheckDocumentMod1129(text);
-        }
-        /// <summary>
-        /// Executa verificação de documento com Mod11, valores de 9 a 2
-        /// </summary>
         public static bool CheckDocumentMod1129(string text)
         {
             if (text == null) return false;

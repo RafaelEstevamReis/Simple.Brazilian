@@ -13,8 +13,13 @@ namespace Simple.Brazilian.Documents
         /// </summary>
         /// <param name="pis">PIS a ser verificado</param>
         /// <returns>True se o PIS é válido de acordo com o cálculo do Dígito Verificador</returns>
-        public static bool IsValid(string pis) 
-            => Validators.ModValidation.CheckDocumentMod1129(pis, 11);
+        public static bool IsValid(string pis)
+        {
+            if (pis.Length > 11) pis = Unmask(pis);
+            if (pis.Length != 11) return false;
+
+            return Validators.ModValidation.CheckDocumentMod1129(pis);
+        }
         /// <summary>
         /// Aplica a máscara de PIS ___._____.__._
         /// </summary>
