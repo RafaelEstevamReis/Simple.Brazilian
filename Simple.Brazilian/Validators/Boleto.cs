@@ -21,8 +21,8 @@ namespace Simple.Brazilian.Validators
                 mult = mult == 2 ? 1 : 2;
             }
 
-            int diferenca = 10 - (sum % 10);
-            return diferenca % 10;
+            int DigitoVerificador = 10 - (sum % 10);
+            return DigitoVerificador;
         }
         /// <summary>
         /// Executa cálculo do Mod10 no texto, retorna []INT
