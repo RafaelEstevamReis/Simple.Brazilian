@@ -4,26 +4,6 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
-        <member name="T:System.Linq.Enumerable">
-            <summary>
-            Classe para dar compatibilidade à NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`2">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`3">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`4">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
         <member name="T:Simple.Brazilian.Documents.CEP">
             <summary>
             Validador de CEP
@@ -684,6 +664,11 @@
         <member name="F:Simple.Brazilian.Information.Places.UFs.EX">
             <summary>
             Exterior
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.Boleto.Mod10(System.String)">
+            <summary>
+            Executa cálculo do Mod10 no texto, retorna INT
             </summary>
         </member>
         <member name="T:Simple.Brazilian.Validators.ModValidation">
