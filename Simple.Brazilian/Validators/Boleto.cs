@@ -8,7 +8,30 @@ namespace Simple.Brazilian.Validators
 {
     public static class Boleto
     {
-        public static int[] CalculateMod10(string LinhaDigitavelBoleto)
+        /// <summary>
+        /// Executa cálculo do Mod10 no texto, retorna INT
+        /// </summary>
+        private static int Mod10(string str)
+        {
+            int mult = 2;
+            int sum = 0;
+
+            for (int i = (str.Length - 1); i >= 0; i--)
+            {
+                char c = str[i];
+
+                int res = Convert.ToInt32(c.ToString()) * mult;
+                sum += res > 9 ? (res - 9) : res;
+                mult = mult == 2 ? 1 : 2;
+            }
+
+            int diferenca = 10 - (sum % 10);
+            return diferenca % 10;
+        }
+        /// <summary>
+        /// Executa cálculo do Mod10 no texto, retorna []INT
+        /// </summary>
+        public static int[] CalculateMod10_old(string LinhaDigitavelBoleto)
         {
             int[] camposDV = new int[3];
             int soma = 0;
@@ -39,7 +62,5 @@ namespace Simple.Brazilian.Validators
             }
             return camposDV;
         }
-
-
     }
 }
