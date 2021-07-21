@@ -25,6 +25,14 @@ namespace Simple.Brazilian.Validators
             return DigitoVerificador;
         }
         /// <summary>
+        /// Executa cálculo do Mod11
+        /// </summary>
+        public static int Mod11(string campo1, string campo2, string campo3)
+        {
+
+            throw new NotImplementedException();
+        }
+        /// <summary>
         /// Executa cálculo do Mod10 no texto, retorna []INT
         /// </summary>
         //public static int[] CalculateMod10_old(string LinhaDigitavelBoleto)

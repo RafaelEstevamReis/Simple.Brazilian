@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Simple.Brazilian.UnitTests.ValidatorsTestes.ModValitationTestes
 {
-    public class CalculateMod10Testes
+    public class BoletoCalculateMod10
     {
         [Theory]
         [InlineData("001905009", 5)]
@@ -12,6 +12,7 @@ namespace Simple.Brazilian.UnitTests.ValidatorsTestes.ModValitationTestes
         [InlineData("033991234", 7)]
         [InlineData("341910901", 6)]
         [InlineData("0419793456", 7)]
+        [InlineData("00190500940144816060680935031", 5)]
 
         public void CalculateMod10(string text, int inum)
         {
