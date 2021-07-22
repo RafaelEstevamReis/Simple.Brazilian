@@ -676,11 +676,6 @@
             Executa cálculo do Mod11
             </summary>
         </member>
-        <member name="M:Simple.Brazilian.Validators.Boleto.CalculateMod10_old(System.String)">
-            <summary>
-            Executa cálculo do Mod10 no texto, retorna []INT
-            </summary>
-        </member>
         <member name="T:Simple.Brazilian.Validators.ModValidation">
             <summary>
             Validação e dados com "Mod"

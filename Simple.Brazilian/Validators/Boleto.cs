@@ -29,8 +29,44 @@ namespace Simple.Brazilian.Validators
         /// </summary>
         public static int Mod11(string campo1, string campo2, string campo3)
         {
+            int mult = 2;
+            int sum = 0;
 
-            throw new NotImplementedException();
+            for (int i = 9; i >= 0; i--)
+            {
+                char c = campo1[i];
+                int res = Convert.ToInt32(c.ToString()) * mult;
+                sum += res;
+                mult++;
+                if (mult > 9) mult = 2;
+            }
+            mult = 2;
+            for (int i = 10; i >= 0; i--)
+            {
+                char c = campo2[i];
+                int res = Convert.ToInt32(c.ToString()) * mult;
+                sum += res;
+                mult++;
+                if (mult > 9) mult = 2;
+            }
+            mult = 2;
+            for (int i = 10; i >= 0; i--)
+            {
+                char c = campo3[i];
+                int res = Convert.ToInt32(c.ToString()) * mult;
+                sum += res;
+                mult++;
+                if (mult > 9) mult = 2;
+            }
+
+            int mod11 = sum % 11;
+
+            if (mod11 == 0 || mod11 == 10 || mod11 == 11)
+            {
+                return 1;
+            }
+
+            return mod11;
         }
         /// <summary>
         /// Executa cálculo do Mod10 no texto, retorna []INT
