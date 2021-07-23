@@ -71,19 +71,19 @@ namespace Simple.Brazilian.Validators
             return mod11;
         }
 
-        public static int FatorVencimento(string dataVencimento)
+        public static int FatorVencimento(string dataVencimentoRaw)
         {
-            int ano = Convert.ToInt32(dataVencimento.Substring(0, 4));
-            int mes = Convert.ToInt32(dataVencimento.Substring(4, 2));
-            int dia = Convert.ToInt32(dataVencimento.Substring(6, 2));
+            int ano = Convert.ToInt32(dataVencimentoRaw.Substring(0, 4));
+            int mes = Convert.ToInt32(dataVencimentoRaw.Substring(4, 2));
+            int dia = Convert.ToInt32(dataVencimentoRaw.Substring(6, 2));
 
             // Calcula o fator de vencimento
             var dataInicial = new DateTime(1997, 10, 07); // Imutável
-            var dataVencimentoT = new DateTime(ano, mes, dia);
+            var dataVencimento = new DateTime(ano, mes, dia);
 
-            var teste = (dataVencimentoT - dataInicial).Days;
+            var fatorVencimento = (dataVencimento - dataInicial).Days;
 
-            return teste;
+            return fatorVencimento;
         }
         /// <summary>
         /// Executa cálculo do Mod10 no texto, retorna []INT
