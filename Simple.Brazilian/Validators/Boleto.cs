@@ -22,6 +22,8 @@ namespace Simple.Brazilian.Validators
             }
 
             int DigitoVerificador = 10 - (sum % 10);
+            if (DigitoVerificador == 10) DigitoVerificador = 0;
+
             return DigitoVerificador;
         }
         /// <summary>
