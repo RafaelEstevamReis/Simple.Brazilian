@@ -4,6 +4,26 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
+        <member name="T:System.Linq.Enumerable">
+            <summary>
+            Classe para dar compatibilidade à NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`2">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`3">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`4">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
         <member name="T:Simple.Brazilian.Documents.CEP">
             <summary>
             Validador de CEP
@@ -675,6 +695,13 @@
             <summary>
             Executa cálculo do Mod11
             </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.Boleto.FatorVencimento(System.String)">
+            <summary>
+            Executa o cálculo do Fator de Vencimento no formato "dd/mm/yyyy"
+            </summary>
+            <param name="dataVencimentoRaw"></param>
+            <returns>int fatorVencimento</returns>
         </member>
         <member name="T:Simple.Brazilian.Validators.ModValidation">
             <summary>

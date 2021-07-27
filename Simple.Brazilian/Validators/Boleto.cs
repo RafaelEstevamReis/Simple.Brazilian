@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Simple.Brazilian.Validators
 {
@@ -70,17 +71,29 @@ namespace Simple.Brazilian.Validators
 
             return mod11;
         }
-
+        /// <summary>
+        /// Executa o cálculo do Fator de Vencimento no formato "dd/mm/yyyy"
+        /// </summary>
+        /// <param name="dataVencimentoRaw"></param>
+        /// <returns>int fatorVencimento</returns>
         public static int FatorVencimento(string dataVencimentoRaw)
         {
-            int ano = Convert.ToInt32(dataVencimentoRaw.Substring(0, 4));
-            int mes = Convert.ToInt32(dataVencimentoRaw.Substring(4, 2));
-            int dia = Convert.ToInt32(dataVencimentoRaw.Substring(6, 2));
+            // Uma int array recebe os valores da data sem as barras '/'
+            var dataUnmask = dataVencimentoRaw.Split('/')
+                                          .Select(Int32.Parse)
+                                          .ToArray();
 
-            // Calcula o fator de vencimento
-            var dataInicial = new DateTime(1997, 10, 07); // Imutável
-            var dataVencimento = new DateTime(ano, mes, dia);
+            // Data de refêrencia imutável
+            var dataInicial = new DateTime(1997, 10, 07);
 
+            // Recebe as datas nas seguintes ordens:
+            // Ano posição 2, Mês posição 1, Dia posição 0
+            var dataVencimento = new DateTime(dataUnmask[2],
+                                              dataUnmask[1], 
+                                              dataUnmask[0]);
+
+            // O fator de vencimento é o total de dias entre
+            // a data inicial e a data de vencimento
             var fatorVencimento = (dataVencimento - dataInicial).Days;
 
             return fatorVencimento;
