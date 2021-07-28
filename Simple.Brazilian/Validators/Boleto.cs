@@ -6,16 +6,19 @@ namespace Simple.Brazilian.Validators
     public static class Boleto
     {
         /// <summary>
-        /// Executa cálculo do Mod10 no texto, retorna INT
+        /// Executa o calculo do digito verificador
+        /// do campo da linha digitavel 1, 2, ou 3 do boleto
         /// </summary>
-        public static int Mod10(string str)
+        /// <param name="campoLinhaDigitavel"></param>
+        /// <returns>int DigitoVerificador</returns>
+        public static int CalculaDigitoVerificador(string campoLinhaDigitavel)
         {
             int mult = 2;
             int sum = 0;
 
-            for (int i = (str.Length - 1); i >= 0; i--)
+            for (int i = (campoLinhaDigitavel.Length - 1); i >= 0; i--)
             {
-                char c = str[i];
+                char c = campoLinhaDigitavel[i];
 
                 int res = Convert.ToInt32(c.ToString()) * mult;
                 sum += res > 9 ? (res - 9) : res;
@@ -28,48 +31,61 @@ namespace Simple.Brazilian.Validators
             return DigitoVerificador;
         }
         /// <summary>
-        /// Executa cálculo do Mod11
+        /// Executa o calculo do DAC do codigo de barras
+        /// a partir do formato:
+        /// AAABXXXXXXXXXXXXXXCCCCCCCCCCCCDDDDEEEEEFGGG;
+        /// A = Codigo do Banco; B = Codigo da Moeda; X = Campo 5;
+        /// C = Nosso Numero; D = Agencia; E = Conta; F = DAC; G = Zeros;
+        /// ou a linha digitavel do código de barras:
+        /// AAABCCCCCZCCCCCCCDDDZDEEEEEFGGGZXXXXXXXXXXXXXX;
+        /// Z = Digito Verificador;
         /// </summary>
-        public static int Mod11(string campo1, string campo2, string campo3)
+        /// <param name="valor"></param>
+        /// <returns>int DACcodigoBarras</returns>
+        public static int CalculoDACcodigoBarras(string valor)
         {
+            // Caso foi insirido 
+            if (valor.Length == 46)
+            {
+                // Removendo os tres digitos verificadores da linha digitavel
+                // do codigo de barras
+                valor = valor.Remove(9, 1);
+                valor = valor.Remove(19, 1);
+                valor = valor.Remove(29, 1);
+
+                string[] puzzle = new string[3];
+
+                // Codigo do Banco + Num. Moeda
+                puzzle[0] = valor.Substring(0, 4);
+                // Nosso Numero + Agencia + Conta + DAC + Zeros
+                puzzle[1] = valor.Substring(4, 25);
+                // Fator Vencimento + Valor do Titulo
+                // (Campo 5 da linha digitavel do codigo de barras)
+                puzzle[2] = valor.Substring(29, 14);
+                // Organizando array para a string para que seja calculado
+                valor = puzzle[0] + puzzle[2] + puzzle[1];
+            }
+
             int mult = 2;
             int sum = 0;
 
-            for (int i = 9; i >= 0; i--)
+            for (int i = 42; i >= 0; i--)
             {
-                char c = campo1[i];
-                int res = Convert.ToInt32(c.ToString()) * mult;
-                sum += res;
-                mult++;
-                if (mult > 9) mult = 2;
-            }
-            mult = 2;
-            for (int i = 10; i >= 0; i--)
-            {
-                char c = campo2[i];
-                int res = Convert.ToInt32(c.ToString()) * mult;
-                sum += res;
-                mult++;
-                if (mult > 9) mult = 2;
-            }
-            mult = 2;
-            for (int i = 10; i >= 0; i--)
-            {
-                char c = campo3[i];
+                char c = valor[i];
                 int res = Convert.ToInt32(c.ToString()) * mult;
                 sum += res;
                 mult++;
                 if (mult > 9) mult = 2;
             }
 
-            int mod11 = sum % 11;
+            int bDAC = 11 - (sum % 11);
 
-            if (mod11 == 0 || mod11 == 10 || mod11 == 11)
-            {
-                return 1;
-            }
+            if (bDAC == 0) return _ = 1;
+            if (bDAC == 1) return _ = 1;
+            if (bDAC == 10) return _ = 1;
+            if (bDAC == 11) return _ = 1;
 
-            return mod11;
+            return bDAC;
         }
         /// <summary>
         /// Executa o cálculo do Fator de Vencimento no formato "dd/mm/yyyy"
@@ -98,39 +114,5 @@ namespace Simple.Brazilian.Validators
 
             return fatorVencimento;
         }
-        /// <summary>
-        /// Executa cálculo do Mod10 no texto, retorna []INT
-        /// </summary>
-        //public static int[] CalculateMod10_old(string LinhaDigitavelBoleto)
-        //{
-        //    int[] camposDV = new int[3];
-        //    int soma = 0;
-
-        //    for (int i = 0; i < 29; i++)
-        //    {
-        //        int digito = Convert.ToInt32(LinhaDigitavelBoleto[i..(i + 1)]);
-        //        int peso = i % 2 == 0 ? 2 : 1;
-
-        //        int valor = digito * peso;
-
-        //        if (valor < 10)
-        //        {
-        //            soma += valor;
-        //        }
-        //        else
-        //        {
-        //            int d1 = valor % 10;
-        //            int d2 = valor / 10;
-
-        //            soma += d1;
-        //            soma += d2;
-        //        }
-
-        //        if (i == 8) camposDV[0] = 30 - (soma % 10);
-        //        if (i == 18) camposDV[1] = 40 - ((soma - camposDV[0]) % 10);
-        //        if (i == 28) camposDV[2] = 40 - ((soma - (camposDV[0] + camposDV[1])) % 10);
-        //    }
-        //    return camposDV;
-        //}
     }
 }
