@@ -53,17 +53,17 @@ namespace Simple.Brazilian.Validators
                 valor = valor.Remove(19, 1);
                 valor = valor.Remove(29, 1);
 
-                string[] puzzle = new string[3];
+                string[] aux = new string[3];
 
                 // Codigo do Banco + Num. Moeda
-                puzzle[0] = valor.Substring(0, 4);
+                aux[0] = valor.Substring(0, 4);
                 // Nosso Numero + Agencia + Conta + DAC + Zeros
-                puzzle[1] = valor.Substring(4, 25);
+                aux[1] = valor.Substring(4, 25);
                 // Fator Vencimento + Valor do Titulo
                 // (Campo 5 da linha digitavel do codigo de barras)
-                puzzle[2] = valor.Substring(29, 14);
+                aux[2] = valor.Substring(29, 14);
                 // Organizando array para a string para que seja calculado
-                valor = puzzle[0] + puzzle[2] + puzzle[1];
+                valor = aux[0] + aux[2] + aux[1];
             }
 
             int mult = 2;
