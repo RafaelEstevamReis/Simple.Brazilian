@@ -19,7 +19,9 @@ namespace Simple.Brazilian.Validators
             for (int i = (campoLinhaDigitavel.Length - 1); i >= 0; i--)
             {
                 char c = campoLinhaDigitavel[i];
-
+                /// Multiplica-se cada algarismo do campo pela sequência de 
+                /// multiplicadores 2, 1, 2, 1, 2, 1..., posicionados 
+                /// da direita para a esquerda;
                 int res = Convert.ToInt32(c.ToString()) * mult;
                 sum += res > 9 ? (res - 9) : res;
                 mult = mult == 2 ? 1 : 2;
@@ -62,10 +64,15 @@ namespace Simple.Brazilian.Validators
                 // Fator Vencimento + Valor do Titulo
                 // (Campo 5 da linha digitavel do codigo de barras)
                 aux[2] = valor.Substring(29, 14);
-                // Organizando array para a string para que seja calculado
+                // Organizando a array para a string, para que seja calculado em seguida
                 valor = aux[0] + aux[2] + aux[1];
             }
 
+            /*
+            Tomando-se os 43 algarismos que compõem o Código de Barras (sem considerar a 5ª posição), 
+            multiplicando-os, iniciando-se da direita para a esquerda, pela sequência numérica de 2 a 9
+            (2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4... e assim por diante)
+            */
             int mult = 2;
             int sum = 0;
 
@@ -80,6 +87,7 @@ namespace Simple.Brazilian.Validators
 
             int bDAC = 11 - (sum % 11);
 
+            // Se o resultado desta for igual a 0, 1, 10 ou 11, considere DAC = 1.
             if (bDAC == 0) return _ = 1;
             if (bDAC == 1) return _ = 1;
             if (bDAC == 10) return _ = 1;
