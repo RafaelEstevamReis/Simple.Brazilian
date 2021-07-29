@@ -13,8 +13,8 @@ namespace Simple.Brazilian.Validators
         /// <returns>int DigitoVerificador</returns>
         public static int CalculaDigitoVerificador(string campoLinhaDigitavel)
         {
-            int mult = 2;
-            int sum = 0;
+            int multiplicador = 2;
+            int somatoria = 0;
 
             for (int i = (campoLinhaDigitavel.Length - 1); i >= 0; i--)
             {
@@ -22,13 +22,20 @@ namespace Simple.Brazilian.Validators
                 /// Multiplica-se cada algarismo do campo pela sequência de 
                 /// multiplicadores 2, 1, 2, 1, 2, 1..., posicionados 
                 /// da direita para a esquerda;
-                int res = Convert.ToInt32(c.ToString()) * mult;
-                sum += res > 9 ? (res - 9) : res;
-                mult = mult == 2 ? 1 : 2;
+                int resultado = Convert.ToInt32(c.ToString()) * multiplicador;
+                /// Somando individualmente os algarismo
+                /// Exemplo: Se o resultado da multiplicação anterior foi
+                /// de 16 então faça 1 + 6 = 7; E faça a somatória.
+                somatoria += resultado > 9 ? (resultado - 9) : resultado;
+                
+                multiplicador = multiplicador == 2 ? 1 : 2;
             }
-
-            int DigitoVerificador = 10 - (sum % 10);
-            if (DigitoVerificador == 10) DigitoVerificador = 0;
+            /// Dividindo a somatória por 10, a fim de determinar o resto da divisão.
+            /// Em seguida subtraindo o resto da divisão por 10 para obter finalmente
+            /// o digito verificador
+            int DigitoVerificador = 10 - (somatoria % 10);
+            // Se o resultado for 10 considere-se que o DV seja 0
+            if (DigitoVerificador == 10) return _ = 0;
 
             return DigitoVerificador;
         }
@@ -68,11 +75,11 @@ namespace Simple.Brazilian.Validators
                 valor = aux[0] + aux[2] + aux[1];
             }
 
-            /*
-            Tomando-se os 43 algarismos que compõem o Código de Barras (sem considerar a 5ª posição), 
-            multiplicando-os, iniciando-se da direita para a esquerda, pela sequência numérica de 2 a 9
-            (2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4... e assim por diante)
-            */
+
+            /// Tomando-se os 43 algarismos que compõem o Código de Barras (sem considerar a 5ª posição), 
+            /// multiplicando-os, iniciando-se da direita para a esquerda, pela sequência numérica de 2 a 9
+            /// (2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4... e assim por diante)
+
             int mult = 2;
             int sum = 0;
 
