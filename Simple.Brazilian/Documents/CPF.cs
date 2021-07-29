@@ -21,6 +21,30 @@ namespace Simple.Brazilian.Documents
             | ValidaCPF_Org | 196.09 ns | 1.214 ns | 1.136 ns | 0.0801 |     - |     - |     168 B |
              */
 
+            if (!CalculateDigits(cpf, out int firstDigitVerification, out int secondDigitVerification)) 
+                return false;
+
+            int firstDigit = cpf[9] - '0';
+            int secondDigit = cpf[10] - '0';
+
+            if (firstDigitVerification != firstDigit || secondDigitVerification != secondDigit)
+                return false;
+
+            // Não é válido se qualquer um dos dígitos for diferente
+            for (int i = 1; i < 11; i++)
+            {
+                // Se algum for diferente, o CPF é válido
+                if (cpf[i] != cpf[0]) return true;
+            }
+
+            return false;
+        }
+
+        internal static bool CalculateDigits(string cpf, out int firstDigitVerification, out int secondDigitVerification)
+        {
+            firstDigitVerification = -1;
+            secondDigitVerification = -1;
+
             // Vazio ou nulo
             if (string.IsNullOrEmpty(cpf))
                 return false;
@@ -39,7 +63,7 @@ namespace Simple.Brazilian.Documents
             int secondSum = 0;
             int countdown = 11;
             for (int i = 0; i < 9; i++)
-            {                
+            {
                 int intValue = cpf[i] - '0';
                 // Não é número ?
                 if (intValue < 0 || intValue > 9) return false;
@@ -50,26 +74,17 @@ namespace Simple.Brazilian.Documents
             }
             secondSum += 2 * firstDigit;
 
-            int firstDigitVerification = (firstSum * 10) % 11;
-            int secondDigitVerification = (secondSum * 10) % 11;
+            firstDigitVerification = (firstSum * 10) % 11;
+            secondDigitVerification = (secondSum * 10) % 11;
 
             if (firstDigitVerification == 10)
                 firstDigitVerification = 0;
             if (secondDigitVerification == 10)
                 secondDigitVerification = 0;
 
-            if (firstDigitVerification != firstDigit || secondDigitVerification != secondDigit)
-                return false;
-
-            // Não é válido se qualquer um dos dígitos for diferente
-            for (int i = 1; i < 11; i++)
-            {
-                // Se algum for diferente, o CPF é válido
-                if (cpf[i] != cpf[0]) return true;
-            }
-
-            return false;
+            return true;
         }
+
 
         /// <summary>
         /// Aplica a máscara de CPF ___.___.___-__
