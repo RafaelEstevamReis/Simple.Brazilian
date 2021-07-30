@@ -21,18 +21,17 @@ namespace Simple.Brazilian.Documents
             | ValidaCPF_Org | 196.09 ns | 1.214 ns | 1.136 ns | 0.0801 |     - |     - |     168 B |
              */
 
+            if (string.IsNullOrEmpty(cpf))
+                return false;
+
             // Se for maior, retira a máscara
             if (cpf.Length > 11) cpf = Unmask(cpf);
-            if (cpf.Length < 11) return false;
+            if (cpf.Length != 11) return false;
 
             int firstDigit = cpf[9] - '0';
             int secondDigit = cpf[10] - '0';
 
-            // Deve ser exatamente 11
-            if (cpf.Length > 9)
-                cpf = cpf.Substring(0, 9);
-
-            if (!CalculateDigits(cpf, out int firstDigitVerification, out int secondDigitVerification))
+            if (!CalculateDigits(cpf.Substring(0, 9), out int firstDigitVerification, out int secondDigitVerification))
                 return false;
 
             if (firstDigitVerification != firstDigit || secondDigitVerification != secondDigit)
@@ -48,7 +47,7 @@ namespace Simple.Brazilian.Documents
             return false;
         }
 
-        public static bool CalculateDigits(string cpf, out int firstDigitVerification, out int secondDigitVerification)
+        private static bool CalculateDigits(string cpf, out int firstDigitVerification, out int secondDigitVerification)
         {
             firstDigitVerification = -1;
             secondDigitVerification = -1;
