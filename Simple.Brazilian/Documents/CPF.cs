@@ -21,11 +21,19 @@ namespace Simple.Brazilian.Documents
             | ValidaCPF_Org | 196.09 ns | 1.214 ns | 1.136 ns | 0.0801 |     - |     - |     168 B |
              */
 
-            if (!CalculateDigits(cpf, out int firstDigitVerification, out int secondDigitVerification)) 
-                return false;
+            // Se for maior, retira a máscara
+            if (cpf.Length > 11) cpf = Unmask(cpf);
+            if (cpf.Length < 11) return false;
 
             int firstDigit = cpf[9] - '0';
             int secondDigit = cpf[10] - '0';
+
+            // Deve ser exatamente 11
+            if (cpf.Length > 9)
+                cpf = cpf.Substring(0, 9);
+
+            if (!CalculateDigits(cpf, out int firstDigitVerification, out int secondDigitVerification))
+                return false;
 
             if (firstDigitVerification != firstDigit || secondDigitVerification != secondDigit)
                 return false;
@@ -40,7 +48,7 @@ namespace Simple.Brazilian.Documents
             return false;
         }
 
-        internal static bool CalculateDigits(string cpf, out int firstDigitVerification, out int secondDigitVerification)
+        public static bool CalculateDigits(string cpf, out int firstDigitVerification, out int secondDigitVerification)
         {
             firstDigitVerification = -1;
             secondDigitVerification = -1;
@@ -49,15 +57,8 @@ namespace Simple.Brazilian.Documents
             if (string.IsNullOrEmpty(cpf))
                 return false;
 
-            // Se for maior, retira a máscara
-            if (cpf.Length > 11) cpf = Unmask(cpf);
-
-            // Deve ser exatamente 11
-            if (cpf.Length != 11)
+            if (cpf.Length != 9)
                 return false;
-
-            int firstDigit = cpf[9] - '0';
-            int secondDigit = cpf[10] - '0';
 
             int firstSum = 0;
             int secondSum = 0;
@@ -72,13 +73,16 @@ namespace Simple.Brazilian.Documents
                 secondSum += intValue * countdown;
                 countdown -= 1;
             }
-            secondSum += 2 * firstDigit;
 
             firstDigitVerification = (firstSum * 10) % 11;
-            secondDigitVerification = (secondSum * 10) % 11;
+
 
             if (firstDigitVerification == 10)
                 firstDigitVerification = 0;
+
+            secondSum += 2 * firstDigitVerification;
+            secondDigitVerification = (secondSum * 10) % 11;
+
             if (secondDigitVerification == 10)
                 secondDigitVerification = 0;
 
