@@ -1,15 +1,17 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 
 namespace Simple.Brazilian.Validators
 {
     public static class Boleto
     {
+        private static readonly DateTime DATA_BASE = new DateTime(1997, 10, 07);
+
         /// <summary>
         /// Executa o calculo do digito verificador
         /// do campo da linha digitavel 1, 2, ou 3 do boleto
         /// </summary>
-        /// <param name="campoLinhaDigitavel"></param>
         /// <returns>int DigitoVerificador</returns>
         public static int CalculaDigitoVerificador(string campoLinhaDigitavel)
         {
@@ -27,7 +29,7 @@ namespace Simple.Brazilian.Validators
                 /// Exemplo: Se o resultado da multiplicação anterior foi
                 /// de 16 então faça 1 + 6 = 7; E faça a somatória.
                 somatoria += resultado > 9 ? (resultado - 9) : resultado;
-                
+
                 multiplicador = multiplicador == 2 ? 1 : 2;
             }
             /// Dividindo a somatória por 10, a fim de determinar o resto da divisão.
@@ -95,10 +97,10 @@ namespace Simple.Brazilian.Validators
             int bDAC = 11 - (sum % 11);
 
             // Se o resultado desta for igual a 0, 1, 10 ou 11, considere DAC = 1.
-            if (bDAC == 0) return _ = 1;
-            if (bDAC == 1) return _ = 1;
-            if (bDAC == 10) return _ = 1;
-            if (bDAC == 11) return _ = 1;
+            if (bDAC == 0) return 1;
+            //if (bDAC == 1) return 1;
+            if (bDAC == 10) return 1;
+            if (bDAC == 11) return 1;
 
             return bDAC;
         }
@@ -109,25 +111,11 @@ namespace Simple.Brazilian.Validators
         /// <returns>int fatorVencimento</returns>
         public static int FatorVencimento(string dataVencimentoRaw)
         {
-            // Uma int array recebe os valores da data sem as barras '/'
-            var dataUnmask = dataVencimentoRaw.Split('/')
-                                          .Select(Int32.Parse)
-                                          .ToArray();
-
-            // Data de refêrencia imutável
-            var dataInicial = new DateTime(1997, 10, 07);
-
-            // Recebe as datas nas seguintes ordens:
-            // Ano posição 2, Mês posição 1, Dia posição 0
-            var dataVencimento = new DateTime(dataUnmask[2],
-                                              dataUnmask[1], 
-                                              dataUnmask[0]);
+            var dataVencimento = DateTime.ParseExact(dataVencimentoRaw, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
             // O fator de vencimento é o total de dias entre
-            // a data inicial e a data de vencimento
-            var fatorVencimento = (dataVencimento - dataInicial).Days;
-
-            return fatorVencimento;
+            // a data base e a data de vencimento
+            return (dataVencimento - DATA_BASE).Days;
         }
     }
 }
