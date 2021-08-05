@@ -691,7 +691,6 @@
             Executa o calculo do digito verificador
             do campo da linha digitavel 1, 2, ou 3 do boleto
             </summary>
-            <param name="campoLinhaDigitavel"></param>
             <returns>int DigitoVerificador</returns>
         </member>
         <member name="M:Simple.Brazilian.Validators.Boleto.CalculoDACcodigoBarras(System.String)">
