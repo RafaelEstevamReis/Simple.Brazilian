@@ -686,6 +686,35 @@
             Exterior
             </summary>
         </member>
+        <member name="M:Simple.Brazilian.Validators.Boleto.CalculaDigitoVerificador(System.String)">
+            <summary>
+            Executa o calculo do digito verificador
+            do campo da linha digitavel 1, 2, ou 3 do boleto
+            </summary>
+            <param name="campoLinhaDigitavel"></param>
+            <returns>int DigitoVerificador</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.Boleto.CalculoDACcodigoBarras(System.String)">
+            <summary>
+            Executa o calculo do DAC do codigo de barras
+            a partir do formato:
+            AAABXXXXXXXXXXXXXXCCCCCCCCCCCCDDDDEEEEEFGGG;
+            A = Codigo do Banco; B = Codigo da Moeda; X = Campo 5;
+            C = Nosso Numero; D = Agencia; E = Conta; F = DAC; G = Zeros;
+            ou a linha digitavel do código de barras:
+            AAABCCCCCZCCCCCCCDDDZDEEEEEFGGGZXXXXXXXXXXXXXX;
+            Z = Digito Verificador;
+            </summary>
+            <param name="valor"></param>
+            <returns>int DACcodigoBarras</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.Boleto.FatorVencimento(System.String)">
+            <summary>
+            Executa o cálculo do Fator de Vencimento no formato "dd/mm/yyyy"
+            </summary>
+            <param name="dataVencimentoRaw"></param>
+            <returns>int fatorVencimento</returns>
+        </member>
         <member name="T:Simple.Brazilian.Validators.ModValidation">
             <summary>
             Validação e dados com "Mod"
