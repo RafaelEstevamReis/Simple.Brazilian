@@ -1,7 +1,7 @@
 ﻿using Simple.Brazilian.Validators;
 using Xunit;
 
-namespace Simple.Brazilian.UnitTests.ValidatorsTestes.ModValitationTestes
+namespace Simple.Brazilian.UnitTests.ValidatorsTestes.BoletoTestes
 {
     public class BoletoCalculateDigitoVerificador
     {

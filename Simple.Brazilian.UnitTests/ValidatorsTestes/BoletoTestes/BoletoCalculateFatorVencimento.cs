@@ -1,7 +1,7 @@
 ﻿using Simple.Brazilian.Validators;
 using Xunit;
 
-namespace Simple.Brazilian.UnitTests.ValidatorsTestes.ModValitationTestes
+namespace Simple.Brazilian.UnitTests.ValidatorsTestes.BoletoTestes
 {
     public class BoletoCalculateFatorVencimento
     {
@@ -10,10 +10,9 @@ namespace Simple.Brazilian.UnitTests.ValidatorsTestes.ModValitationTestes
         [InlineData("01/12/2002", 1881)]
         [InlineData("29/03/2007", 3460)]
         [InlineData("21/02/2025", 9999)]
-
-        public void CalculaFatorVencimento_Raw(string data, int inum)
+        public void CalculaFatorVencimento_Raw(string data, int valorDias)
         {
-            Assert.Equal(inum, Boleto.FatorVencimento(data));
+            Assert.Equal(valorDias, Boleto.FatorVencimento(data));
         }
     }
 }
