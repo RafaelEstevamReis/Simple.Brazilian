@@ -4,26 +4,6 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
-        <member name="T:System.Linq.Enumerable">
-            <summary>
-            Classe para dar compatibilidade à NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`2">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`3">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`4">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
         <member name="T:Simple.Brazilian.Documents.CEP">
             <summary>
             Validador de CEP
@@ -764,6 +744,16 @@
         <member name="M:Simple.Brazilian.Validators.ModValidation.CheckDocumentMod1129(System.String)">
             <summary>
             Executa verificação de documento com Mod11, valores de 9 a 2
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.ModValidation.Calculate2121Mod10IndividualDigits(System.String)">
+            <summary>
+            Executa cálculo no padrão 2121 em Mod10 no texto, retorna INT
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.ModValidation.Calculate2121Mod10IndividualDigitsChar(System.String)">
+            <summary>
+            Executa cálculo no padrão 2121 em Mod10 no texto, retorna CHAR
             </summary>
         </member>
     </members>
