@@ -6,6 +6,7 @@ namespace Simple.Brazilian.UnitTests.ValidatorsTestes.BoletoTestes
     public class BoletoCalculateFatorVencimento
     {
         [Theory]
+        [InlineData("07/10/1997", 0)]
         [InlineData("03/07/2000", 1000)]
         [InlineData("01/12/2002", 1881)]
         [InlineData("29/03/2007", 3460)]
