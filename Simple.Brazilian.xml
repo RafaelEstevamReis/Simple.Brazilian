@@ -671,7 +671,7 @@
             Classe para funções de validação de boletos bancários
             </summary>
         </member>
-        <member name="M:Simple.Brazilian.Validators.Boleto.CalculateDV(System.String)">
+        <member name="M:Simple.Brazilian.Validators.Boleto.CalculateDV_Itau(System.String)">
             <summary>
             Executa o calculo do digito verificador
             do campo da linha digitavel 1, 2, ou 3 do boleto
