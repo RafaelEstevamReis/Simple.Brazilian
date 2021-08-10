@@ -31,14 +31,14 @@
         </member>
         <member name="M:Simple.Brazilian.Documents.CEP.IsValid(System.String)">
             <summary>
-            Verifica se o CEP tem ocomprimento correto
+            Verifica se o CEP tem o comprimento correto
             </summary>
             <param name="cep">CEP a ser verificado</param>
             <returns>True se o CEP tem o comprimento correto; False senão</returns>
         </member>
         <member name="M:Simple.Brazilian.Documents.CEP.IsValid(System.String,Simple.Brazilian.Information.Places.UFs)">
             <summary>
-            Verifica se o CEP tem ocomprimento correto e se corresponde ao UF designado
+            Verifica se o CEP tem o comprimento correto e se corresponde ao UF designado
             </summary>
             <param name="cep">CEP a ser verificado</param>
             <param name="uf">UF a ser comparado</param>
@@ -416,6 +416,15 @@
             <summary>
             Lista de dias da semana em minúsculo, sem acentos
             </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Information.Dates.IsNationalHoliday(System.DateTime,System.String@)">
+            <summary>
+            Retorna feriados civís nacionais
+            Segundo as leis 10.607/2002 e 6.802/1980
+            </summary>
+            <param name="date">Data a ser validada</param>
+            <param name="name">Nome do feriado</param>
+            <returns>True, se é feriado ou False, se não</returns>
         </member>
         <member name="T:Simple.Brazilian.Information.Places.CityInfo">
             <summary>

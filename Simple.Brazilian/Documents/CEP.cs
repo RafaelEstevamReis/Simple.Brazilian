@@ -8,7 +8,7 @@ namespace Simple.Brazilian.Documents
     public static class CEP
     {
         /// <summary>
-        /// Verifica se o CEP tem ocomprimento correto
+        /// Verifica se o CEP tem o comprimento correto
         /// </summary>
         /// <param name="cep">CEP a ser verificado</param>
         /// <returns>True se o CEP tem o comprimento correto; False senão</returns>
@@ -18,8 +18,9 @@ namespace Simple.Brazilian.Documents
 
             return Unmask(cep).Length == 8;
         }
+       
         /// <summary>
-        /// Verifica se o CEP tem ocomprimento correto e se corresponde ao UF designado
+        /// Verifica se o CEP tem o comprimento correto e se corresponde ao UF designado
         /// </summary>
         /// <param name="cep">CEP a ser verificado</param>
         /// <param name="uf">UF a ser comparado</param>
@@ -90,12 +91,14 @@ namespace Simple.Brazilian.Documents
             }
             throw new Exception("Nao é possível comparar o CEP informado com a UF informada");
         }
+      
         /// <summary>
         /// Aplica a máscara de CEP __.___-___
         /// </summary>
         /// <param name="cep">Texto para aplicar a máscara</param>
         /// <returns>Texto com a máscara</returns>
         public static string Mask(string cep) => Formatters.Text.ApplyMask(cep, "__.___-___");
+     
         /// <summary>
         /// Remove a máscara
         /// </summary>
