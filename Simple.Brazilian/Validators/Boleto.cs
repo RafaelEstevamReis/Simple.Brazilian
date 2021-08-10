@@ -57,7 +57,7 @@ namespace Simple.Brazilian.Validators
         /// <returns>int DACcodigoBarras</returns>
         public static int CalculoDACcodigoBarras(string valor)
         {
-            // Caso foi insirido 
+            // Caso foi inserido com os DACs, remove
             if (valor.Length == 46)
             {
                 // Removendo os tres digitos verificadores da linha digitavel
