@@ -4,26 +4,6 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
-        <member name="T:System.Linq.Enumerable">
-            <summary>
-            Classe para dar compatibilidade à NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`2">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`3">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`4">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
         <member name="T:Simple.Brazilian.Documents.CEP">
             <summary>
             Validador de CEP
@@ -734,6 +714,25 @@
             <param name="date">Data a ser validada</param>
             <param name="checkNationalHolydays">Verificar se é feriado nacional</param>
             <returns>True se for dia útil, False se não</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.Dates.NextBusinessDay(System.DateTime,System.Boolean,System.Boolean)">
+            <summary>
+            Retorna o próximo dia útil a partir de uma data base.
+            InvalidOperationException: Caso não seja localizada nos 14 dias seguintes à dataBase
+            </summary>
+            <param name="baseDate">Data a ser verificada</param>
+            <param name="checkNationalHolydays">Define se deve considerar feriados nacionais na verificação</param>
+            <param name="acceptBaseDate">Define se a dataBase é uma data válida para retorno case seja dia útil</param>
+            <returns>Próximo dia útil</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.Dates.FindNextBusinessDays(System.DateTime,System.Int32,System.Boolean)">
+            <summary>
+            Encontra o próximo X dia útil a partir de uma data base
+            </summary>
+            <param name="baseDate">Data base a ser verificada</param>
+            <param name="days">Dias úteis a serem contados</param>
+            <param name="checkNationalHolydays">Define se deve considerar feriados nacionais na verificação</param>
+            <returns>Data após o número `days` de dias úteis</returns>
         </member>
         <member name="T:Simple.Brazilian.Validators.ModValidation">
             <summary>
