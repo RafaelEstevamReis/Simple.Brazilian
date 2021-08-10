@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Globalization;
-using System.Linq;
 
 namespace Simple.Brazilian.Validators
 {
+    /// <summary>
+    /// Classe para funções de validação de boletos bancários
+    /// </summary>
     public static class Boleto
     {
         private static readonly DateTime DATA_BASE = new DateTime(1997, 10, 07);
@@ -76,7 +78,6 @@ namespace Simple.Brazilian.Validators
                 // Organizando a array para a string, para que seja calculado em seguida
                 valor = aux[0] + aux[2] + aux[1];
             }
-
 
             // Tomando-se os 43 algarismos que compõem o Código de Barras (sem considerar a 5ª posição), 
             // multiplicando-os, iniciando-se da direita para a esquerda, pela sequência numérica de 2 a 9
