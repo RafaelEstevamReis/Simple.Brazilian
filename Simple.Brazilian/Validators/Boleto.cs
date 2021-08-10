@@ -11,12 +11,13 @@ namespace Simple.Brazilian.Validators
         private static readonly DateTime DATA_BASE = new DateTime(1997, 10, 07);
 
         /// <summary>
-        /// Executa o calculo do digito verificador
-        /// do campo da linha digitavel 1, 2, ou 3 do boleto
+        /// Executa o calculo do digito verificador para Linha digitável, 
+        /// Nosso Número, Seu Número e outros que são padrão 2121 Mod 10
+        /// com dígitos individuais
         /// </summary>
         /// <returns>int DigitoVerificador</returns>
-        public static int CalculateDV_Itau(string campoLinhaDigitavel)
-            => ModValidation.Calculate2121Mod10IndividualDigits(campoLinhaDigitavel);
+        public static char CalculateDV_Itau(string texto)
+            => ModValidation.Calculate2121Mod10IndividualDigitsChar(texto);
 
         /// <summary>
         /// Executa o calculo do DAC do codigo de barras
