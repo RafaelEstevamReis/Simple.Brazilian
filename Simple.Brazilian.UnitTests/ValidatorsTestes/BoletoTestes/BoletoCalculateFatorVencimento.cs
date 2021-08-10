@@ -1,4 +1,5 @@
-﻿using Simple.Brazilian.Validators;
+﻿using System;
+using Simple.Brazilian.Validators;
 using Xunit;
 
 namespace Simple.Brazilian.UnitTests.ValidatorsTestes.BoletoTestes
@@ -11,9 +12,9 @@ namespace Simple.Brazilian.UnitTests.ValidatorsTestes.BoletoTestes
         [InlineData("01/12/2002", 1881)]
         [InlineData("29/03/2007", 3460)]
         [InlineData("21/02/2025", 9999)]
-        public void CalculaFatorVencimento_Raw(string data, int valorDias)
+        public void CalculaFatorVencimento_Text(string data, int valorDias)
         {
-            Assert.Equal(valorDias, Boleto.FatorVencimento(data));
+            Assert.Equal(valorDias, Boleto.CalculateDueDateFactor(data));
         }
     }
 }

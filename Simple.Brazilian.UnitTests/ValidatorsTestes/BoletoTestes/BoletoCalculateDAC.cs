@@ -12,7 +12,7 @@ namespace Simple.Brazilian.UnitTests.ValidatorsTestes.BoletoTestes
 
         public void CalculaDAC(string valor, int inum)
         {
-            Assert.Equal(inum, Boleto.CalculoDACcodigoBarras(valor));
+            Assert.Equal(inum, Boleto.CalculateCodebarDV(valor));
         }
     }
 }

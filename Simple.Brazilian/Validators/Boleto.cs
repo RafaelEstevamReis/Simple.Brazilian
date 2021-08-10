@@ -15,7 +15,7 @@ namespace Simple.Brazilian.Validators
         /// do campo da linha digitavel 1, 2, ou 3 do boleto
         /// </summary>
         /// <returns>int DigitoVerificador</returns>
-        public static int CalculaDigitoVerificador(string campoLinhaDigitavel)
+        public static int CalculateDV(string campoLinhaDigitavel)
         {
             int multiplicador = 2;
             int somatoria = 0;
@@ -55,7 +55,7 @@ namespace Simple.Brazilian.Validators
         /// </summary>
         /// <param name="valor"></param>
         /// <returns>int DACcodigoBarras</returns>
-        public static int CalculoDACcodigoBarras(string valor)
+        public static int CalculateCodebarDV(string valor)
         {
             // Caso foi inserido com os DACs, remove
             if (valor.Length == 46)
@@ -108,12 +108,20 @@ namespace Simple.Brazilian.Validators
         /// <summary>
         /// Executa o cálculo do Fator de Vencimento no formato "dd/mm/yyyy"
         /// </summary>
-        /// <param name="dataVencimentoRaw"></param>
-        /// <returns>int fatorVencimento</returns>
-        public static int FatorVencimento(string dataVencimentoRaw)
+        /// <param name="stringVencimento">Texto da data de vencimento do boleto em "dd/mm/yyyy"</param>
+        /// <returns>Fator de vencimento</returns>
+        public static int CalculateDueDateFactor(string stringVencimento)
         {
-            var dataVencimento = DateTime.ParseExact(dataVencimentoRaw, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-
+            var dataVencimento = DateTime.ParseExact(stringVencimento, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            return CalculateDueDateFactor(dataVencimento);
+        }
+        /// <summary>
+        /// Executa o cálculo do Fator de Vencimento no formato "dd/mm/yyyy"
+        /// </summary>
+        /// <param name="dataVencimento">Data de vencimento do boleto</param>
+        /// <returns>Fator de vencimento</returns>
+        public static int CalculateDueDateFactor(DateTime dataVencimento)
+        {
             // O fator de vencimento é o total de dias entre
             // a data base e a data de vencimento
             return (dataVencimento - DATA_BASE).Days;
