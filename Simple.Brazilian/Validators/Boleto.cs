@@ -15,34 +15,9 @@ namespace Simple.Brazilian.Validators
         /// do campo da linha digitavel 1, 2, ou 3 do boleto
         /// </summary>
         /// <returns>int DigitoVerificador</returns>
-        public static int CalculateDV(string campoLinhaDigitavel)
-        {
-            int multiplicador = 2;
-            int somatoria = 0;
+        public static int CalculateDV_Itau(string campoLinhaDigitavel)
+            => ModValidation.Calculate2121Mod10IndividualDigits(campoLinhaDigitavel);
 
-            for (int i = (campoLinhaDigitavel.Length - 1); i >= 0; i--)
-            {
-                char c = campoLinhaDigitavel[i];
-                // Multiplica-se cada algarismo do campo pela sequência de 
-                // multiplicadores 2, 1, 2, 1, 2, 1..., posicionados 
-                // da direita para a esquerda;
-                int resultado = Convert.ToInt32(c.ToString()) * multiplicador;
-                // Somando individualmente os algarismo
-                // Exemplo: Se o resultado da multiplicação anterior foi
-                // de 16 então faça 1 + 6 = 7; E faça a somatória.
-                somatoria += resultado > 9 ? (resultado - 9) : resultado;
-
-                multiplicador = multiplicador == 2 ? 1 : 2;
-            }
-            /// Dividindo a somatória por 10, a fim de determinar o resto da divisão.
-            /// Em seguida subtraindo o resto da divisão por 10 para obter finalmente
-            /// o digito verificador
-            int DigitoVerificador = 10 - (somatoria % 10);
-            // Se o resultado for 10 considere-se que o DV seja 0
-            if (DigitoVerificador == 10) return _ = 0;
-
-            return DigitoVerificador;
-        }
         /// <summary>
         /// Executa o calculo do DAC do codigo de barras
         /// a partir do formato:

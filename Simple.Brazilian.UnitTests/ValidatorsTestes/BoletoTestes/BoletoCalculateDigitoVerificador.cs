@@ -21,7 +21,7 @@ namespace Simple.Brazilian.UnitTests.ValidatorsTestes.BoletoTestes
         [InlineData("7123457000", 1)]
         public void CalculaDV(string text, int inum)
         {
-            Assert.Equal(inum, Boleto.CalculateDV(text));
+            Assert.Equal(inum, Boleto.CalculateDV_Itau(text));
         }
     }
 }
