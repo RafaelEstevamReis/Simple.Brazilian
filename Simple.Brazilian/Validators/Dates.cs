@@ -70,8 +70,10 @@ namespace Simple.Brazilian.Validators
                 throw new ArgumentException("Não é possível calcular zero dias úteis. Utilize NextBusinessDay com o parâmetro acceptBaseDate=true");
             }
 
+            int diasOlhar = days * 2 + 7; // no mínimo 12 dias
+
             int contaDias = 0;
-            for (int i = 1; i < days * 2; i++) // Olha no máximo o dobro de dias
+            for (int i = 1; i < diasOlhar; i++) // Olha no máximo o dobro de dias
             {
                 var data = baseDate.AddDays(i);
                 if (IsBusinessDay(data, checkNationalHolydays))
@@ -81,7 +83,7 @@ namespace Simple.Brazilian.Validators
                 if (contaDias == days) return data;
             }
 
-            throw new InvalidOperationException($"Não foi localizado um dia útil nos {days * 2} dias seguintes à data informada");
+            throw new InvalidOperationException($"Não foi localizado um dia útil nos {diasOlhar} dias seguintes à data informada");
         }
 
     }
