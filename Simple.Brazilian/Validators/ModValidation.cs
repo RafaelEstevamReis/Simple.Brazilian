@@ -19,7 +19,7 @@ namespace Simple.Brazilian.Validators
             if (reverse)
             {
                 int current = min;
-                for (int i = sequence.Length -1; i >= 0; i--)
+                for (int i = sequence.Length - 1; i >= 0; i--)
                 {
                     sequence[i] = current;
                     current++;
@@ -36,7 +36,7 @@ namespace Simple.Brazilian.Validators
                     if (current > max) current = min;
                 }
             }
-            
+
             // Sum
             int total = 0;
             for (int i = 0; i < chars.Length; i++)
@@ -106,5 +106,49 @@ namespace Simple.Brazilian.Validators
 
             return orgDv == calcDv;
         }
+
+        /// <summary>
+        /// Executa cálculo no padrão 2121 em Mod10 no texto, retorna INT
+        /// </summary>
+        public static int Calculate2121Mod10IndividualDigits(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+            {
+                throw new ArgumentException($"'{nameof(text)}' cannot be null or empty.", nameof(text));
+            }
+
+            int sum = 0;
+            for (int i = 0; i < text.Length; i++)
+            {
+                // pega o indice de trás pra frente
+                int idx = text.Length - i - 1;
+
+                int digito = text[idx] - '0';
+                if (digito < 0 || digito > 9) throw new FormatException($"'{nameof(text)}' deve conter apenas números");
+
+                int somaLocal = digito * (2 - (i % 2));
+
+                // Não tem como ser maior que 18 (2*9)
+                if (somaLocal > 9)
+                {
+                    // Subtrai 9, porém vou deixar separado para ficar mais claro
+                    somaLocal -= 10;
+                    somaLocal += 1;
+                }
+
+                sum += somaLocal;
+            }
+
+            var dv = 10 - (sum % 10);
+            if (dv == 10) return 0;
+            return dv;
+        }
+
+        /// <summary>
+        /// Executa cálculo no padrão 2121 em Mod10 no texto, retorna CHAR
+        /// </summary>
+        public static char Calculate2121Mod10IndividualDigitsChar(string text)
+            => (char)(Calculate2121Mod10IndividualDigits(text) + '0');
     }
+
 }
