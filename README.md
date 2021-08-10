@@ -60,6 +60,7 @@ Validadores:
 
 - [X] Validação de Documentos: `CEP`, `CNPJ`, `CPF`, `IE` e `PIS`
 - [ ] Validação de Documentos: `RG`
+- [X] Valida Dia Útil com possibilidade de verificar feriados nacionais
 
 Formatadores:
 

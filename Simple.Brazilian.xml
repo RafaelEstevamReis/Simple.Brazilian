@@ -722,6 +722,19 @@
             <param name="dataVencimento">Data de vencimento do boleto</param>
             <returns>Fator de vencimento</returns>
         </member>
+        <member name="T:Simple.Brazilian.Validators.Dates">
+            <summary>
+            Classe para validar datas
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.Dates.IsBusinessDay(System.DateTime,System.Boolean)">
+            <summary>
+            Verifca se uma data é dia útil ou não
+            </summary>
+            <param name="date">Data a ser validada</param>
+            <param name="checkNationalHolydays">Verificar se é feriado nacional</param>
+            <returns>True se for dia útil, False se não</returns>
+        </member>
         <member name="T:Simple.Brazilian.Validators.ModValidation">
             <summary>
             Validação e dados com "Mod"
