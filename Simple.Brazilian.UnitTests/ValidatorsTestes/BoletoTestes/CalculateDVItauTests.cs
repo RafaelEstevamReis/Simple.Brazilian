@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Simple.Brazilian.UnitTests.ValidatorsTestes.BoletoTestes
 {
-    public class BoletoCalculateDigitoVerificador
+    public class CalculateDVItauTests
     {
         [Theory]
         [InlineData("001905009",  '5')]

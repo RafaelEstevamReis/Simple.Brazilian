@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Simple.Brazilian.UnitTests.ValidatorsTestes.BoletoTestes
 {
-    public class BoletoCalculateFatorVencimento
+    public class CalculateDueDateFactorTests
     {
         [Theory]
         [InlineData("07/10/1997", 0)]

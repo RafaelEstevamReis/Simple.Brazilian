@@ -4,6 +4,26 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
+        <member name="T:System.Linq.Enumerable">
+            <summary>
+            Classe para dar compatibilidade à NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`2">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`3">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`4">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
         <member name="T:Simple.Brazilian.Documents.CEP">
             <summary>
             Validador de CEP
@@ -678,20 +698,6 @@
             com dígitos individuais
             </summary>
             <returns>int DigitoVerificador</returns>
-        </member>
-        <member name="M:Simple.Brazilian.Validators.Boleto.CalculateCodebarDV(System.String)">
-            <summary>
-            Executa o calculo do DAC do codigo de barras
-            a partir do formato:
-            AAABXXXXXXXXXXXXXXCCCCCCCCCCCCDDDDEEEEEFGGG;
-            A = Codigo do Banco; B = Codigo da Moeda; X = Campo 5;
-            C = Nosso Numero; D = Agencia; E = Conta; F = DAC; G = Zeros;
-            ou a linha digitavel do código de barras:
-            AAABCCCCCZCCCCCCCDDDZDEEEEEFGGGZXXXXXXXXXXXXXX;
-            Z = Digito Verificador;
-            </summary>
-            <param name="valor"></param>
-            <returns>int DACcodigoBarras</returns>
         </member>
         <member name="M:Simple.Brazilian.Validators.Boleto.CalculateDueDateFactor_Text(System.DateTime)">
             <summary>
