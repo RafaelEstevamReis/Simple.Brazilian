@@ -21,13 +21,13 @@ namespace Simple.Brazilian.Validators
             for (int i = (campoLinhaDigitavel.Length - 1); i >= 0; i--)
             {
                 char c = campoLinhaDigitavel[i];
-                /// Multiplica-se cada algarismo do campo pela sequência de 
-                /// multiplicadores 2, 1, 2, 1, 2, 1..., posicionados 
-                /// da direita para a esquerda;
+                // Multiplica-se cada algarismo do campo pela sequência de 
+                // multiplicadores 2, 1, 2, 1, 2, 1..., posicionados 
+                // da direita para a esquerda;
                 int resultado = Convert.ToInt32(c.ToString()) * multiplicador;
-                /// Somando individualmente os algarismo
-                /// Exemplo: Se o resultado da multiplicação anterior foi
-                /// de 16 então faça 1 + 6 = 7; E faça a somatória.
+                // Somando individualmente os algarismo
+                // Exemplo: Se o resultado da multiplicação anterior foi
+                // de 16 então faça 1 + 6 = 7; E faça a somatória.
                 somatoria += resultado > 9 ? (resultado - 9) : resultado;
 
                 multiplicador = multiplicador == 2 ? 1 : 2;
@@ -78,9 +78,9 @@ namespace Simple.Brazilian.Validators
             }
 
 
-            /// Tomando-se os 43 algarismos que compõem o Código de Barras (sem considerar a 5ª posição), 
-            /// multiplicando-os, iniciando-se da direita para a esquerda, pela sequência numérica de 2 a 9
-            /// (2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4... e assim por diante)
+            // Tomando-se os 43 algarismos que compõem o Código de Barras (sem considerar a 5ª posição), 
+            // multiplicando-os, iniciando-se da direita para a esquerda, pela sequência numérica de 2 a 9
+            // (2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4... e assim por diante)
 
             int mult = 2;
             int sum = 0;
