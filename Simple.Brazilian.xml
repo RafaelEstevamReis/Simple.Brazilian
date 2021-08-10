@@ -673,8 +673,9 @@
         </member>
         <member name="M:Simple.Brazilian.Validators.Boleto.CalculateDV_Itau(System.String)">
             <summary>
-            Executa o calculo do digito verificador
-            do campo da linha digitavel 1, 2, ou 3 do boleto
+            Executa o calculo do digito verificador para Linha digitável, 
+            Nosso Número, Seu Número e outros que são padrão 2121 Mod 10
+            com dígitos individuais
             </summary>
             <returns>int DigitoVerificador</returns>
         </member>
@@ -692,16 +693,16 @@
             <param name="valor"></param>
             <returns>int DACcodigoBarras</returns>
         </member>
-        <member name="M:Simple.Brazilian.Validators.Boleto.CalculateDueDateFactor(System.String)">
+        <member name="M:Simple.Brazilian.Validators.Boleto.CalculateDueDateFactor_Text(System.DateTime)">
             <summary>
-            Executa o cálculo do Fator de Vencimento no formato "dd/mm/yyyy"
+            Executa o cálculo do Fator de Vencimento com retorno em texto com 4 dígitos
             </summary>
-            <param name="stringVencimento">Texto da data de vencimento do boleto em "dd/mm/yyyy"</param>
-            <returns>Fator de vencimento</returns>
+            <param name="dataVencimento">Data de vencimento do boleto</param>
+            <returns>Fator de vencimento com 4 dígitos</returns>
         </member>
         <member name="M:Simple.Brazilian.Validators.Boleto.CalculateDueDateFactor(System.DateTime)">
             <summary>
-            Executa o cálculo do Fator de Vencimento no formato "dd/mm/yyyy"
+            Executa o cálculo do Fator de Vencimento
             </summary>
             <param name="dataVencimento">Data de vencimento do boleto</param>
             <returns>Fator de vencimento</returns>

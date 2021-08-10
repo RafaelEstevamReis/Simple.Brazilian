@@ -81,18 +81,20 @@ namespace Simple.Brazilian.Validators
 
             return bDAC;
         }
+
         /// <summary>
-        /// Executa o cálculo do Fator de Vencimento no formato "dd/mm/yyyy"
+        /// Executa o cálculo do Fator de Vencimento com retorno em texto com 4 dígitos
         /// </summary>
-        /// <param name="stringVencimento">Texto da data de vencimento do boleto em "dd/mm/yyyy"</param>
-        /// <returns>Fator de vencimento</returns>
-        public static int CalculateDueDateFactor(string stringVencimento)
+        /// <param name="dataVencimento">Data de vencimento do boleto</param>
+        /// <returns>Fator de vencimento com 4 dígitos</returns>
+        public static string CalculateDueDateFactor_Text(DateTime dataVencimento)
         {
-            var dataVencimento = DateTime.ParseExact(stringVencimento, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            return CalculateDueDateFactor(dataVencimento);
+            var texto = CalculateDueDateFactor(dataVencimento).ToString("0000");
+            if (texto.Length != 4) throw new FormatException($"Formato inválido: '{texto}'");
+            return texto;
         }
         /// <summary>
-        /// Executa o cálculo do Fator de Vencimento no formato "dd/mm/yyyy"
+        /// Executa o cálculo do Fator de Vencimento
         /// </summary>
         /// <param name="dataVencimento">Data de vencimento do boleto</param>
         /// <returns>Fator de vencimento</returns>
