@@ -1,7 +1,6 @@
 ﻿using Simple.Brazilian.Information.Places;
 using Simple.Brazilian.Validators;
 using System;
-using System.Linq;
 
 namespace Simple.Brazilian.Documents
 {

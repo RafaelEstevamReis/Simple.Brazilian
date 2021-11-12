@@ -1,5 +1,4 @@
 ﻿using Simple.Brazilian.Formatters;
-using System;
 using Xunit;
 
 namespace Simple.Brazilian.UnitTests.FormattersTestes.TextFilterTestes
