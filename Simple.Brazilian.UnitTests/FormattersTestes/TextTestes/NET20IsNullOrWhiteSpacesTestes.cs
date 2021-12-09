@@ -1,5 +1,5 @@
 ﻿using Xunit;
-using System.StringNET20;
+//using System.StringNET20;
 
 namespace Simple.Brazilian.UnitTests.FormattersTestes.TextTestes
 {

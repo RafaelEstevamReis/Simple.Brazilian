@@ -1,5 +1,4 @@
 ﻿using System;
-using System.StringNET20;
 using System.Text;
 
 namespace Simple.Brazilian.Formatters

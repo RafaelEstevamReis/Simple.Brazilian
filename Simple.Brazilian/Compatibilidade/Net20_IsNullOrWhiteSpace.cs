@@ -1,5 +1,5 @@
 ﻿#if NET20
-namespace System.StringNET20
+namespace System
 {
     public static class StringNET20
     {
