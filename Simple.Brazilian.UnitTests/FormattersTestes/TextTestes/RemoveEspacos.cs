@@ -22,7 +22,7 @@ namespace Simple.Brazilian.UnitTests.FormattersTestes.TextTestes
         [InlineData("", "     \n\r\r   ")]
         [InlineData("", "     \n\r \n\r   ")]
 
-        public void Teste_1(string esperado, string valor)
+        public void RemoveUnnecessarySpaces(string esperado, string valor)
         {
             var resultado = Formatters.Text.RemoveEspacosDesnecessarios(valor);
             Assert.Equal(esperado, resultado);
