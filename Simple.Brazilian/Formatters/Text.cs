@@ -15,7 +15,7 @@ namespace Simple.Brazilian.Formatters
         /// <param name="texto">Texto a ser processado</param>
         /// <param name="opcoes">Opções de remoção</param>
         /// <returns>Retorno sem acentos</returns>
-        public static string RemoveAcentos(this string texto, TextOptions opcoes = null)
+        public static string RemoveAccents(this string texto, TextOptions opcoes = null)
         {
             return removeAcentos(texto, opcoes ?? TextOptions.Padrao);
         }
@@ -121,7 +121,7 @@ namespace Simple.Brazilian.Formatters
         /// </summary>
         /// <param name="text">Texto a ser limpo</param>
         /// <returns>O texto com os espaços tratados</returns>
-        public static string RemoveEspacosDesnecessarios(string text)
+        public static string RemoveUnnecessarySpaces(string text)
         {
             if (text == null) return null;
             if (text == string.Empty) return string.Empty;
@@ -148,7 +148,7 @@ namespace Simple.Brazilian.Formatters
                 }
                 // remove spaces after new lines
                 if (isWS && i > 0 && (text[i - 1] == 10 || text[i - 1] == 13)) continue;
-                // remove duplicate spaces
+                // remove duplicate spaces, looking foward
                 if (isWS && !isLast && char.IsWhiteSpace(text[i + 1])) continue;
 
                 sb.Append(text[i]);
