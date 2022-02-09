@@ -1,5 +1,4 @@
 ﻿using System;
-using BenchmarkDotNet.Running;
 
 namespace Simple.Brazilian.Exemplos
 {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Simple.Brazilian.Documents
+﻿namespace Simple.Brazilian.Documents
 {
     /// <summary>
     /// Validador de CNPJ

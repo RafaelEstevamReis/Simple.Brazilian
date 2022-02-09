@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace Simple.Brazilian.Documents
+﻿namespace Simple.Brazilian.Documents
 {
     /// <summary>
     /// Validador de CPF

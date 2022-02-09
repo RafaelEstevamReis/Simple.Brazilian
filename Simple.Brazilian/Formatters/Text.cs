@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace Simple.Brazilian.Formatters
@@ -113,6 +112,42 @@ namespace Simple.Brazilian.Formatters
                 else if (char.IsLetter(texto[i])) sb.Append(texto[i]);
             }
 
+            return sb.ToString();
+        }
+        
+        /// <summary>
+        /// Remove todos os espaços desnecessários.
+        /// Espaços no início e no fim da string, espaços que aparecem mais de uma vez na cadeia e espaços no início e fim de cada linha (caso haja quebra).
+        /// </summary>
+        /// <param name="texto">Texto a ser limpo</param>
+        /// <returns>O texto com os espaços tratados</returns>
+        public static string RemoveEspacosDesnecessarios(string texto)
+        {
+            if (texto == null) return null;
+            if(texto == string.Empty) return string.Empty;
+
+            var textoTrim = texto.Trim();
+            if (textoTrim.Length == 0) return "";
+
+            var sb = new StringBuilder(textoTrim.Length);
+            for (int i = 0; i < textoTrim.Length; i++)
+            {
+                if (textoTrim[i] == 10)
+                {
+                    sb.Append('\n');
+                    continue;
+                }
+                if (textoTrim[i] == 13)
+                {
+                    sb.Append('\r');
+                    continue;
+                }
+
+                if (char.IsWhiteSpace(textoTrim[i]) && char.IsWhiteSpace(textoTrim[i + 1])) continue;
+                if (char.IsWhiteSpace(textoTrim[i]) && (char.IsWhiteSpace(textoTrim[i - 1]) && textoTrim[i] == 10 && textoTrim[i] == 13)) continue;
+                if (char.IsWhiteSpace(textoTrim[i]) && (textoTrim[i - 1] == 10 || textoTrim[i - 1] == 13)) continue;
+                sb.Append(textoTrim[i]);
+            }
             return sb.ToString();
         }
     }

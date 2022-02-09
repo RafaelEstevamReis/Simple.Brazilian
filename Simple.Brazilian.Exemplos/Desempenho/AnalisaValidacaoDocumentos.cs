@@ -1,5 +1,4 @@
 ﻿using BenchmarkDotNet.Attributes;
-using Simple.Brazilian.Documents;
 
 namespace Simple.Brazilian.Exemplos.Desempenho
 {

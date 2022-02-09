@@ -4,6 +4,26 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
+        <member name="T:System.Linq.Enumerable">
+            <summary>
+            Classe para dar compatibilidade à NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`2">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`3">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`4">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
         <member name="T:Simple.Brazilian.Documents.CEP">
             <summary>
             Validador de CEP
@@ -187,6 +207,14 @@
             </summary>
             <param name="texto">Texto a ser limpo</param>
             <returns>Texto desformatado</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.Text.RemoveEspacosDesnecessarios(System.String)">
+            <summary>
+            Remove todos os espaços desnecessários.
+            Espaços no início e no fim da string, espaços que aparecem mais de uma vez na cadeia e espaços no início e fim de cada linha (caso haja quebra).
+            </summary>
+            <param name="texto">Texto a ser limpo</param>
+            <returns>O texto com os espaços tratados</returns>
         </member>
         <member name="T:Simple.Brazilian.Formatters.TextFilter">
             <summary>
