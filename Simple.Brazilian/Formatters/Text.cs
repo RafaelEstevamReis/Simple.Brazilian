@@ -123,11 +123,9 @@ namespace Simple.Brazilian.Formatters
         /// <returns>O texto com os espaços tratados</returns>
         public static string RemoveEspacosDesnecessarios(string texto)
         {
-#if NET20
-            if (StringNET20.IsNullOrWhiteSpace(texto)) return "";
-#else
-            if (string.IsNullOrWhiteSpace(texto)) return "";
-#endif
+            if (texto == null) return null;
+            if(texto == string.Empty) return string.Empty;
+
             var textoTrim = texto.Trim();
             if (textoTrim.Length == 0) return "";
 
