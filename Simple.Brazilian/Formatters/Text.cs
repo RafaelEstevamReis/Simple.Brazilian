@@ -114,39 +114,44 @@ namespace Simple.Brazilian.Formatters
 
             return sb.ToString();
         }
-        
+
         /// <summary>
         /// Remove todos os espaços desnecessários.
         /// Espaços no início e no fim da string, espaços que aparecem mais de uma vez na cadeia e espaços no início e fim de cada linha (caso haja quebra).
         /// </summary>
-        /// <param name="texto">Texto a ser limpo</param>
+        /// <param name="text">Texto a ser limpo</param>
         /// <returns>O texto com os espaços tratados</returns>
-        public static string RemoveEspacosDesnecessarios(string texto)
+        public static string RemoveEspacosDesnecessarios(string text)
         {
-            if (texto == null) return null;
-            if(texto == string.Empty) return string.Empty;
+            if (text == null) return null;
+            if (text == string.Empty) return string.Empty;
 
-            var textoTrim = texto.Trim();
-            if (textoTrim.Length == 0) return "";
-
-            var sb = new StringBuilder(textoTrim.Length);
-            for (int i = 0; i < textoTrim.Length; i++)
+            var sb = new StringBuilder(text.Length);
+            for (int i = 0; i < text.Length; i++)
             {
-                if (textoTrim[i] == 10)
+                bool isWS = char.IsWhiteSpace(text[i]);
+                bool isLast = i == text.Length - 1;
+
+                if (isWS && sb.Length == 0) continue; // LeftTrim
+                if (isWS && isLast) continue; // Last part of RightTrun
+
+                // Keep new lines
+                if (text[i] == 10)
                 {
                     sb.Append('\n');
                     continue;
                 }
-                if (textoTrim[i] == 13)
+                if (text[i] == 13)
                 {
                     sb.Append('\r');
                     continue;
                 }
+                // remove spaces after new lines
+                if (isWS && i > 0 && (text[i - 1] == 10 || text[i - 1] == 13)) continue;
+                // remove duplicate spaces
+                if (isWS && !isLast && char.IsWhiteSpace(text[i + 1])) continue;
 
-                if (char.IsWhiteSpace(textoTrim[i]) && char.IsWhiteSpace(textoTrim[i + 1])) continue;
-                if (char.IsWhiteSpace(textoTrim[i]) && (char.IsWhiteSpace(textoTrim[i - 1]) && textoTrim[i] == 10 && textoTrim[i] == 13)) continue;
-                if (char.IsWhiteSpace(textoTrim[i]) && (textoTrim[i - 1] == 10 || textoTrim[i - 1] == 13)) continue;
-                sb.Append(textoTrim[i]);
+                sb.Append(text[i]);
             }
             return sb.ToString();
         }
