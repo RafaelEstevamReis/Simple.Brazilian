@@ -24,7 +24,7 @@ namespace Simple.Brazilian.UnitTests.FormattersTestes.TextTestes
 
         public void RemoveUnnecessarySpaces(string esperado, string valor)
         {
-            var resultado = Formatters.Text.RemoveEspacosDesnecessarios(valor);
+            var resultado = Formatters.Text.RemoveUnnecessarySpaces(valor);
             Assert.Equal(esperado, resultado);
         }
     }
