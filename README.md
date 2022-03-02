@@ -42,6 +42,7 @@ Existem repositórios em várias linguagens porém é raro que:
    [![.NET](https://github.com/RafaelEstevamReis/Simple.Brazilian/actions/workflows/dotnet.yml/badge.svg)](https://github.com/RafaelEstevamReis/Simple.Brazilian/actions/workflows/dotnet.yml)
 * Inclusivo, código escrito e documentado em português
 * Altíssima compatibilidade permitindo o uso em qualquer versão de .Net
+  * Net6
   * Net5
   * Net Core 3.1
   * Net Framework 4.5
