@@ -65,9 +65,10 @@ Validadores:
 
 Formatadores:
 
-- [X] Máscaras para documentos: `CEP`, `CNPJ`, `CPF` e `PIS`
+- [X] Máscaras para documentos: `CNPJ`, `CPF` e `PIS`
 - [ ] Máscaras para documentos: `IE` e `RG`
-- [ ] Máscaras em geral: `Telefone` e `CEP`
+- [ ] Máscaras em geral: `Telefone`
+- [X] Máscaras em geral: `CEP`
 - [X] Remoção de `máscaras`
 - [X] Remoção de `acentos` (torna o texto compatível com ASCII7)
 - [X] Remoção de `caracteres especiais` (configurável)
