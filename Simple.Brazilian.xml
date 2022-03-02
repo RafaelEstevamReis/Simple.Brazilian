@@ -159,6 +159,25 @@
             <param name="rg">Texto com a máscara aplicada</param>
             <returns>Texto com a máscara removida</returns>
         </member>
+        <member name="T:Simple.Brazilian.Documents.Telefone">
+            <summary>
+            Formtador de Telefone
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Documents.Telefone.Mask(System.String)">
+            <summary>
+            Aplica a máscara de Telefone
+            </summary>
+            <param name="telefone">Texto para aplicar a máscara</param>
+            <returns>Texto com a máscara</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Documents.Telefone.Unmask(System.String)">
+            <summary>
+            Remove a máscara
+            </summary>
+            <param name="telefone">Texto com a máscara aplicada</param>
+            <returns>Texto com a máscara removida</returns>
+        </member>
         <member name="T:Simple.Brazilian.Formatters.Text">
             <summary>
             Formatadores textuais
