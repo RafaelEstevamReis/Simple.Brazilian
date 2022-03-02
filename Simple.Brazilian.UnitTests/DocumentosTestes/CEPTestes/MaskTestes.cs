@@ -15,7 +15,7 @@ namespace Simple.Brazilian.UnitTests.DocumentosTestes.CEPTestes
         [InlineData("123456", "12.345-6")]
         [InlineData("1234567", "12.345-67")]
         [InlineData("12345678", "12.345-678")]
-        public void CEP_Unmask(string entrada, string saida)
+        public void CEP_Mask(string entrada, string saida)
         {
             Assert.Equal(saida, CEP.Mask(entrada));
         }
