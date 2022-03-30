@@ -97,6 +97,14 @@
             Validador de IE
             </summary>
         </member>
+        <member name="M:Simple.Brazilian.Documents.IE.IsValid(System.String,Simple.Brazilian.Information.Places.UFs)">
+            <summary>
+            Verifica se a Inscrição Estuadual é válida para determinado UF
+            </summary>
+            <param name="ie">Inscrição Estuadual a ser validada</param>
+            <param name="uf">Unidade federativa que deve ser utilizada na validação</param>
+            <returns>True caso a IE seja válida nesta UF, false se não</returns>
+        </member>
         <member name="M:Simple.Brazilian.Documents.IE.Mask(System.String,Simple.Brazilian.Information.Places.UFs)">
             <summary>
             Aplica a máscara de IE

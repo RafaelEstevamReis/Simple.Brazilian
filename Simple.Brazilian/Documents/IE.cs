@@ -61,10 +61,66 @@ namespace Simple.Brazilian.Documents
         /// <param name="ie">Texto para aplicar a máscara</param>
         /// <param name="uf">Especifica qual UF deve ser usada para aplicar a máscara</param>
         /// <returns>Texto com a máscara</returns>
-        internal static string Mask(string ie, UFs uf)
+        public static string Mask(string ie, UFs uf)
         {
-            throw new NotImplementedException();
+            if (ie is null) throw new ArgumentNullException(nameof(ie));
+            if (ie == string.Empty) return string.Empty;
+
+            if (uf == UFs.AL) return ie; // AL não tem máscara
+
+            string mask = mascaraUF(ie, uf);
+            return Formatters.Text.ApplyMask(ie, mask);
         }
+        private static string mascaraUF(string ie, UFs uf)
+        {
+            switch (uf)
+            {
+                case UFs.AC: return "__.___.___/___-__";
+                case UFs.AP:
+                case UFs.AM: return "__.___.___-_";
+                case UFs.BA:
+                    if (ie.Length == 8) return "______-__";
+                    return "___.___.___";
+                case UFs.CE: return "________-_";
+                case UFs.DF: return "___._____.___-__";
+                case UFs.ES: return "________-_";
+                case UFs.GO: return "__.___.___-_";
+                case UFs.MA: return "________-_";
+                case UFs.MT: return "___.___.___-_";
+                case UFs.MS: return "________-_";
+                case UFs.MG: return "___.___.___/____";
+                case UFs.PA: return "__-______-_";
+                case UFs.PB: return "________-_";
+                case UFs.PR: return "___._____-__";
+                case UFs.PE:
+                    if (ie.Length == 9) return "_______-__";
+                    return "__._.___._______-_";
+                case UFs.PI: return "________-_";
+                case UFs.RJ: return "__.___.__-_";
+                case UFs.RN:
+                    if (ie.Length == 9) return "__.___.___-_";
+                    return "__._.___.___-_";
+                case UFs.RS: return "___/_______";
+                case UFs.RO:
+                    if (ie.Length == 9) return "___._____-_";
+                    return "_____________-_";
+                case UFs.RR: return "________-_";
+                case UFs.SC: return "___.___.___";
+                case UFs.SP:
+                    if(ie.Length > 0)
+                    {
+                        if (ie[0] == 'P' || ie[0] == 'p') return "_-________._/___";
+                    }
+                    return "___.___.___.___";
+                case UFs.SE: return "________-_";
+                case UFs.TO: return "__.__.______-_";
+
+                case UFs.AL: // Não tem, não deveria ter chego aqui
+                default:
+                    throw new ArgumentException("Invalid UF", nameof(uf));
+            }
+        }
+
         /// <summary>
         /// Remove a máscara
         /// </summary>
