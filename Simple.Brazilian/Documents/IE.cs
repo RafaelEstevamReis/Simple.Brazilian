@@ -9,6 +9,12 @@ namespace Simple.Brazilian.Documents
     /// </summary>
     public static class IE
     {
+        /// <summary>
+        /// Verifica se a Inscrição Estuadual é válida para determinado UF
+        /// </summary>
+        /// <param name="ie">Inscrição Estuadual a ser validada</param>
+        /// <param name="uf">Unidade federativa que deve ser utilizada na validação</param>
+        /// <returns>True caso a IE seja válida nesta UF, false se não</returns>
         public static bool IsValid(string ie, UFs uf)
         {
             if (string.IsNullOrEmpty(ie)) return false;
