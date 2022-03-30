@@ -9,10 +9,6 @@ namespace Simple.Brazilian.Documents
     /// </summary>
     public static class IE
     {
-        internal static bool IsValid(string ie)
-        {
-            throw new NotImplementedException();
-        }
         public static bool IsValid(string ie, UFs uf)
         {
             if (string.IsNullOrEmpty(ie)) return false;
