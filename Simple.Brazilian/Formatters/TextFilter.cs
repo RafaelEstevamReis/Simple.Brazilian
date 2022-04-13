@@ -146,6 +146,16 @@ namespace Simple.Brazilian.Formatters
             return this;
         }
         /// <summary>
+        /// Remove letras
+        /// </summary>
+        public TextFilter DenyLetters()
+        {
+            AllowsUppercaseLetters = false;
+            AllowsLowercaseLetters = false;
+            return this;
+        }
+
+        /// <summary>
         /// Remove símbolos
         /// </summary>
         public TextFilter DenySymbols()
