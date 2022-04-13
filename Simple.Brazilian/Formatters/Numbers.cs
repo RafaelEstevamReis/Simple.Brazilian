@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Text;
 
 namespace Simple.Brazilian.Formatters
 {
@@ -20,25 +21,42 @@ namespace Simple.Brazilian.Formatters
             DefaultCulture = new CultureInfo("pt-BR", false);
 #endif
         }
-        
+
         /// <summary>
         /// Parseia um texto para Int32
         /// </summary>
         /// <param name="text">Texto a ser convertido</param>
         /// <param name="OnError">Valor a ser retornado em caso de falha</param>
         /// <returns>Número convertido, ou valor padrão</returns>
+        /// <exception cref="FormatException">Lança FormatException caso não seja possível a conversão e OnError seja NULL</exception>
         public static int ToInt(string text, int? OnError = 0)
         {
             if (int.TryParse(text, NumberStyles.Any, DefaultCulture, out int value)) return value;
             return processError(OnError);
         }
-        internal static double ToDouble(string text, double? OnError = 0)
+        /// <summary>
+        /// Parseia um texto para Double
+        /// </summary>
+        /// <param name="text">Texto a ser convertido</param>
+        /// <param name="OnError">Valor a ser retornado em caso de falha</param>
+        /// <returns>Número convertido, ou valor padrão</returns>
+        /// <exception cref="FormatException">Lança FormatException caso não seja possível a conversão e OnError seja NULL</exception>
+        public static double ToDouble(string text, double? OnError = 0)
         {
-            throw new NotImplementedException();
+            if (double.TryParse(text, NumberStyles.Any, DefaultCulture, out double value)) return value;
+            return processError(OnError);
         }
-        internal static decimal ToDecimal(string text, decimal? OnError = 0)
+        /// <summary>
+        /// Parseia um texto para Decimal
+        /// </summary>
+        /// <param name="text">Texto a ser convertido</param>
+        /// <param name="OnError">Valor a ser retornado em caso de falha</param>
+        /// <returns>Número convertido, ou valor padrão</returns>
+        /// <exception cref="FormatException">Lança FormatException caso não seja possível a conversão e OnError seja NULL</exception>
+        public static decimal ToDecimal(string text, decimal? OnError = 0)
         {
-            throw new NotImplementedException();
+            if (decimal.TryParse(text, NumberStyles.Any, DefaultCulture, out decimal value)) return value;
+            return processError(OnError);
         }
         /// <summary>
         /// Converte número em texto usando DefaultCulture
@@ -81,6 +99,62 @@ namespace Simple.Brazilian.Formatters
         {
             var rounded = abntRounding(value, decimals);
             return rounded.ToString($"C{decimals}", DefaultCulture);
+        }
+
+        //
+        // Faz conversão tentando ser tolerante à qualquer cultura
+        public static decimal ConvertFromUnkown(string text, decimal? OnError = 0)
+        {
+            // Tolerar o máximo de formatos
+            // Será sempre considerado que, em caso de mais de um símbolo,
+            // o último será o separador decimal
+
+            int posComa = -1;
+            int posPoint = -1;
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (text[i] == ',')
+                {
+                    sb.Append(text[i]);
+                    posComa = i; // último
+                }
+                else if (text[i] == '.')
+                {
+                    sb.Append(text[i]);
+                    posPoint = i; // último
+                }
+                else if (text[i] == ' ') sb.Append(text[i]);
+                else if (text[i] == '-') sb.Append(text[i]);
+                else if (text[i] == '\r') sb.Append(text[i]);
+                else if (text[i] == '\n') sb.Append(text[i]);
+                else if (text[i] >= '0' && text[i] <= '9') sb.Append(text[i]);
+            }
+            string limpo = sb.ToString().Trim();
+
+            // Converte para InvariantCulture
+            if (posPoint == -1 && posComa >= 0)
+            {
+                // Caso especial "$1,900"
+                if (posComa == limpo.Length - 3) limpo = limpo.Replace(",", "");
+                else limpo = limpo.Replace(",", ".");
+            }
+            else if (posPoint >= 0 && posComa >= 0)
+            {
+                if (posPoint < posComa)
+                {
+                    limpo = limpo.Replace(".", "");
+                    limpo = limpo.Replace(",", ".");
+                }
+                else
+                {
+                    limpo = limpo.Replace(",", "");
+                }
+            }
+
+            // Trata como InvariantCulture
+            if (decimal.TryParse(limpo, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal value)) return value;
+            return processError(OnError);
         }
 
         private static decimal abntRounding(decimal value, int decimals)
