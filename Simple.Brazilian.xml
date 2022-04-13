@@ -4,6 +4,26 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
+        <member name="T:System.Linq.Enumerable">
+            <summary>
+            Classe para dar compatibilidade à NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`2">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`3">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`4">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
         <member name="T:Simple.Brazilian.Documents.CEP">
             <summary>
             Validador de CEP
@@ -186,6 +206,21 @@
             <param name="telefone">Texto com a máscara aplicada</param>
             <returns>Texto com a máscara removida</returns>
         </member>
+        <member name="T:Simple.Brazilian.ArrayExtensions">
+            <summary>
+            Extensão interna para Arrays
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.ArrayExtensions.IndexOf(System.String[],System.String,System.StringComparison)">
+            <summary>
+            Localiza índice do Array
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.ArrayExtensions.IndexOf``1(``0[],``0)">
+            <summary>
+            Localiza índice do Array
+            </summary>
+        </member>
         <member name="T:Simple.Brazilian.Formatters.Numbers">
             <summary>
             Formata números
@@ -253,6 +288,15 @@
             <param name="value">Valor a ser convertido</param>
             <param name="decimals">Casas decimais</param>
             <returns>Texto convertido</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.Numbers.ConvertFromUnkown(System.String,System.Nullable{System.Decimal})">
+            <summary>
+            Faz conversão tentando ser tolerante à qualquer cultura
+            </summary>
+            <param name="text">Texto a ser convertido</param>
+            <param name="OnError">Valor a ser retornado em caso de falha</param>
+            <returns>Número convertido, ou valor padrão</returns>
+            <exception cref="T:System.FormatException">Lança FormatException caso não seja possível a conversão e OnError seja NULL</exception>
         </member>
         <member name="T:Simple.Brazilian.Formatters.Text">
             <summary>
