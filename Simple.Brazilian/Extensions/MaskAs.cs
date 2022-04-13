@@ -3,6 +3,7 @@ using System;
 
 namespace Simple.Brazilian.Extensions
 {
+    /*
     public static class MaskAs
     {
         public static string Mask(this string valor, Enums.As As)
@@ -27,4 +28,5 @@ namespace Simple.Brazilian.Extensions
             }
         }
     }
+    */
 }
