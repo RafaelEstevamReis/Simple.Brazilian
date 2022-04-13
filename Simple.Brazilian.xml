@@ -186,6 +186,74 @@
             <param name="telefone">Texto com a máscara aplicada</param>
             <returns>Texto com a máscara removida</returns>
         </member>
+        <member name="T:Simple.Brazilian.Formatters.Numbers">
+            <summary>
+            Formata números
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Formatters.Numbers.DefaultCulture">
+            <summary>
+            CultureInfo padrão a ser utilizado
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.Numbers.ToInt(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Parseia um texto para Int32
+            </summary>
+            <param name="text">Texto a ser convertido</param>
+            <param name="OnError">Valor a ser retornado em caso de falha</param>
+            <returns>Número convertido, ou valor padrão</returns>
+            <exception cref="T:System.FormatException">Lança FormatException caso não seja possível a conversão e OnError seja NULL</exception>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.Numbers.ToDouble(System.String,System.Nullable{System.Double})">
+            <summary>
+            Parseia um texto para Double
+            </summary>
+            <param name="text">Texto a ser convertido</param>
+            <param name="OnError">Valor a ser retornado em caso de falha</param>
+            <returns>Número convertido, ou valor padrão</returns>
+            <exception cref="T:System.FormatException">Lança FormatException caso não seja possível a conversão e OnError seja NULL</exception>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.Numbers.ToDecimal(System.String,System.Nullable{System.Decimal})">
+            <summary>
+            Parseia um texto para Decimal
+            </summary>
+            <param name="text">Texto a ser convertido</param>
+            <param name="OnError">Valor a ser retornado em caso de falha</param>
+            <returns>Número convertido, ou valor padrão</returns>
+            <exception cref="T:System.FormatException">Lança FormatException caso não seja possível a conversão e OnError seja NULL</exception>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.Numbers.ToText(System.Int32)">
+            <summary>
+            Converte número em texto usando DefaultCulture
+            </summary>
+            <param name="value">Valor a ser convertido</param>
+            <returns>Texto convertido</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.Numbers.ToText(System.Double,System.Int32)">
+            <summary>
+            Converte número em texto usando DefaultCulture com a quantidade definida de casas decimais
+            </summary>
+            <param name="value">Valor a ser convertido</param>
+            <param name="decimals">Casas decimais</param>
+            <returns>Texto convertido</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.Numbers.ToText(System.Decimal,System.Int32)">
+            <summary>
+            Converte número em texto usando DefaultCulture com a quantidade definida de casas decimais
+            </summary>
+            <param name="value">Valor a ser convertido</param>
+            <param name="decimals">Casas decimais</param>
+            <returns>Texto convertido</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.Numbers.ToBRL(System.Decimal,System.Int32)">
+            <summary>
+            Converte número em texto monetário usando DefaultCulture com a quantidade definida de casas decimais
+            </summary>
+            <param name="value">Valor a ser convertido</param>
+            <param name="decimals">Casas decimais</param>
+            <returns>Texto convertido</returns>
+        </member>
         <member name="T:Simple.Brazilian.Formatters.Text">
             <summary>
             Formatadores textuais
@@ -311,6 +379,11 @@
         <member name="M:Simple.Brazilian.Formatters.TextFilter.DenyLowercaseLetters">
             <summary>
             Remove minúsculas
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.TextFilter.DenyLetters">
+            <summary>
+            Remove letras
             </summary>
         </member>
         <member name="M:Simple.Brazilian.Formatters.TextFilter.DenySymbols">
