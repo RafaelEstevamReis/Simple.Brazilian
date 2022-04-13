@@ -3,7 +3,7 @@ using System;
 
 namespace Simple.Brazilian
 {
-    public class DescriptionAttribute : Attribute
+    internal class DescriptionAttribute : Attribute
     {
         public string Description { get; }
         public DescriptionAttribute(string description)

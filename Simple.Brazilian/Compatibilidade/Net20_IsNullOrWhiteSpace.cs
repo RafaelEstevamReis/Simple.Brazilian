@@ -1,7 +1,7 @@
 ﻿#if NET20
 namespace System
 {
-    public static class StringNET20
+    internal static class StringNET20
     {
         public static bool IsNullOrWhiteSpace(string s)
         {
