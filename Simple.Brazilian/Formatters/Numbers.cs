@@ -101,8 +101,13 @@ namespace Simple.Brazilian.Formatters
             return rounded.ToString($"C{decimals}", DefaultCulture);
         }
 
-        //
-        // Faz conversão tentando ser tolerante à qualquer cultura
+        /// <summary>
+        /// Faz conversão tentando ser tolerante à qualquer cultura
+        /// </summary>
+        /// <param name="text">Texto a ser convertido</param>
+        /// <param name="OnError">Valor a ser retornado em caso de falha</param>
+        /// <returns>Número convertido, ou valor padrão</returns>
+        /// <exception cref="FormatException">Lança FormatException caso não seja possível a conversão e OnError seja NULL</exception>
         public static decimal ConvertFromUnkown(string text, decimal? OnError = 0)
         {
             // Tolerar o máximo de formatos
