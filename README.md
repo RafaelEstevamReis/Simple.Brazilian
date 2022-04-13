@@ -73,8 +73,8 @@ Formatadores:
 - [X] Remoção de `acentos` (torna o texto compatível com ASCII7)
 - [X] Remoção de `caracteres especiais` (configurável)
 - [X] Remoção de espaços `desnecessários`
-- [ ] Conversão de textos em números
-- [ ] Conversão de números em texto com arredondamento `ABNT`
+- [X] Conversão de textos em números
+- [X] Conversão de números em texto com arredondamento `ABNT`
 - [X] Conversão de valor em reais para texto com sinal `monetário` e arredondamento `ABNT`
 - [ ] Funções para escrita de `valores por extenso`
 - [ ] Conversão de  palavras em `singular` para `plural`
