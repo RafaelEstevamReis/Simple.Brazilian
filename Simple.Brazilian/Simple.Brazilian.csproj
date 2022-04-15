@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFrameworks>NET5.0;NET6.0;netcoreapp3.1;netstandard1.0;netstandard2.0;NET45;NET40;NET20</TargetFrameworks>
     <LangVersion>8.0</LangVersion>
-    <Version>0.5.0-alpha</Version>
+    <Version>0.6.0-beta</Version>
     <Authors>RafaelEstevam.Net</Authors>
     <Company>RafaelEstevam.Net</Company>
     <Product>Simple brazilian text lib</Product>
@@ -12,7 +12,7 @@
     <RepositoryUrl>https://github.com/RafaelEstevamReis/Simple.Brazilian</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Veja documentação e exemplos na página do GitHub
-Pareado com o commit 24cba82
+Pareado com o commit 0145863
 https://github.com/RafaelEstevamReis/Simple.Brazilian
 </PackageReleaseNotes>
   </PropertyGroup>
