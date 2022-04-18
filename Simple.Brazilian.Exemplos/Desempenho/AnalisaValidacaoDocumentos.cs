@@ -5,8 +5,8 @@ namespace Simple.Brazilian.Exemplos.Desempenho
     [MemoryDiagnoser]
     public class AnalisaValidacaoDocumentos
     {
-        string cpf = "00000000000";
-        string cnpj = "11444777000161";
+        //string cpf = "00000000000";
+        //string cnpj = "11444777000161";
 
         //[Benchmark]
         //public void ValidaCPF_A() => CPF.IsValid(cpf);
