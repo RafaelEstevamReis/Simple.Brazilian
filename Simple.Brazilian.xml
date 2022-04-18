@@ -4,6 +4,26 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
+        <member name="T:System.Linq.Enumerable">
+            <summary>
+            Classe para dar compatibilidade à NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`2">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`3">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`4">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
         <member name="T:Simple.Brazilian.Documents.CEP">
             <summary>
             Validador de CEP
@@ -806,6 +826,47 @@
             <summary>
             Exterior
             </summary>
+        </member>
+        <member name="T:Simple.Brazilian.Information.WorkDay">
+            <summary>
+            Classe para lidar com dias úteis
+            Segundo as leis 10.607/2002 e 6.802/1980
+            </summary>
+        </member>
+        <member name="T:Simple.Brazilian.Information.WorkDay.DayType">
+            <summary>
+            Tipo de data
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.WorkDay.DayType.NatinalHoliday">
+            <summary>
+            Feriado nacional, ver Dates.IsNationalHoliday
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.WorkDay.DayType.WeekEnd">
+            <summary>
+            Fim de semana
+            </summary>
+        </member>
+        <member name="F:Simple.Brazilian.Information.WorkDay.DayType.WeekDay">
+            <summary>
+            Dia de semana
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Information.WorkDay.GetDayType(System.DateTime)">
+            <summary>
+            Obtém o tipo de dia
+            </summary>
+            <param name="date">Data base</param>
+            <returns>Tipo de data</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Information.WorkDay.WorkDaysBetween(System.DateTime,System.DateTime)">
+            <summary>
+            Obtém dias úteis entre as datas
+            </summary>
+            <param name="start">Data de início, inclusive</param>
+            <param name="end">Data de dim, inclusive</param>
+            <returns>Dias úteis</returns>
         </member>
         <member name="T:Simple.Brazilian.Validators.Boleto">
             <summary>
