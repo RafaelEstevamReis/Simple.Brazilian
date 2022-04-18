@@ -55,7 +55,6 @@ namespace Simple.Brazilian.UnitTests.InformationTestes.DatesTestes
             Assert.Equal(actualCount, count);
         }
 
-
         [Theory]
         [InlineData(1, 1)]
         [InlineData(4, 21)]
