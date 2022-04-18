@@ -83,6 +83,7 @@ Formatadores:
 Dados:
 
 - [X] Feriados Nacionais (pelas leis 10.607/2002 e 6.802/1980)
+- [X] Dias úteis (pelas leis 10.607/2002 e 6.802/1980)
 - [X] Nomes de `meses` e `dias da semana` com e sem acentos, em maiúsculo e minúsculo
 - [X] Enum de `UFs` relacionado com o `Código IBGE`
 - [X] Arrays com as `UFs`, os `nomes dos estados`, seus códigos no `IBGE` e suas `capitais`
