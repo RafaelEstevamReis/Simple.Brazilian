@@ -50,7 +50,6 @@ namespace Simple.Brazilian.UnitTests.InformationTestes.DatesTestes
             Assert.Equal(255, WorkDay.WorkDaysBetween(dtInicio, dtFim));
         }
 
-
         [Fact]
         public void WorkdayIn_May2020()
         {
