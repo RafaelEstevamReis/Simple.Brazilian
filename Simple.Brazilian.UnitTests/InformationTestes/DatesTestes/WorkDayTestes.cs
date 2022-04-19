@@ -18,7 +18,7 @@ namespace Simple.Brazilian.UnitTests.InformationTestes.DatesTestes
         }
 
         [Fact]
-        public void WorkDaysBetween_Exemplo_Jan2021()
+        public void WorkDaysBetween_Jan2021()
         {
             DateTime dtInicio = new DateTime(2021, 01, 01);
             DateTime dtFim = new DateTime(2021, 01, 31);
@@ -26,7 +26,7 @@ namespace Simple.Brazilian.UnitTests.InformationTestes.DatesTestes
             Assert.Equal(20, WorkDay.WorkDaysBetween(dtInicio, dtFim));
         }
         [Fact]
-        public void WorkDaysBetween_Exemplo_Jan2020()
+        public void WorkDaysBetween_Jan2020()
         {
             DateTime dtInicio = new DateTime(2020, 1, 01);
             DateTime dtFim = new DateTime(2020, 1, 31);
@@ -34,7 +34,7 @@ namespace Simple.Brazilian.UnitTests.InformationTestes.DatesTestes
             Assert.Equal(22, WorkDay.WorkDaysBetween(dtInicio, dtFim));
         }
         [Fact]
-        public void WorkDaysBetween_Exemplo_May2020()
+        public void WorkDaysBetween_May2020()
         {
             DateTime dtInicio = new DateTime(2020, 05, 01);
             DateTime dtFim = new DateTime(2020, 05, 31);
@@ -42,7 +42,7 @@ namespace Simple.Brazilian.UnitTests.InformationTestes.DatesTestes
             Assert.Equal(20, WorkDay.WorkDaysBetween(dtInicio, dtFim));
         }
         [Fact]
-        public void WorkDaysBetween_Exemplo_2020()
+        public void WorkDaysBetween_2020()
         {
             DateTime dtInicio = new DateTime(2020, 01, 01);
             DateTime dtFim = new DateTime(2020, 12, 31);
@@ -50,5 +50,26 @@ namespace Simple.Brazilian.UnitTests.InformationTestes.DatesTestes
             Assert.Equal(255, WorkDay.WorkDaysBetween(dtInicio, dtFim));
         }
 
+
+        [Fact]
+        public void WorkdayIn_May2020()
+        {
+            DateTime dtInicio = new DateTime(2020, 05, 01);
+            DateTime dtFim = new DateTime(2020, 05, 29);
+
+            var actual = WorkDay.WorkdayIn(dtInicio, 20);
+
+            Assert.Equal(dtFim, actual);
+        }
+        [Fact]
+        public void WorkdayIn_2020()
+        {
+            DateTime dtInicio = new DateTime(2020, 01, 01);
+            DateTime dtFim = new DateTime(2020, 12, 31);
+
+            var actual = WorkDay.WorkdayIn(dtInicio, 255);
+
+            Assert.Equal(dtFim, actual);
+        }
     }
 }

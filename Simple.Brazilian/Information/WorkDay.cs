@@ -40,6 +40,7 @@ namespace Simple.Brazilian.Information
 
             return DayType.WeekDay;
         }
+
         /// <summary>
         /// Obtém dias úteis entre as datas
         /// </summary>
@@ -55,6 +56,23 @@ namespace Simple.Brazilian.Information
                 if(type == DayType.WeekDay) count++;
             }
             return count;
+        }
+
+        /// <summary>
+        /// Retorna o n'ésimo dia útil a partir do início
+        /// </summary>
+        /// <param name="start">Dia 0 da busca</param>
+        /// <param name="days">Número N de dias a serem buscados</param>
+        /// <returns>Data do n'ésimo dia</returns>
+        public static DateTime WorkdayIn(DateTime start, int days)
+        {
+            var dt = start;
+            while(days > 0)
+            {
+                dt = dt.AddDays(1);
+                if (GetDayType(dt) == DayType.WeekDay) days--;
+            }
+            return dt;
         }
 
     }
