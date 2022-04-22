@@ -1,4 +1,6 @@
-﻿namespace Simple.Brazilian.Documents
+﻿using System;
+
+namespace Simple.Brazilian.Documents
 {
     /// <summary>
     /// Validador de CPF
@@ -43,6 +45,23 @@
             }
 
             return false;
+        }
+        /// <summary>
+        /// Completa um CPF parcial com os dígitos verificadores
+        /// </summary>
+        /// <param name="partialCPF">CPF parcial com 9 dígitos a ser completado</param>
+        /// <returns>CPF válido</returns>
+        /// <exception cref="ArgumentNullException">Parâmetro não deve ser NULL</exception>
+        /// <exception cref="ArgumentException">Parâmetro informado é inválido</exception>
+        public static string CompleteWithDigitsCPF(string partialCPF)
+        {
+            if (partialCPF is null) throw new ArgumentNullException(nameof(partialCPF));
+            if(partialCPF.Length != 9) throw new ArgumentException($"{nameof(partialCPF)} deve ser composto pelos 9 dígitos iniciais");
+
+            bool valid = CalculateDigits(partialCPF, out int d1, out int d2);
+            if(!valid) throw new ArgumentException($"{nameof(partialCPF)} é inválido");
+
+            return $"{partialCPF}{d1}{d2}";
         }
 
         private static bool CalculateDigits(string cpf, out int firstDigitVerification, out int secondDigitVerification)

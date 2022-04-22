@@ -69,5 +69,17 @@ namespace Simple.Brazilian.UnitTests.DocumentosTestes.CPFTestes
             Assert.False(CPF.IsValid(cpf));
         }
 
+        [Theory]
+        [InlineData("79561606003")]
+        [InlineData("89211219000")]
+        [InlineData("25637952060")]
+        [InlineData("55487565082")]
+        [InlineData("27419682097")]
+        [InlineData("43364585024")]
+        public void CPF_CompleteWithDigitsCPF(string cpf)
+        {
+            string parcial = cpf.Substring(0, 9);
+            Assert.Equal(cpf, CPF.CompleteWithDigitsCPF(parcial));
+        }
     }
 }

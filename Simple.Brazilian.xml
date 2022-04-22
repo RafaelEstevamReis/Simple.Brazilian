@@ -98,6 +98,15 @@
             <param name="cpf">Um CPF com ou sem máscara (ex.: 55487565082 ou 554.875.650-82)</param>
             <returns>True se o CPF for válido, False se não</returns>
         </member>
+        <member name="M:Simple.Brazilian.Documents.CPF.CompleteWithDigitsCPF(System.String)">
+            <summary>
+            Completa um CPF parcial com os dígitos verificadores
+            </summary>
+            <param name="partialCPF">CPF parcial com 9 dígitos a ser completado</param>
+            <returns>CPF válido</returns>
+            <exception cref="T:System.ArgumentNullException">Parâmetro não deve ser NULL</exception>
+            <exception cref="T:System.ArgumentException">Parâmetro informado é inválido</exception>
+        </member>
         <member name="M:Simple.Brazilian.Documents.CPF.Mask(System.String)">
             <summary>
             Aplica a máscara de CPF ___.___.___-__
