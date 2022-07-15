@@ -76,7 +76,7 @@ Formatadores:
 - [X] Conversão de textos em números
 - [X] Conversão de números em texto com arredondamento `ABNT`
 - [X] Conversão de valor em reais para texto com sinal `monetário` e arredondamento `ABNT`
-- [ ] Funções para escrita de `valores por extenso`
+- [x] Funções para escrita de `valores por extenso`
 - [ ] Conversão de  palavras em `singular` para `plural`
 - [x] Filtragem de textos para remoção de caracteres por categorias
 
