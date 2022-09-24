@@ -4,26 +4,6 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
-        <member name="T:System.Linq.Enumerable">
-            <summary>
-            Classe para dar compatibilidade à NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`2">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`3">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`4">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
         <member name="T:Simple.Brazilian.Documents.CEP">
             <summary>
             Validador de CEP
@@ -229,6 +209,19 @@
             <summary>
             Localiza índice do Array
             </summary>
+        </member>
+        <member name="T:Simple.Brazilian.MoneyExtensions">
+            <summary>
+            Extensões para valores monetários
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.MoneyExtensions.ToBRL(System.Decimal,System.Int32)">
+            <summary>
+            Converte número em texto monetário usando Formatters.Numbers.ToBRL com casas decimais especificadas
+            </summary>
+            <param name="value">Valor a ser convertido</param>
+            <param name="decimals">Casas decimais</param>
+            <returns>Texto convertido</returns>
         </member>
         <member name="T:Simple.Brazilian.Formatters.Numbers">
             <summary>
