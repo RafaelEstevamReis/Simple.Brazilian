@@ -155,5 +155,21 @@ namespace Simple.Brazilian.Formatters
             }
             return sb.ToString();
         }
+        /// <summary>
+        /// Retorna o texto com comprimento até o limite
+        /// </summary>
+        /// <param name="text">Texto a ser limitado</param>
+        /// <param name="maxLen">Comprimento a ser utilizado</param>
+        /// <returns>Texto até o limite de comprimento definido</returns>
+        public static string TruncateText(string text, int maxLen)
+        {
+            if (maxLen <= 0) throw new ArgumentException($"{nameof(maxLen)} deve ser maior ou igual à 1");
+
+            if (text == null) return null;
+            if (text == string.Empty) return string.Empty;
+
+            if (text.Length <= maxLen) return text;
+            return text.Substring(0, maxLen);
+        }
     }
 }
