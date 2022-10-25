@@ -4,6 +4,26 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
+        <member name="T:System.Linq.Enumerable">
+            <summary>
+            Classe para dar compatibilidade à NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`2">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`3">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`4">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
         <member name="T:Simple.Brazilian.Documents.CEP">
             <summary>
             Validador de CEP
@@ -348,6 +368,14 @@
             <param name="text">Texto a ser limpo</param>
             <returns>O texto com os espaços tratados</returns>
         </member>
+        <member name="M:Simple.Brazilian.Formatters.Text.TruncateText(System.String,System.Int32)">
+            <summary>
+            Retorna o texto com comprimento até o limite
+            </summary>
+            <param name="text">Texto a ser limitado</param>
+            <param name="maxLen">Comprimento a ser utilizado</param>
+            <returns>Texto até o limite de comprimento definido</returns>
+        </member>
         <member name="T:Simple.Brazilian.Formatters.TextFilter">
             <summary>
             Executa filtragem de textos
@@ -570,6 +598,82 @@
             <param name="date">Data a ser validada</param>
             <param name="name">Nome do feriado</param>
             <returns>True, se é feriado ou False, se não</returns>
+        </member>
+        <member name="T:Simple.Brazilian.Information.Models.PIX_Payload">
+            <summary>
+            Dados do Payload do Pix
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Models.PIX_Payload.UniquePayment">
+            <summary>
+            Identifica se o pagamento pode ser reaproveitado
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Models.PIX_Payload.MerchantChavePix">
+            <summary>
+            Chave pix
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Models.PIX_Payload.MerchantCartoes">
+            <summary>
+            Merchant Account Information – Cartões
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Models.PIX_Payload.MerchantOutro">
+            <summary>
+            Merchant Account Information - Outro
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Models.PIX_Payload.Amount">
+            <summary>
+            Valor da transação
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Models.PIX_Payload.MerchantName">
+            <summary>
+            Nome do titular da conta/Lojista
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Models.PIX_Payload.MerchantCity">
+            <summary>
+            Cidade do titular da conta/Lojista
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Models.PIX_Payload.MerchantPostalCode">
+            <summary>
+            CEP do titular da conta/Lojista
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Models.PIX_Payload.ReferenceLabel">
+            <summary>
+            Texto de Referencia/Id Transacao
+            </summary>
+        </member>
+        <member name="P:Simple.Brazilian.Information.Models.PIX_Payload.InformacaoArbitraria">
+            <summary>
+            Informação Arbitrária
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Information.Models.PIX_Payload.PayloadMinimo(System.String,System.String,System.String)">
+            <summary>
+            Monta Payload mínimo
+            </summary>
+            <param name="chavePix">Chave Pix</param>
+            <param name="nomeMerchant">Nome do titular da conta</param>
+            <param name="cidadeMerchant">Cidade do titular da conta</param>
+            <returns>Payload com os dados</returns>
+        </member>
+        <member name="T:Simple.Brazilian.Information.PIX">
+            <summary>
+            Implementa gerador de BRCode para PIX
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Information.PIX.GerarQR_Estatico(Simple.Brazilian.Information.Models.PIX_Payload)">
+            <summary>
+            Monta texto do BRCode para geração de QR Code estático
+            </summary>
+            <param name="payload">Dados do pagamento</param>
+            <returns>Texto do BRCode</returns>
         </member>
         <member name="T:Simple.Brazilian.Information.Places.CityInfo">
             <summary>
@@ -915,6 +1019,25 @@
             </summary>
             <param name="dataVencimento">Data de vencimento do boleto</param>
             <returns>Fator de vencimento</returns>
+        </member>
+        <member name="T:Simple.Brazilian.Validators.CRC16">
+            <summary>
+            Calcula CRC16 no padrão CRC-16-CCITT-FFFF
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.CRC16.ComputeHexCRC(System.String)">
+            <summary>
+            Executa cálculo do CRC16 de uma string ASCII
+            </summary>
+            <param name="text">Texto a ser calculado</param>
+            <returns>Resultado em HEXADECIMAL</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.CRC16.ComputeCRC(System.Byte[])">
+            <summary>
+            Executa cálculo do CRC16
+            </summary>
+            <param name="bytes">Dados a serem calculados</param>
+            <returns>Resultado do CRC</returns>
         </member>
         <member name="T:Simple.Brazilian.Validators.Dates">
             <summary>
