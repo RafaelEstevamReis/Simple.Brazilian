@@ -3,7 +3,7 @@
 namespace Simple.Brazilian.Validators
 {
     /// <summary>
-    /// Calcula CRC16
+    /// Calcula CRC16 no padrão CRC-16-CCITT-FFFF
     /// </summary>
     public class CRC16
     {
