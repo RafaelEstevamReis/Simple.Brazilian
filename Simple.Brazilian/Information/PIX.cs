@@ -59,8 +59,8 @@ namespace Simple.Brazilian.Information
             }
             sb.Append(montaTLV(COUNTRYCODE, "BR"));
 
-            sb.Append(montaTLV(MERCHANT_NAME, payload.MerchantName));
-            sb.Append(montaTLV(MERCHANT_CITY, payload.MerchantCity));
+            sb.Append(montaTLV(MERCHANT_NAME, Text.TruncateText(payload.MerchantName, 25)));
+            sb.Append(montaTLV(MERCHANT_CITY, Text.TruncateText(payload.MerchantCity, 15)));
             if (!string.IsNullOrEmpty(payload.MerchantPostalCode))
             {
                 sb.Append(montaTLV(MERCHANT_POSTAL, payload.MerchantPostalCode));
