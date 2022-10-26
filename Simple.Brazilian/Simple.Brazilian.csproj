@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>NET6.0;netcoreapp3.1;netstandard1.0;netstandard2.0;NET45;NET40;NET20</TargetFrameworks>
+    <TargetFrameworks>NET6.0;netcoreapp3.1;netstandard1.0;netstandard2.0;NET20</TargetFrameworks>
     <LangVersion>9.0</LangVersion>
     <Version>1.1.0</Version>
     <Authors>RafaelEstevam.Net</Authors>

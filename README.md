@@ -45,8 +45,6 @@ Existem repositórios em várias linguagens porém é raro que:
   * Net6
   * Net5
   * Net Core 3.1
-  * Net Framework 4.5
-  * Net Framework 4.0
   * Net Framework 2.0
   * Net Standard 1.0+
     * Mono 4.6+
