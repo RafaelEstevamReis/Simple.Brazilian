@@ -53,7 +53,7 @@ namespace Simple.Brazilian.Documents
 
             return false;
         }
-
+        
         private static bool CalculateDigits(string cnpj, out int firstDigitVerification, out int secondDigitVerification)
         {
             int firstSum = 0;

@@ -4,6 +4,26 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
+        <member name="T:System.Linq.Enumerable">
+            <summary>
+            Classe para dar compatibilidade à NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`2">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`3">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`4">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
         <member name="T:Simple.Brazilian.Documents.CEP">
             <summary>
             Validador de CEP
@@ -51,6 +71,15 @@
             <param name="cnpj">CNPJ a ser verificado</param>
             <returns>True se o CNPJ é válido de acordo com o cálculo do Dígito Verificador;
             False senão</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Documents.CNPJ.CompleteWithDigitsCNPJ(System.String)">
+            <summary>
+            Completa um CNPJ que esteja sem os dígitos verificadores
+            </summary>
+            <param name="partialCNPJ">CNPJ parcial com 12 dígitos a ser completado</param>
+            <returns>CPF válido</returns>
+            <exception cref="T:System.ArgumentNullException">Parâmetro não deve ser NULL</exception>
+            <exception cref="T:System.ArgumentException">Parâmetro informado é inválido</exception>
         </member>
         <member name="M:Simple.Brazilian.Documents.CNPJ.Mask(System.String)">
             <summary>
