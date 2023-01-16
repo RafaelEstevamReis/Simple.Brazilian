@@ -38,5 +38,22 @@ namespace Simple.Brazilian.UnitTests.InformationTestes.PixTestes
             var esperado = "00020126580014BR.GOV.BCB.PIX0136123e4567-e12b-12d1-a456-4266554400005204000053039865802BR5917NOME DO RECEBEDOR6008BRASILIA6304F029";
             Assert.Equal(esperado, qr);
         }
+        [Fact]
+        public void TestaPix_CruzamentoExterno()
+        {
+            // Teste com o CNPJ da SHARP SISTEMAS
+            // Checado no site: https://www.gerarpix.com.br/
+            // E conferido no: https://pix.nascent.com.br/tools/pix-qr-decoder/
+            var payload = Information.Models.PIX_Payload.PayloadMinimo(chavePix: "17189722000139",
+                                                                       nomeMerchant: "SHARPSIS",
+                                                                       cidadeMerchant: "PAULINIA");
+            payload.Amount = 1;
+            payload.ReferenceLabel = "***";
+
+            var qr = PIX.GerarQR_Estatico(payload);
+
+            var esperado = "00020126360014BR.GOV.BCB.PIX01141718972200013952040000530398654041.005802BR5908SHARPSIS6008PAULINIA62070503***6304FFDA";
+            Assert.Equal(esperado, qr);
+        }
     }
 }
