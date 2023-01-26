@@ -1080,6 +1080,16 @@
             <param name="checkNationalHolydays">Define se deve considerar feriados nacionais na verificação</param>
             <returns>Data após o número `days` de dias úteis</returns>
         </member>
+        <member name="T:Simple.Brazilian.Validators.EMail">
+            <summary>
+            Validação de endereços de e-mail
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.EMail.IsValid(System.String)">
+            <summary>
+            Valida se o texto é uma e-mail válido
+            </summary>
+        </member>
         <member name="T:Simple.Brazilian.Validators.ModValidation">
             <summary>
             Validação e dados com "Mod"
@@ -1128,6 +1138,46 @@
         <member name="M:Simple.Brazilian.Validators.ModValidation.Calculate2121Mod10IndividualDigitsChar(System.String)">
             <summary>
             Executa cálculo no padrão 2121 em Mod10 no texto, retorna CHAR
+            </summary>
+        </member>
+        <member name="T:Simple.Brazilian.Validators.Pix">
+            <summary>
+            Validação de Chaves PIX
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.Pix.IsValid(System.String)">
+            <summary>
+            Valida se o texto é uma das Chaves PIX válidas
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.Pix.IsValid_CPF(System.String)">
+            <summary>
+            Valida se o texto é uma Chave PIX de CPF
+            Exemplo do Manual PIX: 12345678900 (Atenção, o CPF do manual é inválido)
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.Pix.IsValid_CNPJ(System.String)">
+            <summary>
+            Valida se o texto é uma Chave PIX de CNPJ
+            Exemplo do Manual PIX: 00038166000105
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.Pix.IsValid_Celular(System.String)">
+            <summary>
+            Valida se o texto é uma Chave PIX de Celular
+            Exemplo do Manual PIX: +5561912345678
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.Pix.IsValid_Email(System.String)">
+            <summary>
+            Valida se o texto é uma Chave PIX de e-mail
+            Exemplo do Manual PIX: fulano_da_silva.recebedor@example.com
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.Pix.IsValid_Aleatoria(System.String)">
+            <summary>
+            Valida se o texto é uma Chave PIX Aleatória. 
+            Exemplo do Manual PIX: 123e4567-e12b-12d1-a456-426655440000
             </summary>
         </member>
     </members>
