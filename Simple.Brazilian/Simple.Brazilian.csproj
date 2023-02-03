@@ -16,6 +16,8 @@
 			Pareado com o commit c642476
 			https://github.com/RafaelEstevamReis/Simple.Brazilian
 		</PackageReleaseNotes>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);1591</NoWarn>
 	</PropertyGroup>
 	<PropertyGroup>
 		<DocumentationFile>..\Simple.Brazilian.xml</DocumentationFile>
