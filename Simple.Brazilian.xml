@@ -4,26 +4,6 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
-        <member name="T:System.Linq.Enumerable">
-            <summary>
-            Classe para dar compatibilidade à NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`2">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`3">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`4">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
         <member name="T:Simple.Brazilian.Documents.CEP">
             <summary>
             Validador de CEP
@@ -1001,6 +981,38 @@
             <param name="start">Dia 0 da busca</param>
             <param name="days">Número N de dias a serem buscados</param>
             <returns>Data do n'ésimo dia</returns>
+        </member>
+        <member name="T:Simple.Brazilian.Validators.Bank">
+            <summary>
+            Validações de dados bancários
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.Bank.IsBankNumberValid(System.String)">
+            <summary>
+            Validação simples de número do banco (COMPE), sem dígito
+            </summary>
+            <param name="bankNumber">Número do banco</param>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.Bank.IsAgencyValid(System.String)">
+            <summary>
+            Validação simples de número da agência, sem dígito
+            </summary>
+            <param name="agencyNumber">Número do banco</param>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.Bank.IsAccountValid(System.String)">
+            <summary>
+            Validação simples de número da conta, sem dígito
+            </summary>
+            <param name="accountNumber">Número do banco</param>
+        </member>
+        <member name="M:Simple.Brazilian.Validators.Bank.IsValid(System.String,System.String,System.String)">
+            <summary>
+            Validação simples de de dados bancários com digito. 
+            Não é feita a checagem do digito verificador.
+            </summary>
+            <param name="bankNumber">Código do Banco (COMPE)</param>
+            <param name="agencyWithDigit">Número da agência</param>
+            <param name="accountWithDigit">Número da Conta</param>
         </member>
         <member name="T:Simple.Brazilian.Validators.Boleto">
             <summary>
