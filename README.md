@@ -60,6 +60,8 @@ Validadores:
 - [X] Validação de Documentos: `CEP`, `CNPJ`, `CPF`, `IE` e `PIS`
 - [ ] Validação de Documentos: `RG`
 - [x] Validação de Chaves PIX
+- [x] Validação de Dados Bancários (sem calcular DV)
+- [ ] Validação de Dados Bancários (com cálculo DV)
 - [X] Valida Dia Útil com possibilidade de verificar feriados nacionais
 - [X] Calculador de dias úteis (ex.: Quando será daqui X dias úteis)
 
