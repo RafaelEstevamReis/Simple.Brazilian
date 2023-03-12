@@ -365,6 +365,30 @@
             <param name="maxLen">Comprimento a ser utilizado</param>
             <returns>Texto até o limite de comprimento definido</returns>
         </member>
+        <member name="M:Simple.Brazilian.Formatters.Text.Filtrar(System.String,System.String)">
+            <summary>
+            Retorna o texto removendo todos os caracteres não permitidos
+            </summary>
+            <param name="text">Texto a ser avaliado</param>
+            <param name="allowed">Caracteres permitidos</param>
+            <returns>Texto contendo apenas caracteres permitidos</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.Text.Filtrar(System.String,System.Char[])">
+            <summary>
+            Retorna o texto removendo todos os caracteres não permitidos
+            </summary>
+            <param name="text">Texto a ser avaliado</param>
+            <param name="allowed">Caracteres permitidos</param>
+            <returns>Texto contendo apenas caracteres permitidos</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.Text.Filtrar(System.String,System.Collections.Generic.HashSet{System.Char})">
+            <summary>
+            Retorna o texto removendo todos os caracteres não permitidos
+            </summary>
+            <param name="text">Texto a ser avaliado</param>
+            <param name="allowed">Caracteres permitidos</param>
+            <returns>Texto contendo apenas caracteres permitidos</returns>
+        </member>
         <member name="T:Simple.Brazilian.Formatters.TextFilter">
             <summary>
             Executa filtragem de textos
