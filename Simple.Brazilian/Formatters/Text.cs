@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace Simple.Brazilian.Formatters
@@ -171,5 +172,54 @@ namespace Simple.Brazilian.Formatters
             if (text.Length <= maxLen) return text;
             return text.Substring(0, maxLen);
         }
+
+        /// <summary>
+        /// Retorna o texto removendo todos os caracteres não permitidos
+        /// </summary>
+        /// <param name="text">Texto a ser avaliado</param>
+        /// <param name="allowed">Caracteres permitidos</param>
+        /// <returns>Texto contendo apenas caracteres permitidos</returns>
+        public static string Filtrar(string text, string allowed)
+            => Filtrar(text, allowed.ToCharArray());
+        /// <summary>
+        /// Retorna o texto removendo todos os caracteres não permitidos
+        /// </summary>
+        /// <param name="text">Texto a ser avaliado</param>
+        /// <param name="allowed">Caracteres permitidos</param>
+        /// <returns>Texto contendo apenas caracteres permitidos</returns>
+        public static string Filtrar(string text, char[] allowed)
+            => Filtrar(text, new HashSet<char>(allowed));
+        /// <summary>
+        /// Retorna o texto removendo todos os caracteres não permitidos
+        /// </summary>
+        /// <param name="text">Texto a ser avaliado</param>
+        /// <param name="allowed">Caracteres permitidos</param>
+        /// <returns>Texto contendo apenas caracteres permitidos</returns>
+#if NET20
+        internal 
+#else
+        public 
+#endif
+        /**/ static string Filtrar(string text, HashSet<char> allowed)
+        {
+            if (allowed is null)
+            {
+                throw new ArgumentNullException(nameof(allowed));
+            }
+
+            if (string.IsNullOrEmpty(text)) return text;
+            if (allowed.Count == 0) return string.Empty;
+
+            StringBuilder sb = new StringBuilder(capacity: text.Length);
+
+            foreach(var c in text)
+            {
+                if (!allowed.Contains(c)) continue;
+                sb.Append(c);
+            }
+
+            return sb.ToString();
+        }
+
     }
 }
