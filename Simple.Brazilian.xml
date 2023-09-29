@@ -4,6 +4,26 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
+        <member name="T:System.Linq.Enumerable">
+            <summary>
+            Classe para dar compatibilidade à NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`2">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`3">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
+        <member name="T:System.Func`4">
+            <summary>
+            Delegate de compatibilidade para NET20
+            </summary>
+        </member>
         <member name="T:Simple.Brazilian.Documents.CEP">
             <summary>
             Validador de CEP
@@ -319,6 +339,16 @@
             <summary>
             Escreve número inteiro por extenso
             </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.Pluralizer.DivisaoSilabica(System.String)">
+            <summary>
+            Algoritmo de divisão silábica
+            Usa o paper `Divisão Silábica Automática do Texto Escrito e Falado` do
+            CEFAT por Paulo Duarte Ferreira Gouveia, João Paulo Ramos Teixeira, e Diamantino Rui da Silva Freitas
+            </summary>
+            <param name="pal"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
         </member>
         <member name="T:Simple.Brazilian.Formatters.Text">
             <summary>
