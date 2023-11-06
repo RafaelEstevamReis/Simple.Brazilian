@@ -199,7 +199,7 @@ public static class Text
 #if NET20
     internal 
 #else
-    public 
+    public
 #endif
     /**/ static string Filter(string text, HashSet<char> allowed)
     {
@@ -213,13 +213,53 @@ public static class Text
 
         StringBuilder sb = new StringBuilder(capacity: text.Length);
 
-        foreach(var c in text)
+        foreach (var c in text)
         {
             if (!allowed.Contains(c)) continue;
             sb.Append(c);
         }
 
         return sb.ToString();
+    }
+
+    public enum CharacterType
+    {
+        Numbers,
+        UppercaseLetters,
+        LowercaseLetters,
+        Symbols,
+        Punctuation,
+        Whitespace,
+    }
+    public static bool ContainsAny(string text, CharacterType type)
+    {
+        for (int i = 0; i < text.Length; i++)
+        {
+            char c = text[i];
+
+            if (type == CharacterType.Numbers && char.IsDigit(c)) return true;
+            if (type == CharacterType.UppercaseLetters && char.IsUpper(c)) return true;
+            if (type == CharacterType.LowercaseLetters && char.IsLower(c)) return true;
+            if (type == CharacterType.Symbols && char.IsSymbol(c)) return true;
+            if (type == CharacterType.Punctuation && char.IsPunctuation(c)) return true;
+            if (type == CharacterType.Whitespace && char.IsWhiteSpace(c)) return true;
+        }
+        return false;
+    }
+    public static bool ContainsOnly(string text, CharacterType type)
+    {
+        for (int i = 0; i < text.Length; i++)
+        {
+            char c = text[i];
+
+            if (type == CharacterType.Numbers && !char.IsDigit(c)) return false;
+            if (type == CharacterType.UppercaseLetters && !char.IsUpper(c)) return false;
+            if (type == CharacterType.LowercaseLetters && !char.IsLower(c)) return false;
+            if (type == CharacterType.Symbols && !char.IsSymbol(c)) return false;
+            if (type == CharacterType.Punctuation && !char.IsPunctuation(c)) return false;
+            if (type == CharacterType.Whitespace && !char.IsWhiteSpace(c)) return false;
+        }
+        return true;
     }
 
 }
