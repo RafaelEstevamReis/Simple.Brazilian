@@ -2,8 +2,10 @@
 
 using Simple.Brazilian.Formatters;
 using System;
+using System.Runtime.Versioning;
 using Xunit;
 
+[RequiresPreviewFeatures]
 public class DivisaoSilabicaTestes
 {
     [Theory]

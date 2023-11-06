@@ -1,8 +1,10 @@
 ﻿namespace Simple.Brazilian.UnitTests.FormattersTestes.PluralizerTestes;
 
 using Simple.Brazilian.Formatters;
+using System.Runtime.Versioning;
 using Xunit;
 
+[RequiresPreviewFeatures]
 public class PluralizePDVTestes
 {
     [Theory]

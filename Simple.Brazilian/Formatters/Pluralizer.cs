@@ -1,10 +1,14 @@
-﻿using System;
+﻿#if NET6_0_OR_GREATER
+
+using System;
 using System.Collections.Generic;
+using System.Runtime.Versioning;
 using System.Text;
 
 namespace Simple.Brazilian.Formatters;
 
-internal class Pluralizer
+[RequiresPreviewFeatures("API em estudo de viabilidade")]
+public class Pluralizer
 {
     public static string[] InvariantWords { get; set; } =
     {
@@ -278,3 +282,5 @@ internal class Pluralizer
 
 
 }
+
+#endif
