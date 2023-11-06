@@ -179,16 +179,17 @@ public static class Text
     /// <param name="text">Texto a ser avaliado</param>
     /// <param name="allowed">Caracteres permitidos</param>
     /// <returns>Texto contendo apenas caracteres permitidos</returns>
-    public static string Filtrar(string text, string allowed)
-        => Filtrar(text, allowed.ToCharArray());
+    public static string Filter(string text, string allowed)
+        => Filter(text, allowed.ToCharArray());
     /// <summary>
     /// Retorna o texto removendo todos os caracteres não permitidos
     /// </summary>
     /// <param name="text">Texto a ser avaliado</param>
     /// <param name="allowed">Caracteres permitidos</param>
     /// <returns>Texto contendo apenas caracteres permitidos</returns>
-    public static string Filtrar(string text, char[] allowed)
-        => Filtrar(text, new HashSet<char>(allowed));
+    public static string Filter(string text, char[] allowed)
+        => Filter(text, new HashSet<char>(allowed));
+
     /// <summary>
     /// Retorna o texto removendo todos os caracteres não permitidos
     /// </summary>
@@ -200,7 +201,7 @@ public static class Text
 #else
     public 
 #endif
-    /**/ static string Filtrar(string text, HashSet<char> allowed)
+    /**/ static string Filter(string text, HashSet<char> allowed)
     {
         if (allowed is null)
         {

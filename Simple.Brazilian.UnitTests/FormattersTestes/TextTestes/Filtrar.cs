@@ -11,7 +11,7 @@ namespace Simple.Brazilian.UnitTests.FormattersTestes.TextTestes
         [InlineData("123", null)]
         public void Texto_Filtrar_ValidaNulos(string valor, string permitidos)
         {
-            Assert.Throws<NullReferenceException>(() => Text.Filtrar(valor, permitidos));
+            Assert.Throws<NullReferenceException>(() => Text.Filter(valor, permitidos));
         }
 
         [Theory]
@@ -25,11 +25,11 @@ namespace Simple.Brazilian.UnitTests.FormattersTestes.TextTestes
             // Garante que todas as sobrecargas estão testando os mesmos dados
 
             // Base test
-            Assert.Equal(retorno, Text.Filtrar(valor, permitidos));
+            Assert.Equal(retorno, Text.Filter(valor, permitidos));
             // Char test
-            Assert.Equal(retorno, Text.Filtrar(valor, permitidos.ToCharArray()));
+            Assert.Equal(retorno, Text.Filter(valor, permitidos.ToCharArray()));
             // Hashset test
-            Assert.Equal(retorno, Text.Filtrar(valor, new HashSet<char>(permitidos.ToCharArray())));
+            Assert.Equal(retorno, Text.Filter(valor, new HashSet<char>(permitidos.ToCharArray())));
         }
     }
 }
