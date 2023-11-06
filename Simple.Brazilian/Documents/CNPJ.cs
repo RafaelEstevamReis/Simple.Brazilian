@@ -37,7 +37,7 @@ public static class CNPJ
         int firstDigit = cnpj[12] - '0';
         int secondDigit = cnpj[13] - '0';
 
-        if (!CalculateDigits(cnpj, out int firstDigitVerification, out int secondDigitVerification))
+        if (!calculateDigits(cnpj, out int firstDigitVerification, out int secondDigitVerification))
             return false;
 
         if (firstDigitVerification != firstDigit || secondDigitVerification != secondDigit)
@@ -54,7 +54,25 @@ public static class CNPJ
         return false;
     }
 
-    private static bool CalculateDigits(string cnpj, out int firstDigitVerification, out int secondDigitVerification)
+    /// <summary>
+    /// Completa um CNPJ que esteja sem os dígitos verificadores
+    /// </summary>
+    /// <param name="partialCNPJ">CNPJ parcial com 12 dígitos a ser completado</param>
+    /// <returns>CPF válido</returns>
+    /// <exception cref="ArgumentNullException">Parâmetro não deve ser NULL</exception>
+    /// <exception cref="ArgumentException">Parâmetro informado é inválido</exception>
+    public static string CompleteWithDigitsCNPJ(string partialCNPJ)
+    {
+        if (partialCNPJ is null) throw new ArgumentNullException(nameof(partialCNPJ));
+        if (partialCNPJ.Length != 12) throw new ArgumentException($"{nameof(partialCNPJ)} deve ser composto pelos 12 dígitos iniciais");
+
+        bool valid = calculateDigits(partialCNPJ, out int d1, out int d2);
+        if (!valid) throw new ArgumentException($"{nameof(partialCNPJ)} é inválido");
+
+        return $"{partialCNPJ}{d1}{d2}";
+    }
+
+    private static bool calculateDigits(string cnpj, out int firstDigitVerification, out int secondDigitVerification)
     {
         int firstSum = 0;
         int secondSum = 0;
@@ -98,25 +116,6 @@ public static class CNPJ
         // Finalizou
         return true;
     }
-
-    /// <summary>
-    /// Completa um CNPJ que esteja sem os dígitos verificadores
-    /// </summary>
-    /// <param name="partialCNPJ">CNPJ parcial com 12 dígitos a ser completado</param>
-    /// <returns>CPF válido</returns>
-    /// <exception cref="ArgumentNullException">Parâmetro não deve ser NULL</exception>
-    /// <exception cref="ArgumentException">Parâmetro informado é inválido</exception>
-    public static string CompleteWithDigitsCNPJ(string partialCNPJ)
-    {
-        if (partialCNPJ is null) throw new ArgumentNullException(nameof(partialCNPJ));
-        if (partialCNPJ.Length != 12) throw new ArgumentException($"{nameof(partialCNPJ)} deve ser composto pelos 12 dígitos iniciais");
-
-        bool valid = CalculateDigits(partialCNPJ, out int d1, out int d2);
-        if (!valid) throw new ArgumentException($"{nameof(partialCNPJ)} é inválido");
-
-        return $"{partialCNPJ}{d1}{d2}";
-    }
-
 
     /// <summary>
     /// Aplica a máscara de CNPJ __.___.___/____-__
