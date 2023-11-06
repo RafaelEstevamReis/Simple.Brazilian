@@ -16,7 +16,7 @@ namespace Simple.Brazilian.Information
             /// <summary>
             /// Feriado nacional, ver Dates.IsNationalHoliday
             /// </summary>
-            NatinalHoliday,
+            NationalHoliday,
             /// <summary>
             /// Fim de semana
             /// </summary>
@@ -33,7 +33,7 @@ namespace Simple.Brazilian.Information
         /// <returns>Tipo de data</returns>
         public static DayType GetDayType(DateTime date)
         {
-            if (Dates.IsNationalHoliday(date, out _)) return DayType.NatinalHoliday;
+            if (Dates.IsNationalHoliday(date, out _)) return DayType.NationalHoliday;
 
             if (date.DayOfWeek == DayOfWeek.Saturday) return DayType.WeekEnd;
             if (date.DayOfWeek == DayOfWeek.Sunday) return DayType.WeekEnd;
@@ -50,7 +50,7 @@ namespace Simple.Brazilian.Information
         public static int WorkDaysBetween(DateTime start, DateTime end)
         {
             int count = 0;
-            for (DateTime dt = start; dt <= end; dt = dt.AddDays(1))
+            for (DateTime dt = start.Date; dt <= end; dt = dt.AddDays(1).Date)
             {
                 var type = GetDayType(dt);
                 if(type == DayType.WeekDay) count++;

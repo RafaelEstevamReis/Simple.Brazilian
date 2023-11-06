@@ -7,7 +7,7 @@ namespace Simple.Brazilian.UnitTests.InformationTestes.DatesTestes
     public class WorkDayTestes
     {
         [Theory]
-        [InlineData(1, WorkDay.DayType.NatinalHoliday)]
+        [InlineData(1, WorkDay.DayType.NationalHoliday)]
         [InlineData(2, WorkDay.DayType.WeekEnd)]
         [InlineData(3, WorkDay.DayType.WeekEnd)]
         [InlineData(4, WorkDay.DayType.WeekDay)]
