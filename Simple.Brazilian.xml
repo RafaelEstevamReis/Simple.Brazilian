@@ -4,26 +4,6 @@
         <name>Simple.Brazilian</name>
     </assembly>
     <members>
-        <member name="T:System.Linq.Enumerable">
-            <summary>
-            Classe para dar compatibilidade à NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`2">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`3">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
-        <member name="T:System.Func`4">
-            <summary>
-            Delegate de compatibilidade para NET20
-            </summary>
-        </member>
         <member name="T:Simple.Brazilian.Documents.CEP">
             <summary>
             Validador de CEP
@@ -395,7 +375,7 @@
             <param name="maxLen">Comprimento a ser utilizado</param>
             <returns>Texto até o limite de comprimento definido</returns>
         </member>
-        <member name="M:Simple.Brazilian.Formatters.Text.Filtrar(System.String,System.String)">
+        <member name="M:Simple.Brazilian.Formatters.Text.Filter(System.String,System.String)">
             <summary>
             Retorna o texto removendo todos os caracteres não permitidos
             </summary>
@@ -403,7 +383,7 @@
             <param name="allowed">Caracteres permitidos</param>
             <returns>Texto contendo apenas caracteres permitidos</returns>
         </member>
-        <member name="M:Simple.Brazilian.Formatters.Text.Filtrar(System.String,System.Char[])">
+        <member name="M:Simple.Brazilian.Formatters.Text.Filter(System.String,System.Char[])">
             <summary>
             Retorna o texto removendo todos os caracteres não permitidos
             </summary>
@@ -411,13 +391,23 @@
             <param name="allowed">Caracteres permitidos</param>
             <returns>Texto contendo apenas caracteres permitidos</returns>
         </member>
-        <member name="M:Simple.Brazilian.Formatters.Text.Filtrar(System.String,System.Collections.Generic.HashSet{System.Char})">
+        <member name="M:Simple.Brazilian.Formatters.Text.Filter(System.String,System.Collections.Generic.HashSet{System.Char})">
             <summary>
             Retorna o texto removendo todos os caracteres não permitidos
             </summary>
             <param name="text">Texto a ser avaliado</param>
             <param name="allowed">Caracteres permitidos</param>
             <returns>Texto contendo apenas caracteres permitidos</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.Text.ContainsAny(System.String,Simple.Brazilian.Formatters.Text.CharacterType)">
+            <summary>
+            Verifica se o texto contém qualquer caracter do tipo escolhido
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.Text.ContainsOnly(System.String,Simple.Brazilian.Formatters.Text.CharacterType)">
+            <summary>
+            Verifica se o texto contém apenas caracteres do tipo escolhido
+            </summary>
         </member>
         <member name="T:Simple.Brazilian.Formatters.TextFilter">
             <summary>
@@ -998,7 +988,7 @@
             Tipo de data
             </summary>
         </member>
-        <member name="F:Simple.Brazilian.Information.WorkDay.DayType.NatinalHoliday">
+        <member name="F:Simple.Brazilian.Information.WorkDay.DayType.NationalHoliday">
             <summary>
             Feriado nacional, ver Dates.IsNationalHoliday
             </summary>

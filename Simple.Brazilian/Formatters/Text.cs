@@ -231,6 +231,9 @@ public static class Text
         Punctuation,
         Whitespace,
     }
+    /// <summary>
+    /// Verifica se o texto contém qualquer caracter do tipo escolhido
+    /// </summary>
     public static bool ContainsAny(string text, CharacterType type)
     {
         for (int i = 0; i < text.Length; i++)
@@ -246,6 +249,9 @@ public static class Text
         }
         return false;
     }
+    /// <summary>
+    /// Verifica se o texto contém apenas caracteres do tipo escolhido
+    /// </summary>
     public static bool ContainsOnly(string text, CharacterType type)
     {
         for (int i = 0; i < text.Length; i++)
