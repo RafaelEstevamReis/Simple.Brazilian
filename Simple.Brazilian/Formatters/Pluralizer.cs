@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Simple.Brazilian.Formatters;
 
-public class Pluralizer
+internal class Pluralizer
 {
     public static string[] InvariantWords { get; set; } =
     {
