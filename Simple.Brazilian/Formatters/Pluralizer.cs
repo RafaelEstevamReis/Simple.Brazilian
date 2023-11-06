@@ -1,11 +1,10 @@
 ﻿#if NET6_0_OR_GREATER
+namespace Simple.Brazilian.Formatters;
 
 using System;
 using System.Collections.Generic;
 using System.Runtime.Versioning;
 using System.Text;
-
-namespace Simple.Brazilian.Formatters;
 
 [RequiresPreviewFeatures("API em estudo de viabilidade")]
 public class Pluralizer
@@ -279,7 +278,6 @@ public class Pluralizer
         string consoantes = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZçÇ";
         return consoantes.Contains(c.ToString());
     }
-
 
 }
 
