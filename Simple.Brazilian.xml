@@ -320,6 +320,16 @@
             Escreve número inteiro por extenso
             </summary>
         </member>
+        <member name="M:Simple.Brazilian.Formatters.Pluralizer.DivisaoSilabica(System.String)">
+            <summary>
+            Algoritmo de divisão silábica
+            Usa o paper `Divisão Silábica Automática do Texto Escrito e Falado` do
+            CEFAT por Paulo Duarte Ferreira Gouveia, João Paulo Ramos Teixeira, e Diamantino Rui da Silva Freitas
+            </summary>
+            <param name="pal"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
         <member name="T:Simple.Brazilian.Formatters.Text">
             <summary>
             Formatadores textuais
@@ -397,6 +407,11 @@
         <member name="M:Simple.Brazilian.Formatters.Text.ContainsOnly(System.String,Simple.Brazilian.Formatters.Text.CharacterType)">
             <summary>
             Verifica se o texto contém apenas caracteres do tipo escolhido
+            </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.Text.Equals(System.String,System.String)">
+            <summary>
+             Verifica se as strings são iguais ignorando acentos e utilizando InvariantCultureIgnoreCase
             </summary>
         </member>
         <member name="T:Simple.Brazilian.Formatters.TextFilter">
