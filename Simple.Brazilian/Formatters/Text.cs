@@ -268,4 +268,20 @@ public static class Text
         return true;
     }
 
+    /// <summary>
+    ///  Verifica se as strings são iguais ignorando acentos e utilizando InvariantCultureIgnoreCase
+    ///  NETSTANDARD1_0 utilizará .ToLower() antes da comparação
+    /// </summary>
+    public static bool EqualsText(this string a, string b)
+    {
+        var a1 = RemoveAccents(a);
+        var b1 = RemoveAccents(b);
+
+#if NETSTANDARD1_0
+        return a1.ToLower().Equals(b1.ToLower());
+#else
+        return a1.Equals(b1, StringComparison.InvariantCultureIgnoreCase);
+#endif
+
+    }
 }
