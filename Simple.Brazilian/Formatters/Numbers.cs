@@ -185,6 +185,19 @@ public class Numbers
         return processError(OnError);
     }
 
+    /// <summary>
+    /// Arredonda o valor utilizando a ABNT
+    /// </summary>
+    /// <param name="value">Valor a ser arredondado</param>
+    /// <param name="decimals">Quantidade de casas decimais</param>
+    public static decimal RoundABNT(decimal value, int decimals) => abntRounding(value, decimals);
+    /// <summary>
+    /// Arredonda o valor utilizando a ABNT
+    /// </summary>
+    /// <param name="value">Valor a ser arredondado</param>
+    /// <param name="decimals">Quantidade de casas decimais</param>
+    public static double RoundABNT(double value, int decimals) => abntRounding(value, decimals);
+
     private static decimal abntRounding(decimal value, int decimals)
     {
         return Math.Round(value, decimals, MidpointRounding.ToEven);

@@ -309,6 +309,20 @@
             <returns>Número convertido, ou valor padrão</returns>
             <exception cref="T:System.FormatException">Lança FormatException caso não seja possível a conversão e OnError seja NULL</exception>
         </member>
+        <member name="M:Simple.Brazilian.Formatters.Numbers.Round(System.Decimal,System.Int32)">
+            <summary>
+            Arredonda o valor utilizando a ABNT
+            </summary>
+            <param name="value">Valor a ser arredondado</param>
+            <param name="decimals">Quantidade de casas decimais</param>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.Numbers.Round(System.Double,System.Int32)">
+            <summary>
+            Arredonda o valor utilizando a ABNT
+            </summary>
+            <param name="value">Valor a ser arredondado</param>
+            <param name="decimals">Quantidade de casas decimais</param>
+        </member>
         <member name="M:Simple.Brazilian.Formatters.Numbers.MoedaExtenso(System.Decimal)">
             <summary>
             Escreve número monetário por extenso
@@ -319,6 +333,16 @@
             <summary>
             Escreve número inteiro por extenso
             </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Formatters.Pluralizer.DivisaoSilabica(System.String)">
+            <summary>
+            Algoritmo de divisão silábica
+            Usa o paper `Divisão Silábica Automática do Texto Escrito e Falado` do
+            CEFAT por Paulo Duarte Ferreira Gouveia, João Paulo Ramos Teixeira, e Diamantino Rui da Silva Freitas
+            </summary>
+            <param name="pal"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
         </member>
         <member name="T:Simple.Brazilian.Formatters.Text">
             <summary>
