@@ -309,14 +309,14 @@
             <returns>Número convertido, ou valor padrão</returns>
             <exception cref="T:System.FormatException">Lança FormatException caso não seja possível a conversão e OnError seja NULL</exception>
         </member>
-        <member name="M:Simple.Brazilian.Formatters.Numbers.Round(System.Decimal,System.Int32)">
+        <member name="M:Simple.Brazilian.Formatters.Numbers.RoundABNT(System.Decimal,System.Int32)">
             <summary>
             Arredonda o valor utilizando a ABNT
             </summary>
             <param name="value">Valor a ser arredondado</param>
             <param name="decimals">Quantidade de casas decimais</param>
         </member>
-        <member name="M:Simple.Brazilian.Formatters.Numbers.Round(System.Double,System.Int32)">
+        <member name="M:Simple.Brazilian.Formatters.Numbers.RoundABNT(System.Double,System.Int32)">
             <summary>
             Arredonda o valor utilizando a ABNT
             </summary>
