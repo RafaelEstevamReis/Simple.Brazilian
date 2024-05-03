@@ -8,6 +8,8 @@ public class GO : IStateData
 
     public bool IsSateHoliday(DateTime date, out string name)
     {
+        // Não tem
+
         name = null;
         return false;
     }

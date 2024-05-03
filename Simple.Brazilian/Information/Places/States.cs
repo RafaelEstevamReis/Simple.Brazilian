@@ -62,7 +62,7 @@ public class States
     };
     private static readonly Dictionary<UFs, IStateData> dicStateData = lstStateData.ToDictionary(o => o.UF);
 
-    static CityInfo[] cityInfo = null;
+    private static CityInfo[] cityInfo = null;
     /// <summary>
     /// Obtém uma lista com todos os municípios, seus nomes e códigos IBGE
     /// </summary>
@@ -118,7 +118,10 @@ public class States
     /// </summary>
     /// <param name="uf">Item do enum UFs</param>
     public static StateInfo GetStateInfo(UFs uf) => GetStateInfoByName((int)uf);
-
+    /// <summary>
+    /// Obtém o objeto IStateData para o UF desejado
+    /// </summary>
+    /// <exception cref="Exception">UF=EX não é permitido</exception>
     public static IStateData GetStateDataObject(UFs uf)
     {
         if (uf == UFs.EX) throw new Exception("EX não é um UF válido");

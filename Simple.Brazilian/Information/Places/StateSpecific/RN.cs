@@ -8,6 +8,15 @@ public class RN : IStateData
 
     public bool IsSateHoliday(DateTime date, out string name)
     {
+        if (date.Month == 10)
+        {
+            if (date.Day == 3)
+            {
+                name = "Protomártires de Uruaçu e Cunhaú";
+                return true;
+            }
+        }
+
         name = null;
         return false;
     }

@@ -8,6 +8,15 @@ public class RS : IStateData
 
     public bool IsSateHoliday(DateTime date, out string name)
     {
+        if (date.Month == 9)
+        {
+            if (date.Day == 20)
+            {
+                name = "Revolução Farroupilha (Dia do Gaúcho)";
+                return true;
+            }
+        }
+
         name = null;
         return false;
     }

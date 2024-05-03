@@ -1,5 +1,6 @@
 ﻿namespace Simple.Brazilian.Information;
 
+using Simple.Brazilian.Information.Places;
 using System;
 
 /// <summary>
@@ -129,4 +130,16 @@ public static class Dates
         return false;
     }
 
+    /// <summary>
+    /// Retorna feriados civís estaduais
+    /// </summary>
+    /// <param name="uf">UF para qual validar</param>
+    /// <param name="date">Data a ser validada</param>
+    /// <param name="name">Nome do feriado</param>
+    /// <returns>True, se é feriado ou False, se não</returns>
+    public static bool IsStateHoliday(UFs uf, DateTime date, out string name)
+    {
+        var si = States.GetStateDataObject(uf);
+        return si.IsSateHoliday(date, out name);
+    }
 }

@@ -8,6 +8,15 @@ public class PA : IStateData
 
     public bool IsSateHoliday(DateTime date, out string name)
     {
+        if (date.Month == 8)
+        {
+            if (date.Day == 15)
+            {
+                name = "Adesão do Grão-Pará à independência do Brasil";
+                return true;
+            }
+        }
+
         name = null;
         return false;
     }

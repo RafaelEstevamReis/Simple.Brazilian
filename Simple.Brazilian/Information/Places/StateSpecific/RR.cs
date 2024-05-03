@@ -8,6 +8,15 @@ public class RR : IStateData
 
     public bool IsSateHoliday(DateTime date, out string name)
     {
+        if (date.Month == 10)
+        {
+            if (date.Day == 5)
+            {
+                name = "Elevação do antigo Território Federal do Rio Branco a estado de Roraima";
+                return true;
+            }
+        }
+
         name = null;
         return false;
     }
