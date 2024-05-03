@@ -42,15 +42,16 @@ Existem repositórios em várias linguagens porém é raro que:
    [![.NET](https://github.com/RafaelEstevamReis/Simple.Brazilian/actions/workflows/dotnet.yml/badge.svg)](https://github.com/RafaelEstevamReis/Simple.Brazilian/actions/workflows/dotnet.yml)
 * Inclusivo, código escrito e documentado em português
 * Altíssima compatibilidade permitindo o uso em qualquer versão de .Net
-  * Net6
-  * Net5
+  * Net 8.0
+  * Net 6.0
   * Net Core 3.1
   * Net Framework 2.0
-  * Net Standard 1.0+
-    * Mono 4.6+
-    * Xamarin.iOS 10.0+
-    * Xamarin.Android 7.0+
-    * UWP 8.0+
+  * Net Standard 2.0+
+    * Mono 5.4+
+    * Xamarin.iOS 10.14, 12.16+
+    * Xamarin.Mac 3.8, 5.16+
+    * Xamarin.Android 8.0+
+    * UWP 10.0.16299+
     * Unity 2018.1+
 
 ## O que já temos ou ainda queremos ter ?
