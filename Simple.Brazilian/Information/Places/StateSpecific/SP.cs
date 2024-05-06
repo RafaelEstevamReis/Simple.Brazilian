@@ -1,6 +1,7 @@
 ﻿namespace Simple.Brazilian.Information.Places.StateSpecific;
 
 using System;
+using Simple.Brazilian.Information.Places;
 
 public class SP : IStateData
 {
