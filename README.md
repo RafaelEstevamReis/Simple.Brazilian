@@ -86,7 +86,7 @@ Dados:
 
 - [x] Montagem de BRCode para PIX Estático
 - [X] Feriados Nacionais (pelas leis 10.607/2002 e 6.802/1980)
-- [ ] Feriados Estaduais
+- [X] Feriados Estaduais
 - [X] Dias úteis (pelas leis 10.607/2002 e 6.802/1980)
 - [X] Nomes de `meses` e `dias da semana` com e sem acentos, em maiúsculo e minúsculo
 - [X] Enum de `UFs` relacionado com o `Código IBGE`
