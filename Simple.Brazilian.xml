@@ -652,6 +652,15 @@
             <param name="name">Nome do feriado</param>
             <returns>True, se é feriado ou False, se não</returns>
         </member>
+        <member name="M:Simple.Brazilian.Information.Dates.IsStateHoliday(Simple.Brazilian.Information.Places.UFs,System.DateTime,System.String@)">
+            <summary>
+            Retorna feriados civís estaduais
+            </summary>
+            <param name="uf">UF para qual validar</param>
+            <param name="date">Data a ser validada</param>
+            <param name="name">Nome do feriado</param>
+            <returns>True, se é feriado ou False, se não</returns>
+        </member>
         <member name="T:Simple.Brazilian.Information.Models.PIX_Payload">
             <summary>
             Dados do Payload do Pix
@@ -851,6 +860,12 @@
             Obtém um objeto "StateInfo"
             </summary>
             <param name="uf">Item do enum UFs</param>
+        </member>
+        <member name="M:Simple.Brazilian.Information.Places.States.GetStateDataObject(Simple.Brazilian.Information.Places.UFs)">
+            <summary>
+            Obtém o objeto IStateData para o UF desejado
+            </summary>
+            <exception cref="T:System.Exception">UF=EX não é permitido</exception>
         </member>
         <member name="T:Simple.Brazilian.Information.Places.UFs">
             <summary>

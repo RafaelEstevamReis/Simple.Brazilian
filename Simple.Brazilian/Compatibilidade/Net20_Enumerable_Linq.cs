@@ -51,6 +51,19 @@ namespace System.Linq
         {
             return new List<T>(source).ToArray();
         }
+
+        internal static Dictionary<TKey, TSource> ToDictionary<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector) where TKey : notnull
+        {
+            var dic = new Dictionary<TKey, TSource>();
+
+            foreach(var  v in source)
+            {
+                var key = keySelector(v);
+                dic[key] = v;
+            }
+
+            return dic;
+        }
     }
 }
 

@@ -31,7 +31,38 @@ public class States
     /// </summary>
     public static readonly double[] AreaKm2 = { 164_122.2, 27_767.7, 142_814.6, 1_570_745.7, 564_692.7, 148_825.6, 5_822.1, 46_077.5, 340_086.7, 331_983.3, 903_357.9, 357_125.0, 586_528.3, 1_247_689.5, 56_439.8, 199_314.9, 98_311.6, 251_529.2, 43_696.1, 52_796.8, 281_748.5, 237_576.2, 224_299.0, 95_346.2, 248_209.4, 21_910.3, 277_620.9, };
 
-    static CityInfo[] cityInfo = null;
+    private static readonly IStateData[] lstStateData = {
+        new StateSpecific.RO(),
+        new StateSpecific.AC(),
+        new StateSpecific.AM(),
+        new StateSpecific.RR(),
+        new StateSpecific.PA(),
+        new StateSpecific.AP(),
+        new StateSpecific.TO(),
+        new StateSpecific.MA(),
+        new StateSpecific.PI(),
+        new StateSpecific.CE(),
+        new StateSpecific.RN(),
+        new StateSpecific.PB(),
+        new StateSpecific.PE(),
+        new StateSpecific.AL(),
+        new StateSpecific.SE(),
+        new StateSpecific.BA(),
+        new StateSpecific.MG(),
+        new StateSpecific.ES(),
+        new StateSpecific.RJ(),
+        new StateSpecific.SP(),
+        new StateSpecific.PR(),
+        new StateSpecific.SC(),
+        new StateSpecific.RS(),
+        new StateSpecific.MS(),
+        new StateSpecific.MT(),
+        new StateSpecific.GO(),
+        new StateSpecific.DF(),
+    };
+    private static readonly Dictionary<UFs, IStateData> dicStateData = lstStateData.ToDictionary(o => o.UF);
+
+    private static CityInfo[] cityInfo = null;
     /// <summary>
     /// Obtém uma lista com todos os municípios, seus nomes e códigos IBGE
     /// </summary>
@@ -87,5 +118,14 @@ public class States
     /// </summary>
     /// <param name="uf">Item do enum UFs</param>
     public static StateInfo GetStateInfo(UFs uf) => GetStateInfoByName((int)uf);
+    /// <summary>
+    /// Obtém o objeto IStateData para o UF desejado
+    /// </summary>
+    /// <exception cref="Exception">UF=EX não é permitido</exception>
+    public static IStateData GetStateDataObject(UFs uf)
+    {
+        if (uf == UFs.EX) throw new Exception("EX não é um UF válido");
+        return dicStateData[uf];
+    }
 
 }
