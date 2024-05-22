@@ -8,10 +8,10 @@ namespace Simple.Brazilian.UnitTests.FormattersTestes.NumbersTestes
     {
         //[Theory]
         //[InlineData(0, "")]
-        public void Numero_ToDecimal_0(decimal expected, string test)
-        {
-            throw new NotImplementedException();
-        }
+        //public void Numero_ToDecimal_0(decimal expected, string test)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         [Theory]
         [InlineData("-10,75", -10.75)]

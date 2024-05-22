@@ -1028,6 +1028,11 @@
             Feriado nacional, ver Dates.IsNationalHoliday
             </summary>
         </member>
+        <member name="F:Simple.Brazilian.Information.WorkDay.DayType.StateHoliday">
+            <summary>
+            Feriado estadual, ver Dates.IsStateHoliday
+            </summary>
+        </member>
         <member name="F:Simple.Brazilian.Information.WorkDay.DayType.WeekEnd">
             <summary>
             Fim de semana
@@ -1038,27 +1043,30 @@
             Dia de semana
             </summary>
         </member>
-        <member name="M:Simple.Brazilian.Information.WorkDay.GetDayType(System.DateTime)">
+        <member name="M:Simple.Brazilian.Information.WorkDay.GetDayType(System.DateTime,Simple.Brazilian.Information.Places.UFs)">
             <summary>
             Obtém o tipo de dia
             </summary>
             <param name="date">Data base</param>
+            <param name="uf">UF para qual verificar feriados estaduais, EX para não verificar</param>
             <returns>Tipo de data</returns>
         </member>
-        <member name="M:Simple.Brazilian.Information.WorkDay.WorkDaysBetween(System.DateTime,System.DateTime)">
+        <member name="M:Simple.Brazilian.Information.WorkDay.WorkDaysBetween(System.DateTime,System.DateTime,Simple.Brazilian.Information.Places.UFs)">
             <summary>
             Obtém dias úteis entre as datas
             </summary>
             <param name="start">Data de início, inclusive</param>
             <param name="end">Data de dim, inclusive</param>
+            <param name="uf">UF para qual verificar feriados estaduais, EX para não verificar</param>
             <returns>Dias úteis</returns>
         </member>
-        <member name="M:Simple.Brazilian.Information.WorkDay.WorkdayIn(System.DateTime,System.Int32)">
+        <member name="M:Simple.Brazilian.Information.WorkDay.WorkdayIn(System.DateTime,System.Int32,Simple.Brazilian.Information.Places.UFs)">
             <summary>
             Retorna o n'ésimo dia útil a partir do início
             </summary>
             <param name="start">Dia 0 da busca</param>
             <param name="days">Número N de dias a serem buscados</param>
+            <param name="uf">UF para qual verificar feriados estaduais, EX para não verificar</param>
             <returns>Data do n'ésimo dia</returns>
         </member>
         <member name="T:Simple.Brazilian.Validators.Bank">
