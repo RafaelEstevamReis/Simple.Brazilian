@@ -219,6 +219,42 @@
             Localiza índice do Array
             </summary>
         </member>
+        <member name="M:Simple.Brazilian.Extensions.DateTimeExtensions.GetMonthName(System.DateTime,Simple.Brazilian.Information.Dates.TextStyle,System.Boolean)">
+            <summary>
+            Retorna o nome do mês referenciado formatado
+            </summary>
+            <param name="dtReference">Referência para obter o mês</param>
+            <param name="style">Estilo de capitalização</param>
+            <param name="WithAccents">Utilizar acentos?</param>
+            <returns>Nome do mês</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Extensions.DateTimeExtensions.GetWeekdayName(System.DateTime,Simple.Brazilian.Information.Dates.TextStyle,System.Boolean)">
+            <summary>
+            Retorna o nome do dia da semana referenciado formatado
+            </summary>
+            <param name="dtReference">Referência para obter o dia da semana</param>
+            <param name="style">Estilo de capitalização</param>
+            <param name="WithAccents">Utilizar acentos?</param>
+            <returns>Nome do dia da semana</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Extensions.DateTimeExtensions.IsNationalHoliday(System.DateTime,System.String@)">
+            <summary>
+            Retorna feriados civís nacionais
+            Segundo as leis 10.607/2002 e 6.802/1980
+            </summary>
+            <param name="date">Data a ser validada</param>
+            <param name="name">Nome do feriado</param>
+            <returns>True, se é feriado ou False, se não</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Extensions.DateTimeExtensions.IsStateHoliday(System.DateTime,Simple.Brazilian.Information.Places.UFs,System.String@)">
+            <summary>
+            Retorna feriados civís estaduais
+            </summary>
+            <param name="uf">UF para qual validar</param>
+            <param name="date">Data a ser validada</param>
+            <param name="name">Nome do feriado</param>
+            <returns>True, se é feriado ou False, se não</returns>
+        </member>
         <member name="T:Simple.Brazilian.MoneyExtensions">
             <summary>
             Extensões para valores monetários
@@ -333,16 +369,6 @@
             <summary>
             Escreve número inteiro por extenso
             </summary>
-        </member>
-        <member name="M:Simple.Brazilian.Formatters.Pluralizer.DivisaoSilabica(System.String)">
-            <summary>
-            Algoritmo de divisão silábica
-            Usa o paper `Divisão Silábica Automática do Texto Escrito e Falado` do
-            CEFAT por Paulo Duarte Ferreira Gouveia, João Paulo Ramos Teixeira, e Diamantino Rui da Silva Freitas
-            </summary>
-            <param name="pal"></param>
-            <returns></returns>
-            <exception cref="T:System.Exception"></exception>
         </member>
         <member name="T:Simple.Brazilian.Formatters.Text">
             <summary>
@@ -642,6 +668,24 @@
             <summary>
             Lista de dias da semana em minúsculo, sem acentos
             </summary>
+        </member>
+        <member name="M:Simple.Brazilian.Information.Dates.GetMonthName(System.DateTime,Simple.Brazilian.Information.Dates.TextStyle,System.Boolean)">
+            <summary>
+            Retorna o nome do mês referenciado formatado
+            </summary>
+            <param name="dtReference">Referência para obter o mês</param>
+            <param name="style">Estilo de capitalização</param>
+            <param name="WithAccents">Utilizar acentos?</param>
+            <returns>Nome do mês</returns>
+        </member>
+        <member name="M:Simple.Brazilian.Information.Dates.GetWeekdayName(System.DateTime,Simple.Brazilian.Information.Dates.TextStyle,System.Boolean)">
+            <summary>
+            Retorna o nome do dia da semana referenciado formatado
+            </summary>
+            <param name="dtReference">Referência para obter o dia da semana</param>
+            <param name="style">Estilo de capitalização</param>
+            <param name="WithAccents">Utilizar acentos?</param>
+            <returns>Nome do dia da semana</returns>
         </member>
         <member name="M:Simple.Brazilian.Information.Dates.IsNationalHoliday(System.DateTime,System.String@)">
             <summary>
