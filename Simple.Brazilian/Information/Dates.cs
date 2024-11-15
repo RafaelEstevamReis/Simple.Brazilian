@@ -8,6 +8,13 @@ using System;
 /// </summary>
 public static class Dates
 {
+    public enum TextStyle
+    {
+        Regular,
+        Upper,
+        Lower
+    }
+
     /* Normais */
     /// <summary>
     /// Lista de Months com a iniciaLowermaiúscula, com acentos
@@ -61,6 +68,44 @@ public static class Dates
     /// Lista de dias da semana em minúsculo, sem acentos
     /// </summary>
     public static readonly string[] WeekDayWithoutAccentLower = { "domingo", "segunda", "terca", "quarta", "quinta", "sexta", "sabado" };
+
+    /// <summary>
+    /// Retorna o nome do mês referenciado formatado
+    /// </summary>
+    /// <param name="dtReference">Referência para obter o mês</param>
+    /// <param name="style">Estilo de capitalização</param>
+    /// <param name="WithAccents">Utilizar acentos?</param>
+    /// <returns>Nome do mês</returns>
+    public static string GetMonthName(DateTime dtReference, TextStyle style = TextStyle.Regular, bool WithAccents = true)
+    {
+        int monthIndex = dtReference.Month - 1;
+        return style switch
+        {
+            TextStyle.Regular => WithAccents ? MonthsWithAccent[monthIndex] : MonthsWithoutAccent[monthIndex],
+            TextStyle.Upper => WithAccents ? MonthsWithAccentUpper[monthIndex] : MonthsWithoutAccentUpper[monthIndex],
+            TextStyle.Lower => WithAccents ? MonthsWithAccentLower[monthIndex] : MonthsWithoutAccentLower[monthIndex],
+            _ => throw new Exception("Invalid style"),
+        };
+    }
+
+    /// <summary>
+    /// Retorna o nome do dia da semana referenciado formatado
+    /// </summary>
+    /// <param name="dtReference">Referência para obter o dia da semana</param>
+    /// <param name="style">Estilo de capitalização</param>
+    /// <param name="WithAccents">Utilizar acentos?</param>
+    /// <returns>Nome do dia da semana</returns>
+    public static string GetWeekdayName(DateTime dtReference, TextStyle style = TextStyle.Regular, bool WithAccents = true)
+    {
+        int weekIndex = (int)dtReference.DayOfWeek;
+        return style switch
+        {
+            TextStyle.Regular => WithAccents ? WeekDayWithAccent[weekIndex] : WeekDayWithoutAccent[weekIndex],
+            TextStyle.Upper => WithAccents ? WeekDayWithAccentUpper[weekIndex] : WeekDayWithoutAccentUpper[weekIndex],
+            TextStyle.Lower => WithAccents ? WeekDayWithAccentLower[weekIndex] : WeekDayWithoutAccentLower[weekIndex],
+            _ => throw new Exception("Invalid style"),
+        };
+    }
 
     /// <summary>
     /// Retorna feriados civís nacionais
