@@ -157,6 +157,14 @@ public static class Dates
             name = "Proclamação da República";
             return true;
         }
+
+        // 20 de novembro, Dia Nacional de Zumbi e da Consciência Negra (feriado nacional)
+        if (date.Year >= 2024 && date.Day == 20 && date.Month == 11)
+        {
+            name = "Dia Nacional de Zumbi e da Consciência Negra";
+            return true;
+        }
+
         // 25 de dezembro
         if (date.Day == 25 && date.Month == 12)
         {

@@ -10,7 +10,7 @@ namespace Simple.Brazilian.UnitTests.InformationTestes.DatesTestes
         // Vou checar os que são, e o total
 
         [Fact]
-        public void IsNationalHoliday_TotalCount()
+        public void IsNationalHoliday_TotalCount_2020()
         {
             DateTime dt = new DateTime(2020, 1, 1);
 
@@ -24,6 +24,23 @@ namespace Simple.Brazilian.UnitTests.InformationTestes.DatesTestes
             }
 
             Assert.Equal(8, count);
+        }
+        [Fact]
+        public void IsNationalHoliday_TotalCount_2024()
+        {
+            // 2024 adicionou 20 de novembro, Dia Nacional de Zumbi e da Consciência Negra (feriado nacional)
+            DateTime dt = new DateTime(2024, 1, 1);
+
+            int count = 0;
+            while (dt.Year == 2024)
+            {
+                bool isNationalHoliday = Dates.IsNationalHoliday(dt, out string name);
+                if (isNationalHoliday) count++;
+
+                dt = dt.AddDays(1); // day++
+            }
+
+            Assert.Equal(9, count);
         }
 
         [Theory]
