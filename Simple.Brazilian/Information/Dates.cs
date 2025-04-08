@@ -120,6 +120,8 @@ public static class Dates
         // Feriados Nacionais
         // LEI No 10.607, DE 19 DE DEZEMBRO DE 2002.
         // "Art. 1o São feriados nacionais os dias 1o de janeiro, 21 de abril, 1o de maio, 7 de setembro, 2 de novembro, 15 de novembro e 25 de dezembro."(NR)
+        // https://www.in.gov.br/en/web/dou/-/portaria-mgi-n-9.783-de-27-de-dezembro-de-2024-604395869
+        // > Portaria lista vários outros
 
         // 1o de janeiro
         if (date.Day == 01 && date.Month == 1)
@@ -177,6 +179,14 @@ public static class Dates
         if (date.Day == 12 && date.Month == 10)
         {
             name = "Nossa Senhora Aparecida";
+            return true;
+        }
+
+        // Portaria MGI Nº 9.783, DE 27 DE dezembro DE 2024
+        // 18 de abril
+        if (date.Year >= 2025 && date.Day == 18 && date.Month == 04)
+        {
+            name = "Paixão de Cristo";
             return true;
         }
 
