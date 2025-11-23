@@ -407,6 +407,13 @@
             <param name="text">Texto a ser limpo</param>
             <returns>O texto com os espaços tratados</returns>
         </member>
+        <member name="M:Simple.Brazilian.Formatters.Text.Normalize_NFKD(System.String)">
+            <summary>
+            Normaliza o texto usando Unicode-NFKD removendo whitespaces consecutivos
+            </summary>
+            <param name="text">Texto a ser normalizado</param>
+            <returns>Texto normalizado</returns>
+        </member>
         <member name="M:Simple.Brazilian.Formatters.Text.TruncateText(System.String,System.Int32)">
             <summary>
             Retorna o texto com comprimento até o limite

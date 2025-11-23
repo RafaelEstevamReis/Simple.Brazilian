@@ -85,5 +85,37 @@ do Distrito Federal e dos 5.570 municipios";
             };
             Assert.Equal(Exemplos.Externos.acentos_wikipedia_semAcentos, Text.RemoveAccents(Exemplos.Externos.acentos_wikipedia_original, opcoes));
         }
+
+        [Fact]
+        public void Texto_Normalize_NFKD_ExemploTexto()
+        {
+            string textoWikipedia =
+@"Brasil, oficialmente República Federativa do Brasil, é o maior país da América do Sul e da região da América Latina, 
+sendo o quinto maior do mundo   em área territorial (equivalente a 47,3% do território sul-americano)        e sexto em população (com mais de 210 milhões de habitantes). 
+É o único país na América onde se fala majoritariamente a língua portuguesa e o maior país lusófono do planeta, 
+além de ser uma das nações mais multiculturais e etnicamente diversas,          em decorrência da forte imigração oriunda de variados locais do mundo. 
+Sua atual Constituição, promulgada em 1988, concebe o Brasil como uma república federativa      presidencialista, formada pela união dos 26 estados, 
+do Distrito Federal e dos 5.570 municípios";
+            // Acentos removidos manualmente
+            string textoSemAcentos =
+@"Brasil, oficialmente Republica Federativa do Brasil, e o maior pais da America do Sul e da regiao da America Latina, 
+sendo o quinto maior do mundo em area territorial (equivalente a 47,3% do territorio sul-americano) e sexto em populacao (com mais de 210 milhoes de habitantes). 
+E o unico pais na America onde se fala majoritariamente a lingua portuguesa e o maior pais lusofono do planeta, 
+alem de ser uma das nacoes mais multiculturais e etnicamente diversas, em decorrencia da forte imigracao oriunda de variados locais do mundo. 
+Sua atual Constituicao, promulgada em 1988, concebe o Brasil como uma republica federativa presidencialista, formada pela uniao dos 26 estados, 
+do Distrito Federal e dos 5.570 municipios";
+
+            Assert.Equal(textoSemAcentos, Text.Normalize_NFKD(textoWikipedia));
+        }
+        [Fact]
+        public void Texto_Normalize_NFKD_CertificaNullRetornaNull()
+        {
+            Assert.Null(Text.Normalize_NFKD(null));
+        }
+        [Fact]
+        public void Texto_Normalize_NFKD_CertificaVazioRetornaVazio()
+        {
+            Assert.Equal(string.Empty, Text.Normalize_NFKD(string.Empty));
+        }
     }
 }

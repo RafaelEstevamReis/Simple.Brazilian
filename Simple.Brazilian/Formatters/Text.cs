@@ -156,6 +156,40 @@ public static class Text
         }
         return sb.ToString();
     }
+
+#if !NETSTANDARD1_0
+    /// <summary>
+    /// Normaliza o texto usando Unicode-NFKD removendo whitespaces consecutivos
+    /// </summary>
+    /// <param name="text">Texto a ser normalizado</param>
+    /// <returns>Texto normalizado</returns>
+    public static string Normalize_NFKD(string text)
+    {
+        if (string.IsNullOrEmpty( text )) return text;
+
+        bool lastWhiteSpace = false;
+        StringBuilder sb = new(text.Length);
+        foreach (char c in text.Normalize(NormalizationForm.FormKD))
+        {
+            if (c >= 250) continue;
+
+            if (c == '\n' || c == '\r') { }
+            else if (char.IsWhiteSpace(c))
+            {
+                if (lastWhiteSpace) continue;
+                lastWhiteSpace = true;
+            }
+            else
+            {
+                lastWhiteSpace = false;
+            }
+
+            sb.Append(c);
+        }
+        return sb.ToString().Trim();
+    }
+#endif
+
     /// <summary>
     /// Retorna o texto com comprimento até o limite
     /// </summary>
@@ -197,7 +231,7 @@ public static class Text
     /// <param name="allowed">Caracteres permitidos</param>
     /// <returns>Texto contendo apenas caracteres permitidos</returns>
 #if NET20
-    internal 
+    internal
 #else
     public
 #endif
