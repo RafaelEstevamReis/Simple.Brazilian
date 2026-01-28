@@ -65,6 +65,7 @@ Validadores:
 - [ ] Validação de Dados Bancários (com cálculo DV)
 - [X] Valida Dia Útil com possibilidade de verificar feriados nacionais
 - [X] Calculador de dias úteis (ex.: Quando será daqui X dias úteis)
+- [X] Atribute de Validação `ValidationAttribute`: `CNPJ` e `CPF`
 
 Formatadores:
 
