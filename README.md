@@ -58,6 +58,7 @@ Existem repositórios em várias linguagens porém é raro que:
 
 Validadores:
 
+- [X] Validação do novo CNPJ alfanumérico
 - [X] Validação de Documentos: `CEP`, `CNPJ`, `CPF`, `IE` e `PIS`
 - [ ] Validação de Documentos: `RG`
 - [x] Validação de Chaves PIX

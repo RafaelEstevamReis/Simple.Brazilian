@@ -96,9 +96,9 @@ public static class CNPJ
         // Calcula simultâneo
         for (int i = 0; i < 12; i++)
         {
-            int intValue = cnpj[i] - '0';
-            // Não é número ?
-            if (intValue > 9 || intValue < 0)
+            int intValue = cnpj[i] - 48;
+            // Não é caractere válido ?
+            if (intValue < 0 || (intValue > 9 && intValue < 17) || intValue > 42)
             {
                 firstDigitVerification = 0;
                 secondDigitVerification = 0;
