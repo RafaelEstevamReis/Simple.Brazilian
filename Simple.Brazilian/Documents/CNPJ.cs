@@ -72,6 +72,21 @@ public static class CNPJ
         return $"{partialCNPJ}{d1}{d2}";
     }
 
+    public static string GetCnpjMatriz(string cnpjFilial)
+    {
+        if (cnpjFilial.Length > 14)
+        {
+            cnpjFilial = Unmask(cnpjFilial);
+        }
+
+        if (cnpjFilial.Length != 14)
+            throw new InvalidOperationException("CNPJ Filial inválido");
+
+        if (cnpjFilial.Substring(8, 4) == "0001") return cnpjFilial;
+
+        return CompleteWithDigitsCNPJ(cnpjFilial.Substring(0, 8) + "0001");
+    }
+
     private static bool calculateDigits(string cnpj, out int firstDigitVerification, out int secondDigitVerification)
     {
         int firstSum = 0;
