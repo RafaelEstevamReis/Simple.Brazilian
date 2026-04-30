@@ -4,7 +4,7 @@
 		<LangVersion>12.0</LangVersion>
 		<ImplicitUsings>disable</ImplicitUsings>
 		<Nullable>disable</Nullable>
-		<Version>1.4.0</Version>
+		<Version>1.4.1</Version>
 		<Authors>RafaelEstevam.Net</Authors>
 		<Company>RafaelEstevam.Net</Company>
 		<Product>Simple brazilian text lib</Product>
@@ -30,31 +30,31 @@
 			<PackagePath>\</PackagePath>
 		</None>
 	</ItemGroup>
-	
+
 	<ItemGroup Condition="'$(TargetFramework)' == 'NET8.0'">
-	  <PackageReference Include="System.Text.RegularExpressions">
-	    <Version>4.3.1</Version>
-	  </PackageReference>
+		<PackageReference Include="System.Text.RegularExpressions">
+			<Version>4.3.1</Version>
+		</PackageReference>
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'NET6.0'">
-	  <PackageReference Include="System.Text.RegularExpressions">
-	    <Version>4.3.1</Version>
-	  </PackageReference>
+		<PackageReference Include="System.Text.RegularExpressions">
+			<Version>4.3.1</Version>
+		</PackageReference>
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
-	  <PackageReference Include="System.Text.RegularExpressions">
-	    <Version>4.3.1</Version>
-	  </PackageReference>
+		<PackageReference Include="System.Text.RegularExpressions">
+			<Version>4.3.1</Version>
+		</PackageReference>
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.0'">
-	  <PackageReference Include="System.Text.RegularExpressions">
-	    <Version>4.3.1</Version>
-	  </PackageReference>
+		<PackageReference Include="System.Text.RegularExpressions">
+			<Version>4.3.1</Version>
+		</PackageReference>
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-	  <PackageReference Include="System.Text.RegularExpressions">
-	    <Version>4.3.1</Version>
-	  </PackageReference>
+		<PackageReference Include="System.Text.RegularExpressions">
+			<Version>4.3.1</Version>
+		</PackageReference>
 	</ItemGroup>
-	
+
 </Project>
