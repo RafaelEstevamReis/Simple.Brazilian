@@ -83,6 +83,7 @@ Formatadores:
 - [x] Funções para escrita de `valores por extenso`
 - [ ] Conversão de  palavras em `singular` para `plural`
 - [x] Filtragem de textos para remoção de caracteres por categorias
+- [x] Abreviação de Nomes customaizável
 
 Dados:
 
