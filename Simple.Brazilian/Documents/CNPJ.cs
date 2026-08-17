@@ -72,6 +72,9 @@ public static class CNPJ
         return $"{partialCNPJ}{d1}{d2}";
     }
 
+    /// <summary>
+    /// Retorna o CNPJ da matriz. Se o CNPJ já é 0001, retorna o valor original
+    /// </summary>
     public static string GetCnpjMatriz(string cnpjFilial)
     {
         if (cnpjFilial.Length > 14)
